@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Hourly requirement --></label>
+    <name>Hourly_requirement__c</name>
+    <picklistValues>
+        <masterLabel>0 hours</masterLabel>
+        <translation><!-- 0 hours --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>1 hour every 6 months</masterLabel>
+        <translation><!-- 1 hour every 6 months --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>1 hour per month</masterLabel>
+        <translation><!-- 1 hour per month --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>1 hour per quarter</masterLabel>
+        <translation><!-- 1 hour per quarter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>10 hours every 6 months</masterLabel>
+        <translation><!-- 10 hours every 6 months --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>10 hours per month</masterLabel>
+        <translation><!-- 10 hours per month --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>10 hours per quarter</masterLabel>
+        <translation><!-- 10 hours per quarter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2 hours every 6 months</masterLabel>
+        <translation><!-- 2 hours every 6 months --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2 hours per month</masterLabel>
+        <translation><!-- 2 hours per month --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2 hours per quarter</masterLabel>
+        <translation><!-- 2 hours per quarter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>3 hours every 6 months</masterLabel>
+        <translation><!-- 3 hours every 6 months --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>3 hours per month</masterLabel>
+        <translation><!-- 3 hours per month --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>3 hours per quarter</masterLabel>
+        <translation><!-- 3 hours per quarter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4 hours every 6 months</masterLabel>
+        <translation><!-- 4 hours every 6 months --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4 hours per month</masterLabel>
+        <translation><!-- 4 hours per month --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4 hours per quarter</masterLabel>
+        <translation><!-- 4 hours per quarter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>5 hours every 6 months</masterLabel>
+        <translation><!-- 5 hours every 6 months --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>5 hours per month</masterLabel>
+        <translation><!-- 5 hours per month --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>5 hours per quarter</masterLabel>
+        <translation><!-- 5 hours per quarter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>6 hours every 6 months</masterLabel>
+        <translation><!-- 6 hours every 6 months --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>6 hours per month</masterLabel>
+        <translation><!-- 6 hours per month --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>6 hours per quarter</masterLabel>
+        <translation><!-- 6 hours per quarter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>7 hour every 6 months</masterLabel>
+        <translation><!-- 7 hour every 6 months --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>7 hour per month</masterLabel>
+        <translation><!-- 7 hour per month --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>7 hour per quarter</masterLabel>
+        <translation><!-- 7 hour per quarter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>8 hours every 6 months</masterLabel>
+        <translation><!-- 8 hours every 6 months --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>8 hours per month</masterLabel>
+        <translation><!-- 8 hours per month --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>8 hours per quarter</masterLabel>
+        <translation><!-- 8 hours per quarter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>9 hours every 6 months</masterLabel>
+        <translation><!-- 9 hours every 6 months --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>9 hours per month</masterLabel>
+        <translation><!-- 9 hours per month --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>9 hours per quarter</masterLabel>
+        <translation><!-- 9 hours per quarter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unspecified</masterLabel>
+        <translation><!-- Unspecified --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

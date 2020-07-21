@@ -1,0 +1,236 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/activityChart": [
+                "activityChart/activityChart.js"
+            ],
+            "c/complianceContainer": [
+                "complianceContainer/complianceContainer.js"
+            ],
+            "c/complianceFileUpload": [
+                "complianceFileUpload/complianceFileUpload.js"
+            ],
+            "c/contract": [
+                "contract/contract.js"
+            ],
+            "c/contractContainer": [
+                "contractContainer/contractContainer.js"
+            ],
+            "c/contractFileDownload": [
+                "contractFileDownload/contractFileDownload.js"
+            ],
+            "c/customerAccountSelection": [
+                "customerAccountSelection/customerAccountSelection.js"
+            ],
+            "c/customerActivityDetail": [
+                "customerActivityDetail/customerActivityDetail.js"
+            ],
+            "c/customerActivityLink": [
+                "customerActivityLink/customerActivityLink.js"
+            ],
+            "c/customerAdvancedInsightChart": [
+                "customerAdvancedInsightChart/customerAdvancedInsightChart.js"
+            ],
+            "c/customerCompliance": [
+                "customerCompliance/customerCompliance.js"
+            ],
+            "c/customerComplianceInspectionReports": [
+                "customerComplianceInspectionReports/customerComplianceInspectionReports.js"
+            ],
+            "c/customerComplianceStateRecords": [
+                "customerComplianceStateRecords/customerComplianceStateRecords.js"
+            ],
+            "c/customerDisputeSent": [
+                "customerDisputeSent/customerDisputeSent.js"
+            ],
+            "c/customerExternalLinks": [
+                "customerExternalLinks/customerExternalLinks.js"
+            ],
+            "c/customerExternalLinksSection": [
+                "customerExternalLinksSection/customerExternalLinksSection.js"
+            ],
+            "c/customerFeedback": [
+                "customerFeedback/customerFeedback.js"
+            ],
+            "c/customerFileDownload": [
+                "customerFileDownload/customerFileDownload.js"
+            ],
+            "c/customerFinance": [
+                "customerFinance/customerFinance.js"
+            ],
+            "c/customerFinanceCellStatus": [
+                "customerFinanceCellStatus/customerFinanceCellStatus.js"
+            ],
+            "c/customerFinanceChart": [
+                "customerFinanceChart/customerFinanceChart.js"
+            ],
+            "c/customerFinanceDisputeInvoices": [
+                "customerFinanceDisputeInvoices/customerFinanceDisputeInvoices.js"
+            ],
+            "c/customerFinanceHistory": [
+                "customerFinanceHistory/customerFinanceHistory.js"
+            ],
+            "c/customerFinanceInvoiceDetail": [
+                "customerFinanceInvoiceDetail/customerFinanceInvoiceDetail.js"
+            ],
+            "c/customerFinanceInvoices": [
+                "customerFinanceInvoices/customerFinanceInvoices.js"
+            ],
+            "c/customerFinanceLiquidatedDamages": [
+                "customerFinanceLiquidatedDamages/customerFinanceLiquidatedDamages.js"
+            ],
+            "c/customerFinanceOpenInvoices": [
+                "customerFinanceOpenInvoices/customerFinanceOpenInvoices.js"
+            ],
+            "c/customerFinancePanel": [
+                "customerFinancePanel/customerFinancePanel.js"
+            ],
+            "c/customerFinancePanels": [
+                "customerFinancePanels/customerFinancePanels.js"
+            ],
+            "c/customerInformation": [
+                "customerInformation/customerInformation.js"
+            ],
+            "c/customerInformationPanel": [
+                "customerInformationPanel/customerInformationPanel.js"
+            ],
+            "c/customerInsightChart": [
+                "customerInsightChart/customerInsightChart.js"
+            ],
+            "c/customerInvoiceAccept": [
+                "customerInvoiceAccept/customerInvoiceAccept.js"
+            ],
+            "c/customerInvoiceActions": [
+                "customerInvoiceActions/customerInvoiceActions.js"
+            ],
+            "c/customerInvoiceDispute": [
+                "customerInvoiceDispute/customerInvoiceDispute.js"
+            ],
+            "c/customerInvoicePayment": [
+                "customerInvoicePayment/customerInvoicePayment.js"
+            ],
+            "c/customerInvoiceRenegociate": [
+                "customerInvoiceRenegociate/customerInvoiceRenegociate.js"
+            ],
+            "c/customerLogin": [
+                "customerLogin/customerLogin.js"
+            ],
+            "c/customerNotification": [
+                "customerNotification/customerNotification.js"
+            ],
+            "c/customerProposal": [
+                "customerProposal/customerProposal.js"
+            ],
+            "c/customerProposalAccept": [
+                "customerProposalAccept/customerProposalAccept.js"
+            ],
+            "c/customerProposalActions": [
+                "customerProposalActions/customerProposalActions.js"
+            ],
+            "c/customerProposalCellStatus": [
+                "customerProposalCellStatus/customerProposalCellStatus.js"
+            ],
+            "c/customerProposalDecline": [
+                "customerProposalDecline/customerProposalDecline.js"
+            ],
+            "c/customerProposalHistory": [
+                "customerProposalHistory/customerProposalHistory.js"
+            ],
+            "c/customerProposalOpen": [
+                "customerProposalOpen/customerProposalOpen.js"
+            ],
+            "c/customerProvisioning": [
+                "customerProvisioning/customerProvisioning.js"
+            ],
+            "c/customerProvisioningVendor": [
+                "customerProvisioningVendor/customerProvisioningVendor.js"
+            ],
+            "c/customerService": [
+                "customerService/customerService.js"
+            ],
+            "c/customerServiceActivities": [
+                "customerServiceActivities/customerServiceActivities.js"
+            ],
+            "c/customerServiceCallback": [
+                "customerServiceCallback/customerServiceCallback.js"
+            ],
+            "c/customerServiceCellStatus": [
+                "customerServiceCellStatus/customerServiceCellStatus.js"
+            ],
+            "c/customerServiceLink": [
+                "customerServiceLink/customerServiceLink.js"
+            ],
+            "c/customerServiceMaintenance": [
+                "customerServiceMaintenance/customerServiceMaintenance.js"
+            ],
+            "c/customerServiceMaintenanceRow": [
+                "customerServiceMaintenanceRow/customerServiceMaintenanceRow.js"
+            ],
+            "c/customerServiceRepair": [
+                "customerServiceRepair/customerServiceRepair.js"
+            ],
+            "c/customerServiceTesting": [
+                "customerServiceTesting/customerServiceTesting.js"
+            ],
+            "c/customerSummary": [
+                "customerSummary/customerSummary.js"
+            ],
+            "c/customerUnitBadge": [
+                "customerUnitBadge/customerUnitBadge.js"
+            ],
+            "c/customerUnitDetail": [
+                "customerUnitDetail/customerUnitDetail.js"
+            ],
+            "c/financeContainer": [
+                "financeContainer/financeContainer.js"
+            ],
+            "c/insights": [
+                "insights/insights.js"
+            ],
+            "c/insightsContainer": [
+                "insightsContainer/insightsContainer.js"
+            ],
+            "c/invoiceFixer": [
+                "invoiceFixer/invoiceFixer.js"
+            ],
+            "c/invoiceForm": [
+                "invoiceForm/invoiceForm.js"
+            ],
+            "c/invoiceViewer": [
+                "invoiceViewer/invoiceViewer.js"
+            ],
+            "c/proposalContainer": [
+                "proposalContainer/proposalContainer.js"
+            ],
+            "c/proposalFileUpload": [
+                "proposalFileUpload/proposalFileUpload.js"
+            ],
+            "c/pubsub": [
+                "pubsub/pubsub.js"
+            ],
+            "c/requestUpdate": [
+                "requestUpdate/requestUpdate.js"
+            ],
+            "c/scheduleBuilder": [
+                "scheduleBuilder/scheduleBuilder.js"
+            ],
+            "c/serviceContainer": [
+                "serviceContainer/serviceContainer.js"
+            ],
+            "c/summaryContainer": [
+                "summaryContainer/summaryContainer.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}

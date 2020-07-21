@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Obsolescence is when parts become obsolete or are not longer manufactured by the OEM. --></help>
+    <label><!-- Obsolescence Language --></label>
+    <name>Obsolescence_Language__c</name>
+</CustomFieldTranslation>

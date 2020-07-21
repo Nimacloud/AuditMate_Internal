@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Source --></label>
+    <name>Source__c</name>
+    <picklistValues>
+        <masterLabel>Kone</masterLabel>
+        <translation><!-- Kone --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mitsubishi Electric</masterLabel>
+        <translation><!-- Mitsubishi Electric --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Otis</masterLabel>
+        <translation><!-- Otis --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Schindler</masterLabel>
+        <translation><!-- Schindler --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ThyssenKrupp</masterLabel>
+        <translation><!-- ThyssenKrupp --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

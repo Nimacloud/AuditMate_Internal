@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Max. number of days prior to expiration date that client may request not to renew their contract with vendor --></help>
+    <label><!-- Expiration window start --></label>
+    <name>Expiration_window_start__c</name>
+</CustomFieldTranslation>

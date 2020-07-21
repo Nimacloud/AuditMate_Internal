@@ -1,0 +1,59 @@
+<template>
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Inspection Type">Inspection Type</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="State ID">State ID</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Result">Result</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Schedule Date">Schedule Date</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Completed Date">Completed Date</div>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <template for:each={records} for:item="record">
+
+                <tr class="slds-hint-parent" key={record.Id} data-record-id={record.Id}>
+                   
+                    <td data-label="Inspection Type">
+                        <div class="slds-truncate" title={record.Type_of_Inspection__c}>{record.Type_of_Inspection__c}</div>
+                    </td>
+                    <td data-label="State ID">
+                        <div class="slds-truncate" title={record.State_ID__c}>                            
+                            <div class="slds-truncate" title={record.Type_of_Inspection__c}>{record.State_ID__c}</div>
+                        </div>
+                    </td>
+                    <td data-label="Result">
+                        <div class="slds-truncate" title={record.Result__c}>{record.Result__c}</div>
+                    </td>
+                    <td data-label="Schedule Date">
+                        <div class="slds-truncate" title={record.Scheduled_Date__c}>
+                            <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={record.Scheduled_Date__c}></lightning-formatted-date-time>
+                        </div>
+                    </td>
+                    <td data-label="Completed Date">
+                        <div class="slds-truncate" title={record.Completed_Date__c}>
+                            <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={record.Completed_Date__c}></lightning-formatted-date-time>
+                        </div>
+                    </td>
+                </tr>
+
+            </template>
+
+        </tbody>
+
+    </table>
+
+</template>

@@ -1,0 +1,136 @@
+<template>
+
+    <div class="slds-m-horizontal_large">
+
+        <template if:true={contractRecord}>
+
+            <!-- <div class="slds-m-top_medium">
+                <div class="slds-grid slds-wrap slds-gutters" id="buttons">
+                    <div class="slds-col slds-size_1-of-4">
+                        <c-contract-file-download object-id="none"></c-contract-file-download>
+                    </div>
+                </div>
+            </div> -->
+
+            <p class="slds-text-heading_small slds-m-bottom_small slds-m-top_x-large">
+                Terms
+            </p>
+
+            <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" id="terms">
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="utility-2" label="Start Date" value={contractRecord.Start_Date__c} is-date="true"></c-customer-information-panel>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="utility-2" label="Expiration Date" value={contractRecord.Expiration_date__c} is-date="true"></c-customer-information-panel>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="utility-5" label="Autorenewal Clause" value={contractRecord.Contract_Renewal__c}></c-customer-information-panel>
+                </div>
+            </div>
+
+            <p class="slds-text-heading_small slds-m-bottom_small slds-m-top_x-large">
+                Price
+            </p>
+
+            <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" id="price">
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel is-currency="true" compact="true" icon="utility-6" label="Monthly Price" value={contractRecord.Elevator_maintenance_price__c}></c-customer-information-panel>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel is-currency="true" compact="true" icon="utility-3" label="Hourly Rates" value={contractRecord.Mechanic_Standard_Billing_Rate__c}></c-customer-information-panel>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="warning-2" label="Price Increase" value={contractRecord.Price_Increase_Message__c} message={contractRecord.Price_Increase_justification__c}></c-customer-information-panel>
+                </div>
+            </div>
+
+            <p class="slds-text-heading_small slds-m-bottom_small slds-m-top_x-large">
+                Hours of Service
+            </p>
+
+            <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" id="hours-service">
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="utility-2" message="Vendor Discretion on Definition of Regular" label="Coverage Hours" value={contractRecord.CoverageHours__c}></c-customer-information-panel>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="utility-5" message="Unspecified Vendor Discretion" label="Callback Hours Available" value={contractRecord.Call_Back_Hours_Available__c}></c-customer-information-panel>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="utility-2" message={callbackHoursIncludedMessage} label="Callback Hours Included" value={contractRecord.Call_Back_Coverage__c}></c-customer-information-panel>
+                </div>
+            </div>
+
+            <p class="slds-text-heading_small slds-m-bottom_small slds-m-top_x-large">
+                Maintenance Coverage
+            </p>
+
+            <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" id="maintenance-coverage">
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="warning-2" message={serviceFrequencyMessage} label="Maintenance Frequency" value={contractRecord.Frequency_of_service__c}></c-customer-information-panel>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="warning-1" message="Vendor Discretion" label="Hourly Requirement" value={contractRecord.Hourly_requirement__c}></c-customer-information-panel>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="warning-1" message="Vendor Discretion" label="Specific Task Requirement" value={contractRecord.Specific_Task_Requirement__c}></c-customer-information-panel>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <template if:true={contractRecord.Monthly_Fire_Service_Testing__c}>
+                        <c-customer-information-panel compact="true" icon="warning-2" message="Fire Service" label="Testing Coverage" value="Yes"></c-customer-information-panel>
+                    </template>
+                    <template if:false={contractRecord.Monthly_Fire_Service_Testing__c}>
+                        <c-customer-information-panel compact="true" icon="warning-2" message="Fire Service" label="Testing Coverage" value="No"></c-customer-information-panel>
+                    </template>
+                </div>
+            </div>
+
+            <!-- <p class="slds-text-heading_small slds-m-bottom_small slds-m-top_x-large">
+                Repair Coverage
+            </p>
+
+            <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" id="repair-coverage">
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="utility-2" message="Click for More Details" label="Maintenance Hours" value={contractRecord.Maintenance_Hours__c}></c-customer-information-panel>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="utility-2" message="Click for More Details" label="Hourly Requirement" value={contractRecord.Repair_Hourly_Requirement__c}></c-customer-information-panel>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="warning-2" message="Click for Vendor Definition" label="Specific Task Requirement" value={contractRecord.Covered_Excluded_Item_Notes__c}></c-customer-information-panel>
+                </div>
+            </div> -->
+
+            <p class="slds-text-heading_small slds-m-bottom_small slds-m-top_x-large">
+                Callback Coverage
+            </p>
+
+            <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" id="callback-coverage">
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="warning-1" message="Vendor Discretion" label="Standard Response Time" value={contractRecord.Response_Time_ST_In_Hours__c} units="hours" message-if-null="true"></c-customer-information-panel>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="warning-1" message="Vendor Discretion" label="Overtime Response Time" value={contractRecord.Response_Time_OT_In_Hours__c} message-if-null="true" units="hours"></c-customer-information-panel>
+                </div>
+
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="warning-1" message="Vendor Discretion" label="Standard Response Time (Entrapment)" value={contractRecord.Reponse_Time_ST_Entrapment__c} units="hours" message-if-null="true"></c-customer-information-panel>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="warning-1" message="Vendor Discretion" label="Overtime Response Time (Entrapment)" value={contractRecord.Response_Time_OT_Entrapment__c} units="hours" message-if-null="true"></c-customer-information-panel>
+                </div>
+
+            </div>
+
+            <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" id="callback-coverage-2">
+
+                <div class="slds-col slds-size_1-of-4">
+                    <c-customer-information-panel compact="true" icon="warning-2" label="Overtime Repair Cost" value={contractRecord.Overtime_Repair_Cost__c}></c-customer-information-panel>
+                </div>
+
+            </div>
+
+        </template>
+
+    </div>
+
+</template>

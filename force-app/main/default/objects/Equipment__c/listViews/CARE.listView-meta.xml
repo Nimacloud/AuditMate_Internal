@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CARE</fullName>
+    <columns>NAME</columns>
+    <columns>Number_of_Maintenance_Visits__c</columns>
+    <columns>Number_of_Callbacks__c</columns>
+    <columns>Number_of_Repairs__c</columns>
+    <columns>Last_CB_Date__c</columns>
+    <columns>State_Status__c</columns>
+    <columns>Last_12_Month_PM_Percent__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>CARE</label>
+</ListView>

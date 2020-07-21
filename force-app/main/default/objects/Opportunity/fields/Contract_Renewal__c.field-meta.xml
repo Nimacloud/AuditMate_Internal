@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Renewal__c</fullName>
+    <description>Auto-renewal language in contract will be found in term section.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Auto-renewal language in contract will be found in term section.</inlineHelpText>
+    <label>Contract Renewal</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Auto-renews into similar subsequent terms</fullName>
+                <default>false</default>
+                <label>Auto-renews into similar subsequent terms</label>
+            </value>
+            <value>
+                <fullName>Auto-renews into annual term</fullName>
+                <default>false</default>
+                <label>Auto-renews into annual term</label>
+            </value>
+            <value>
+                <fullName>Auto-renews into monthly term</fullName>
+                <default>false</default>
+                <label>Auto-renews into monthly term</label>
+            </value>
+            <value>
+                <fullName>Does not auto-renew</fullName>
+                <default>false</default>
+                <label>Does not auto-renew</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

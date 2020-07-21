@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Checked if Unit on Invoice has NOT had prior visits with last 30 days --></help>
+    <label><!-- No prior visits within last 30 days --></label>
+    <name>VerNoPriorVisitsLast30days__c</name>
+</CustomFieldTranslation>

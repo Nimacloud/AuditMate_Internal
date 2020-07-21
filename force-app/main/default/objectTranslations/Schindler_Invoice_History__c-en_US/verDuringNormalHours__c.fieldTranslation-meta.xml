@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Checked if visit occurred during coverage hours --></help>
+    <label><!-- During Normal Hours --></label>
+    <name>verDuringNormalHours__c</name>
+</CustomFieldTranslation>

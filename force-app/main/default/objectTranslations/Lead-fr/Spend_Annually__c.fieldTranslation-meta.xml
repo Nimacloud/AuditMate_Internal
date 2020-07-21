@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Amount of money the lead is spending on a yearly basis --></help>
+    <label><!-- Spend Annually --></label>
+    <name>Spend_Annually__c</name>
+</CustomFieldTranslation>

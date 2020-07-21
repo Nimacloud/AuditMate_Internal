@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check if cleandown is included in contract. --></help>
+    <label><!-- Cleandown Covered --></label>
+    <name>Cleandown_Covered__c</name>
+</CustomFieldTranslation>

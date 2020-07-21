@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Number of Callbacks within the last 12 months --></help>
+    <label><!-- Last 12 Month CB Count --></label>
+    <name>Last_12_Month_CB_Count__c</name>
+</CustomFieldTranslation>

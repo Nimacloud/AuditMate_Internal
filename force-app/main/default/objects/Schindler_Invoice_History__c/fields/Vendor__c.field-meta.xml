@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vendor__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Vendor invoice was received from.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Vendor invoice was received from.</inlineHelpText>
+    <label>Vendor</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Invoice History (Vendor)</relationshipLabel>
+    <relationshipName>Invoice_History</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

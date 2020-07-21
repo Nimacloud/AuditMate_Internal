@@ -1,0 +1,78 @@
+<template>
+
+    <div class="slds-m-horizontal_large">
+
+        <lightning-spinner variant="inverse" if:false={showCharts}></lightning-spinner>
+
+        <p class="slds-text-heading_small slds-m-bottom_small slds-m-top_x-large">
+            Services
+        </p>
+
+        <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" id="upcoming-services">
+
+            <template if:true={showCharts}>
+                <div class="slds-col slds-size_1-of-3 custom-pointer" onclick={navigateServicesClick}>
+                    <template if:true={maintenanceWrapper}>
+                        <c-activity-chart wrapper={maintenanceWrapper}></c-activity-chart>
+                    </template>
+                </div>
+                <div class="slds-col slds-size_1-of-3 custom-pointer" onclick={navigateServicesClick}>
+                    <template if:true={testingOne}>
+                        <c-activity-chart wrapper={testingOne} label="Cat 1"></c-activity-chart>
+                    </template>
+                </div>
+                <div class="slds-col slds-size_1-of-3 custom-pointer" onclick={navigateServicesClick}>
+                    <template if:true={testingFive}>
+                        <c-activity-chart wrapper={testingFive} label="Cat 5"></c-activity-chart>
+                    </template>
+                </div>
+            </template>
+        </div>
+
+        <p class="slds-text-heading_small slds-m-bottom_small slds-m-top_x-large">
+            Invoices
+        </p>
+        <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" id="invoices">
+
+            <div class="slds-col slds-size_1-of-4 custom-pointer" onclick={navigateInvoicesClick}>
+                <c-customer-information-panel compact="true" icon="utility-6" label="New Invoices" value={openInvoices}></c-customer-information-panel>
+            </div>
+            <div class="slds-col slds-size_1-of-4 custom-pointer" onclick={navigateInvoicesClick}>
+                <c-customer-information-panel compact="true" icon="utility-6" label="Disputed Invoices" value={disputedInvoices}></c-customer-information-panel>
+            </div>
+            <div class="slds-col slds-size_1-of-4 custom-pointer" onclick={navigateInvoicesClick}>
+                <c-customer-information-panel compact="true" icon="warning-2" label="Past Due Invoices" value={dueInvoices}></c-customer-information-panel>
+            </div>
+        </div>
+
+        <!-- <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium">
+
+            <div class="slds-col slds-size_1-of-4">
+                <p class="slds-text-heading_small slds-m-bottom_small slds-m-top_medium">
+                    Compliance
+                </p>
+            </div>
+
+            <div class="slds-col slds-size_1-of-4">
+                <p class="slds-text-heading_small slds-m-bottom_small slds-m-top_medium">
+                    Proposals
+                </p>
+            </div>
+
+        </div>
+
+        <div class="slds-grid slds-wrap slds-gutters slds-m-top_small" id="compliances-proposals">
+
+            <div class="slds-col slds-size_1-of-4 custom-pointer" onclick={navigateInspectionsClick}>
+                <c-customer-information-panel compact="true" icon="utility-3" label="Open Inspection Reports" value={inspectionFindings}></c-customer-information-panel>
+            </div>
+
+            <div class="slds-col slds-size_1-of-4 custom-pointer" onclick={navigateProposalsClick}>
+                <c-customer-information-panel compact="true" icon="utility-4" label="Open Proposal Review" value={openProposals}></c-customer-information-panel>
+            </div>
+
+        </div> -->
+
+    </div>
+
+</template>

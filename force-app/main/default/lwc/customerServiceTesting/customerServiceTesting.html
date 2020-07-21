@@ -1,0 +1,157 @@
+<template>
+
+    <c-request-update ids={selectedIds} account-id={accountId}></c-request-update>
+
+    <lightning-tabset>
+
+        <lightning-tab label="Category 1">
+
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate slds-text-title_caps" title=""></div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate slds-text-title_caps" title="Unit">Unit</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate slds-text-title_caps" title="Last Annual Performed">Last Annual Performed</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate slds-text-title_caps" title="Next Annual Due">Next Annual Due</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate slds-text-title_caps" title="Covered in Contract">Covered in Contract</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate slds-text-title_caps" title="Status">Status</div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <template for:each={records} for:item="record">
+
+                        <tr class="slds-hint-parent" key={record.Id} data-equipment={record.Id}>
+
+                            <td data-label="">
+                                <lightning-input type="checkbox" data-record-id={record.Id} onchange={handleCheckboxChange}></lightning-input>
+                            </td>
+                            <th data-label="Unit" scope="row">
+                                <c-customer-service-link record={record}></c-customer-service-link>
+                            </th>
+                            <td data-label="Last Annual Performed">
+                                <div class="slds-truncate" title={record.Last_Cat1_Date__c}>
+                                    <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={record.Last_Category_1_Date__c}></lightning-formatted-date-time>
+                                </div>
+                            </td>
+                            <td data-label="Next Annual Due">
+                                <div class="slds-truncate" title={record.Next_Cat1_Date__c}>
+                                    <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={record.Next_Category_1_Date__c}></lightning-formatted-date-time>
+                                </div>
+                            </td>
+                            <td data-label="Covered in Contract">
+                                <template if:true={record.Opportunity__r}>
+                                    <template if:true={record.Opportunity__r.Annual_test_covered__c}>
+                                        <lightning-icon icon-name="utility:check" size="xx-small" variant="success"></lightning-icon>
+                                    </template>
+                                    <template if:false={record.Opportunity__r.Annual_test_covered__c}>
+                                        <lightning-icon icon-name="utility:close" size="xx-small" variant="error"></lightning-icon>
+                                    </template>
+                                </template>
+                            </td>
+                            <td data-label="Status">
+                                <div class="slds-truncate" title={record.Category_1_Due_Days__c}>
+                                    <c-customer-service-cell-status due-value={record.Category_1_Due_Days__c}></c-customer-service-cell-status>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </template>
+
+                </tbody>
+
+            </table>
+
+        </lightning-tab>
+
+        <lightning-tab label="Category 5">
+
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate slds-text-title_caps" title=""></div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate slds-text-title_caps" title="Unit">Unit</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate slds-text-title_caps" title="Last 5 Year Performed">Last 5 Year Performed</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate slds-text-title_caps" title="Next 5 Year Due">Next 5 Year Due</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate slds-text-title_caps" title="Covered in Contract">Covered in Contract</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate slds-text-title_caps" title="Status">Status</div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <template for:each={records} for:item="record">
+
+                        <tr class="slds-hint-parent" key={record.Id} data-equipment={record.Id}>
+
+                            <td data-label="">
+                                <lightning-input type="checkbox" data-record-id={record.Id} onchange={handleCheckboxChange}></lightning-input>
+                            </td>
+                            <th data-label="Unit" scope="row">
+                                <c-customer-service-link record={record}></c-customer-service-link>
+                            </th>
+                            <td data-label="Last 5 Year Performed">
+                                <div class="slds-truncate" title={record.Last_Cat5_Date__c}>
+                                    <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={record.Last_Category_5_Date__c}></lightning-formatted-date-time>
+                                </div>
+                            </td>
+                            <td data-label="Next 5 Year Due">
+                                <div class="slds-truncate" title={record.Next_Cat5_Date__c}>
+                                    <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={record.Next_Category_5_Date__c}></lightning-formatted-date-time>
+                                </div>
+                            </td>
+                            <td data-label="Covered in Contract">
+                                <div class="slds-truncate">
+                                    <template if:true={record.Opportunity__r}>
+                                        <template if:true={record.Opportunity__r.year5_test_covered__c}>
+                                            <lightning-icon icon-name="utility:check" size="xx-small" variant="success"></lightning-icon>
+                                        </template>
+                                        <template if:false={record.Opportunity__r.year5_test_covered__c}>
+                                            <lightning-icon icon-name="utility:close" size="xx-small" variant="error"></lightning-icon>
+                                        </template>
+                                    </template>
+                                </div>
+                            </td>
+                            <td data-label="Status">
+                                <div class="slds-truncate" title={record.Category_5_Due_Days__c}>
+                                    <c-customer-service-cell-status record={record.Category_5_Due_Days__c}></c-customer-service-cell-status>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </template>
+
+                </tbody>
+
+            </table>
+
+        </lightning-tab>
+
+    </lightning-tabset>
+
+</template>

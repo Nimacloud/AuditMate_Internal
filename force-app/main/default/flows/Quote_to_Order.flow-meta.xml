@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Adds the order product to the list of order products in the sObject collection variable.</description>
+        <name>Add_Order_Product_to_List</name>
+        <label>Add Order Product to List</label>
+        <locationX>973</locationX>
+        <locationY>367</locationY>
+        <assignmentItems>
+            <assignToReference>listOrderProducts</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>oOrderProduct</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Quote_Lines</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Uses the quote’s or opportunity’s field values to assign field values to the order.
+
+ACTION: Review the Order fields assigned and add/remove fields as needed.  
+
+If fields from another object are needed, you could add a Fast Lookup step prior to this step to read and store the fields in a separate sObject Variable to be used here.</description>
+        <name>Assign_Order_Fields</name>
+        <label>Assign Order Fields</label>
+        <locationX>632</locationX>
+        <locationY>36</locationY>
+        <assignmentItems>
+            <assignToReference>oOrder.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOppty.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.EffectiveDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oQuoteLine.ServiceDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.Pricebook2Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oQuote.Pricebook2Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.BillingStreet</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oAccount.BillingStreet</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.BillingCity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oAccount.BillingCity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.BillingState</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oAccount.BillingState</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.BillingPostalCode</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oAccount.BillingPostalCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.BillingCountry</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oAccount.BillingCountry</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.ShippingStreet</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oAccount.ShippingStreet</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.ShippingCity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oAccount.ShippingCity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.ShippingState</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oAccount.ShippingState</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.ShippingPostalCode</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oAccount.ShippingPostalCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrder.ShippingCountry</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oAccount.ShippingCountry</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrderProduct.ServiceDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oQuoteLine.quote_start_date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrderProduct.EndDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oQuoteLine.quote_end_date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Order</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Uses the quote line item’s or order’s field values to assign field values to the order product.
+
+ACTION: Review the order product fields assigned, and add or remove fields as needed.  
+
+If you need fields from another object, use a Fast Lookup element to store the fields in another sObject variable before this element in the flow, and then assign the stored values to the order product here.</description>
+        <name>Assign_Order_Product_Fields</name>
+        <label>Assign Order Product Fields</label>
+        <locationX>802</locationX>
+        <locationY>368</locationY>
+        <assignmentItems>
+            <assignToReference>oOrderProduct.OrderId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOrder.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrderProduct.PricebookEntryId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oQuoteLine.PricebookEntryId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrderProduct.Quantity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oQuoteLine.Quantity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrderProduct.UnitPrice</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oQuoteLine.UnitPrice</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOrderProduct.QuoteLineItemId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oQuoteLine.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Order_Product_to_List</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Sets the order’s Status field to Activated.
+
+Include this element if you want the new order to be Activated.</description>
+        <name>Set_Order_Status_to_Activated</name>
+        <label>Set Order Status to Activated</label>
+        <locationX>1266</locationX>
+        <locationY>363</locationY>
+        <assignmentItems>
+            <assignToReference>oOrder.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Activated</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Activate_Order</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Sets the quote&apos;s Order Generated field to true.</description>
+        <name>Update_Order_Generated</name>
+        <label>Update Order Generated</label>
+        <locationX>1126</locationX>
+        <locationY>470</locationY>
+        <assignmentItems>
+            <assignToReference>oQuote.Order_Generated__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Quote</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Evaluates whether the sObject collection variable contains any order products.</description>
+        <name>Order_Product_List_Empty</name>
+        <label>Order Product List Empty?</label>
+        <locationX>1125</locationX>
+        <locationY>251</locationY>
+        <defaultConnectorLabel>Empty</defaultConnectorLabel>
+        <rules>
+            <name>Not_Empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>listOrderProducts</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Order_Products</targetReference>
+            </connector>
+            <label>Not Empty</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Evaluates whether an order has already been generated from the quote.
+
+If an order has already been generated from the quote, a new order will not be generated.</description>
+        <name>OrderGenerated</name>
+        <label>Order Generated?</label>
+        <locationX>180</locationX>
+        <locationY>136</locationY>
+        <defaultConnector>
+            <targetReference>Get_Opportunity_Fields</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Order Not Generated</defaultConnectorLabel>
+        <rules>
+            <name>Order_Generated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>oQuote.Order_Generated__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Order Generated</label>
+        </rules>
+    </decisions>
+    <description>Creates an order from a quote</description>
+    <label>Quote to Order</label>
+    <loops>
+        <description>Iterates through each quote line item in the sObject collection variable.</description>
+        <name>Loop_Quote_Lines</name>
+        <label>Loop Quote Lines</label>
+        <locationX>801</locationX>
+        <locationY>251</locationY>
+        <assignNextValueToReference>oQuoteLine</assignNextValueToReference>
+        <collectionReference>listQuoteLines</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Order_Product_Fields</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Order_Product_List_Empty</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Uses the field values that are stored in the sObject variable to create an order.</description>
+        <name>Create_Order</name>
+        <label>Create Order</label>
+        <locationX>627</locationX>
+        <locationY>139</locationY>
+        <connector>
+            <targetReference>Get_Quote_Lines</targetReference>
+        </connector>
+        <inputReference>oOrder</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <description>Uses the field values that are stored in the sObject collection variable to create order products.</description>
+        <name>Create_Order_Products</name>
+        <label>Create Order Products</label>
+        <locationX>1126</locationX>
+        <locationY>365</locationY>
+        <connector>
+            <targetReference>Update_Order_Generated</targetReference>
+        </connector>
+        <inputReference>listOrderProducts</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <description>Looks up the account that’s related to the opportunity, and stores selected account field values in an sObject variable.
+
+ACTION: Review the account fields retrieved, and add additional fields as needed to the sObject variable.</description>
+        <name>Get_Account_Fields</name>
+        <label>Get Account Fields</label>
+        <locationX>470</locationX>
+        <locationY>32</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Order_Fields</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>oOppty.AccountId</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputReference>oAccount</outputReference>
+        <queriedFields>BillingStreet</queriedFields>
+        <queriedFields>BillingCity</queriedFields>
+        <queriedFields>BillingState</queriedFields>
+        <queriedFields>BillingPostalCode</queriedFields>
+        <queriedFields>BillingCountry</queriedFields>
+        <queriedFields>ShippingStreet</queriedFields>
+        <queriedFields>ShippingCity</queriedFields>
+        <queriedFields>ShippingState</queriedFields>
+        <queriedFields>ShippingPostalCode</queriedFields>
+        <queriedFields>ShippingCountry</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Uses the Opportunity ID passed to the flow to look up the opportunity, and stores the selected opportunity fields in an sObject variable.
+
+ACTION: Review the opportunity fields retrieved, and add additional fields as needed to the sObject variable.
+
+
+
+This step reads the Opportunity with the Opportunity ID passed to the Flow and stores selected Opportunity fields in the sObject Variable to be used in later steps.
+
+ACTION: Review the Opportunity fields retrieved and add additional fields as needed to the sObject Variable.</description>
+        <name>Get_Opportunity_Fields</name>
+        <label>Get Opportunity Fields</label>
+        <locationX>326</locationX>
+        <locationY>32</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Account_Fields</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>oQuote.OpportunityId</elementReference>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <outputReference>oOppty</outputReference>
+        <queriedFields>AccountId</queriedFields>
+        <queriedFields>CloseDate</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Uses the Quote ID that was passed to the flow to look up the quote, and stores selected quote fields in an sObject variable.
+
+ACTION: Review the quote fields retrieved, and add additional fields as needed to the sObject variable.</description>
+        <name>Get_Quote_Fields</name>
+        <label>Get Quote Fields</label>
+        <locationX>180</locationX>
+        <locationY>32</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>OrderGenerated</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>QuoteID</elementReference>
+            </value>
+        </filters>
+        <object>Quote</object>
+        <outputReference>oQuote</outputReference>
+        <queriedFields>AccountId</queriedFields>
+        <queriedFields>OpportunityId</queriedFields>
+        <queriedFields>Pricebook2Id</queriedFields>
+        <queriedFields>Order_Generated__c</queriedFields>
+        <queriedFields>TotalPrice</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Looks up the quote line items that are related to the quote, and stores selected field values for each quote line item in the sObject collection variable.
+
+ACTION: Review the retrieved quote line item fields, and add additional fields as needed to the sObject collection variable.</description>
+        <name>Get_Quote_Lines</name>
+        <label>Get Quote Lines</label>
+        <locationX>628</locationX>
+        <locationY>252</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Quote_Lines</targetReference>
+        </connector>
+        <filters>
+            <field>QuoteId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>oQuote.Id</elementReference>
+            </value>
+        </filters>
+        <object>QuoteLineItem</object>
+        <outputReference>listQuoteLines</outputReference>
+        <queriedFields>PricebookEntryId</queriedFields>
+        <queriedFields>Quantity</queriedFields>
+        <queriedFields>UnitPrice</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <description>Uses the field values that are stored in the sObject variable to update the order.
+
+Include this element if you want the new order to be Activated.</description>
+        <name>Activate_Order</name>
+        <label>Activate Order</label>
+        <locationX>1406</locationX>
+        <locationY>362</locationY>
+        <inputReference>oOrder</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Uses the field values that are stored in the sObject variable to update the quote.</description>
+        <name>Update_Quote</name>
+        <label>Update Quote</label>
+        <locationX>1268</locationX>
+        <locationY>469</locationY>
+        <connector>
+            <targetReference>Set_Order_Status_to_Activated</targetReference>
+        </connector>
+        <inputReference>oQuote</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Get_Quote_Fields</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>listOrderProducts</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OrderItem</objectType>
+    </variables>
+    <variables>
+        <name>listQuoteLines</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>QuoteLineItem</objectType>
+    </variables>
+    <variables>
+        <name>oAccount</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>oOppty</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>oOrder</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Order</objectType>
+    </variables>
+    <variables>
+        <name>oOrderProduct</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>OrderItem</objectType>
+    </variables>
+    <variables>
+        <name>oQuote</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Quote</objectType>
+    </variables>
+    <variables>
+        <name>oQuoteLine</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>QuoteLineItem</objectType>
+    </variables>
+    <variables>
+        <name>QuoteID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

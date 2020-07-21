@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Customer_Invoice_Update_Received</fullName>
+        <description>Customer - Invoice Update Received</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Vendor_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@auditmate.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Customer_Alerts/Invoice_Update_Received</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Invoice_Comment_Update_Email</fullName>
+        <field>Vendor_Email__c</field>
+        <formula>Invoice__r.Account__r.Customer_Contact__r.Email</formula>
+        <name>Invoice Comment - Update Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>CARE - Invoice Comment</fullName>
+        <actions>
+            <name>Customer_Invoice_Update_Received</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Invoice_Comment_Update_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>TRUE</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maintenance_Status_Image__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Maintenance_Due_Days__c &gt; 0 &amp;&amp; Has_Monthly_Requirement__c, 
+
+IMAGE(&quot;/resource/AuditmateCustomer/images/table-status-2.png&quot;, &quot;Past Due&quot;) + &quot; Past Due&quot;, 
+
+IMAGE(&quot;/resource/AuditmateCustomer/images/table-status-1.png&quot; , &quot;Current&quot;) + &quot; Current&quot;
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Maintenance Status Image</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CoverageHours__c</fullName>
+    <description>IF( MOD( HOUR(Coverage_end_time__c ) - HOUR(Coverage_start_time__c), 24 ) &lt; 1, &quot;&quot;, TEXT( MOD( HOUR(Coverage_end_time__c ) - HOUR(Coverage_start_time__c), 24 ) ) &amp; 
+IF((MOD( HOUR(Coverage_end_time__c ) - HOUR(Coverage_start_time__c), 24 )) = 1, &quot; HR &quot;, &quot; HRS &quot; ) ) 
+&amp; IF( (ROUND( MOD( Minute(Coverage_end_time__c ) - Minute(Coverage_start_time__c), 60 ), 0 )) = 0, &quot;&quot;, TEXT( ROUND( MOD( Minute(Coverage_end_time__c ) - Minute(Coverage_start_time__c), 60 ), 0 ) ) &amp; &quot; MINS&quot; )</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Coverage_Hours__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CoverageHours</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

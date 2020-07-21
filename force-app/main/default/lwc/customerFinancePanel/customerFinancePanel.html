@@ -1,0 +1,27 @@
+<template>
+
+    <lightning-card>
+
+        <div class="slds-m-left_small">
+            
+            <div class="slds-text-heading_large slds-m-top_x-small slds-m-bottom_large slds-p-around_medium">
+
+                <template if:true={isInvoiceOpen}>
+                    Open <br>
+                    Invoices
+                </template>
+                <template if:false={isInvoiceOpen}>
+                    {label}
+                </template>
+
+            </div>
+
+            <div class=" slds-m-top_x-small slds-p-top_large" style="margin-bottom: 4.1rem; margin-top: 6.8rem;">
+                <div class="slds-text-heading_large custom-title-font slds-p-left_medium">{value}</div>
+            </div>
+
+        </div>
+
+    </lightning-card>
+    
+</template>

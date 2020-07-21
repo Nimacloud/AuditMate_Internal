@@ -1,0 +1,71 @@
+<template>
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Invoice #">Invoice #</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Due Date">Due Date</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Service Date">Service Date</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Unit">Unit</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Description">Description</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Result">Result</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="PDF">PDF</div>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <template for:each={allInvoices} for:item="invoice">
+
+                <tr class="slds-hint-parent" key={invoice.Id}>
+                    <td data-label="Invoice #">
+                        <div class="slds-truncate" title={invoice.Invoice_Number__c}>{invoice.Invoice_Number__c}</div>
+                    </td>
+                    <td data-label="Due Date">
+                        <div class="slds-truncate" title={invoice.Invoice_Due_Date__c}>{invoice.Invoice_Due_Date__c}</div>
+                    </td>
+                    <td data-label="Service Date">
+                        <div class="slds-truncate" title={invoice.Invoice_Date__c}>{invoice.Invoice_Date__c}</div>
+                    </td>
+                    <td data-label="Unit">
+                        <div class="slds-truncate" title="Unit">N/A</div>
+                    </td>
+                    <td data-label="Description">
+                        <div class="slds-truncate" title={invoice.Description__c} style="white-space:nowrap;overflow: hidden; width: 200px;">
+                            <!-- <template if:true={invoice.Description__c}>
+                                <lightning-helptext content={invoice.Description__c}></lightning-helptext>
+                            </template>                             -->
+                            {invoice.Description__c}
+                        </div>
+                    </td>
+                    <td data-label="Result">
+                        <div class="slds-truncate" title={invoice.UserStatus__c}>{invoice.UserStatus__c}</div>
+                    </td>
+                    <td data-label="PDF">
+                        <div class="slds-truncate" title="PDF">
+                            <c-customer-file-download object-id={invoice.Id}></c-customer-file-download>
+                        </div>
+                    </td>
+                </tr>
+
+            </template>
+
+        </tbody>
+
+    </table>
+
+</template>

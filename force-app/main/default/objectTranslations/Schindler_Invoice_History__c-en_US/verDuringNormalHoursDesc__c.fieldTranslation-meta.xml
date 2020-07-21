@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Actual time of arrival --></help>
+    <label><!-- During Normal Hours Desc --></label>
+    <name>verDuringNormalHoursDesc__c</name>
+</CustomFieldTranslation>

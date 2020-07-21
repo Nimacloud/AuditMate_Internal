@@ -1,0 +1,75 @@
+<template>
+
+    <template if:true={record}>
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <lightning-button-icon icon-name="utility:close" onclick={handleCancel} class="slds-text-align_right slds-m-bottom_small" variant="bare-inverse"></lightning-button-icon>
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Accept Proposal</h2>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning-card>
+
+                        <lightning-record-view-form record-id={record.Id} object-api-name="Equipment__c">
+                            <div class="slds-p-horizontal_medium">
+
+                                <div class="slds-grid slds-gutters slds-wrap">
+
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <h1 class="slds-text-heading_large slds-text-align_center">You are about to Accept a proposal.</h1>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-1 slds-m-top_medium">
+                                        <h2 class="slds-text-color_weak slds-text-align_center">You will receive a confirmation email in your email.</h2>
+                                    </div>
+
+                                    <div class="slds-col slds-size_9-of-12 slds-m-top_x-large">
+
+                                        <div class="slds-grid slds-gutters slds-wrap">
+
+                                            <div class="slds-col slds-size_1-of-1">
+                                                <div class="slds-text-title_caps slds-m-vertical_small">
+                                                    Customer Number:
+                                                </div>
+                                                <div class="">{record.Opportunity__r.Vendor_Contract_Number__c}</div>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-1">
+                                                <div class="slds-text-title_caps slds-m-vertical_small">
+                                                    Estimate Number:
+                                                </div>
+                                                <div class="">{record.Estimate_Number__c}</div>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-1">
+                                                <lightning-textarea name="comments" label="" placeholder="Comments..." class="input-comments"></lightning-textarea>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="slds-col slds-size_3-of-12">
+                                        <img src={logo} alt="" style="width: 150px;">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </lightning-record-view-form>
+
+                    </lightning-card>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={handleCancel}>Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={handleSend}>Send</button>
+                    </footer>
+            </div>
+        </section>
+
+        <div class="slds-backdrop slds-backdrop_open"></div>
+
+
+    </template>
+
+</template>

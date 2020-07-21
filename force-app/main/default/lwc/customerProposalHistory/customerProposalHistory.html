@@ -1,0 +1,78 @@
+<template>
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Inspection #">Estimate #</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Date">Date</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Vendor">Vendor</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Elevator(s)">Elevator(s)</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Repair">Repair</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Expiration">Expiration</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Status">Status</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="PDF">PDF</div>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <template for:each={records} for:item="record">
+
+                <tr class="slds-hint-parent" key={record.Id} data-record-id={record.Id}>
+                    <th data-label="Inspection #" scope="row">
+                        <div class="slds-truncate" title={record.Estimate_Number__c}>{record.Estimate_Number__c}</div>
+                    </th>
+                    <td data-label="Date">
+                        <div class="slds-truncate" title={record.Date__c}>
+                            <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={record.Date__c}></lightning-formatted-date-time>
+                        </div>
+                    </td>
+                    <td data-label="Pending Items">
+                        <div class="slds-truncate" title={record.Vendor__c}>{record.Vendor__c}</div>
+                    </td>
+                    <td data-label="Elevator(s)">
+                        <div class="slds-truncate" title={record.Elevators__c}>{record.Elevators__c}</div>
+                    </td>
+                    <td data-label="Repair">
+                        <div class="slds-truncate" title={record.Repair__c}>{record.Repair__c}</div>
+                    </td>
+                    <td data-label="Expiration">
+                        <div class="slds-truncate" title={record.Opportunity__r.Expiration_date__c}>
+                            <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={record.Opportunity__r.Expiration_date__c}></lightning-formatted-date-time>
+                        </div>
+                    </td>                    
+                    <td data-label="Status">
+                        <div class="slds-truncate" title={record.CustomerStatus__c}>
+                            <c-customer-proposal-cell-status customer-status={record.CustomerStatus__c}></c-customer-proposal-cell-status>
+                        </div>
+                    </td>
+                    <td data-label="PDF">
+                        <div class="slds-truncate" title="">
+                            <c-customer-file-download object-id={record.Id}></c-customer-file-download>
+                        </div>
+                    </td>
+                </tr>
+
+            </template>
+
+        </tbody>
+
+    </table>
+
+</template>

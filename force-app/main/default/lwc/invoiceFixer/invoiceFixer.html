@@ -1,0 +1,50 @@
+<template>
+  <lightning-card title="Invoice Fixer">
+    
+    <lightning-tabset variant="scoped">
+      <lightning-tab label="Input" value="1">
+        <div class="slds-grid">
+          <div class="btn-group">
+          <div class="slds-col slds-size_2-of-12 slds-p-left_x-small content-version-id">
+            <lightning-input  name="inp-cvid" label="Content Version Id" onchange={handleChange} value={contentVersionId}></lightning-input>
+          </div>
+    
+          <div class="slds-col slds-size_2-of-12 pdf-filename">
+            <lightning-input name="inp-pdf" label="Pdf Filename" onchange={handleChange} value={pdfFilename}></lightning-input>
+          </div>
+    
+          <div class="slds-col slds-size_2-of-12 current-input">
+            <lightning-radio-group
+              type="button"
+              name="inp-current"
+              label="Current Input"
+              options={options}
+              onchange={handleChange2}>
+            </lightning-radio-group>
+         </div>
+    
+          <div class="slds-col slds-size_3-of-12">
+            <lightning-button data-button="Get data" label="Get data" onclick={handleClick}></lightning-button>
+            <lightning-button data-button="Debug"    label="Debug"    onclick={handleClick} style="padding-left: 10px;margin-left: 20px;"></lightning-button>
+          </div>
+           
+          </div>
+        </div>
+      </lightning-tab>
+
+      <lightning-tab label={problemsTabLabel} value="2">
+        <lightning-card title="Problems">    
+          <div class="problems"> {problemsOriginal}</div>
+          <lightning-input name="inp-problems"  type="text" onchange={handleChange}  value={problems}  label="Pr" variant="label-hidden"></lightning-input>
+          <div class="problems-footer">
+            <div class="problems-count">
+              <lightning-input style="width:50px;" name="inp-problemCount"  type="number" step="1" label="P" variant="label-hidden" onchange={handleChange} value={problemCount} min=-1 max = 12></lightning-input>
+            </div>
+            <div class="problems-label"><label>Change this number if you fix any problems.</label></div>
+          </div>
+        </lightning-card>
+      </lightning-tab>
+
+    </lightning-tabset>
+  </lightning-card>    
+</template>

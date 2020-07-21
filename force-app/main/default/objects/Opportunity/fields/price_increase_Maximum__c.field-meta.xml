@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>price_increase_Maximum__c</fullName>
+    <description>Maximum price increase allowed by contract - If contract is mute select &quot;no maximum&quot;.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Maximum price increase allowed by contract - If contract is mute select &quot;no maximum&quot;.</inlineHelpText>
+    <label>Price Increase Maximum</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No Maximum</fullName>
+                <default>false</default>
+                <label>No Maximum</label>
+            </value>
+            <value>
+                <fullName>No Price</fullName>
+                <default>false</default>
+                <label>No Price</label>
+            </value>
+            <value>
+                <fullName>Percentage</fullName>
+                <default>false</default>
+                <label>Percentage</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

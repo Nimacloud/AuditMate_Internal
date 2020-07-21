@@ -1,0 +1,69 @@
+<template>
+  <lightning-card title="Schedule Builder" icon-name="custom:custom67">
+
+    <div class="slds-box slds-grid slds-m-top_small"> 
+
+      <div class="slds-col slds-size_1-of-12 slds-form-element slds-form-element__control test-1">
+        <select name="frequency">
+          <option value="Annually">Annually</option>
+          <option value="Annually">Bi-Annually</option>
+          <option value="Annually">Quarterly</option>
+          <option value="Annually">Monthly</option>
+        </select>
+      </div>
+
+      <div class="slds-col slds-size_2-of-12 slds-form-element slds-form-element__control test-2">
+        <lightning-input 
+          name      = "start-date" 
+          data-name = "start-date"
+          label     = "Start Date"
+          type      = "date"
+          variant   = "label-inline"
+          value     = {startDateString}
+          onchange  = {handleChange} 
+          required>
+        </lightning-input>
+      </div>      
+    
+      <div class="slds-col slds-size_3-of-12 slds-form-element slds-form-element__control test-3">
+        <lightning-input 
+          name      = "end-date" 
+          data-name = "end-date" 
+          label     = "Expiration Date"
+          type      = "date"
+          variant   = "label-inline"
+          value     = {endDateString}
+          onchange  = {handleChange} 
+          required>
+        </lightning-input>
+      </div>
+    
+      <div class="slds-col slds-size_4-of-12 slds-form-element slds-form-element__control test-4">
+        <lightning-input 
+          name    = "date-duration" 
+          label   = "Duration"
+          variant = "label-inline"
+          value   = {duration}
+          required 
+          readonly>
+        </lightning-input>
+      </div>
+
+      <div class="slds-col slds-size_2-of-12 slds-form-element slds-form-element__control">
+        <lightning-button
+          label="OK"
+          title="OK"
+          name="ok-btn"
+          onclick={handleClick}>
+        </lightning-button>
+      </div>
+
+    </div>
+    
+    <div class="table-container slds-m-around_medium slds-box" lwc:dom="manual"></div>
+
+    <div class="summary-container slds-m-around_medium slds-box" lwc:dom="manual"></div>
+    
+  </lightning-card>
+
+</template>

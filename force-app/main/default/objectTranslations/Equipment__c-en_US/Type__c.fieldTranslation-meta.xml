@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>Dumbwaiter</masterLabel>
+        <translation><!-- Dumbwaiter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Geared</masterLabel>
+        <translation><!-- Geared --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gearless</masterLabel>
+        <translation><!-- Gearless --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hydraulic</masterLabel>
+        <translation><!-- Hydraulic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Traction</masterLabel>
+        <translation><!-- Traction --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

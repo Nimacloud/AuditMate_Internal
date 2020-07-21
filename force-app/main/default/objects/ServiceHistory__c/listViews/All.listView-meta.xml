@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Vendor_Contract_Number__c</columns>
+    <columns>Service_Report_Date__c</columns>
+    <columns>Vendor_Sales_Order__c</columns>
+    <columns>Vendor_Work_Order__c</columns>
+    <columns>Vendor_Notification__c</columns>
+    <columns>Vendor_Equipment__c</columns>
+    <columns>Vendor_Building_ID__c</columns>
+    <columns>Building_NameAddress__c</columns>
+    <columns>Technician__c</columns>
+    <columns>Problem_reported__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Records</label>
+</ListView>

@@ -1,0 +1,33 @@
+.theme-font {
+    color: #5d9c11;
+}
+
+.theme-back {
+    background-color: #5d9c11;
+}
+
+.custom-hidden-label .slds-form-element__label {
+    display: none !important;
+}
+
+.theme-success svg {
+    fill: #adc71e !important
+}
+
+.theme-error svg {
+    fill: #a40909 !important
+}
+
+.theme-text textarea {
+    height: 350px !important;
+}
+
+.fixed-width .slds-card__body {
+
+    height: 200px !important;
+}
+
+.value-size {
+
+    font-size: 24px !important;
+}

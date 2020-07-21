@@ -1,0 +1,10 @@
+<template>
+
+    <template if:true={isDue}>
+        <img src={dueLogo} alt="" style="margin-bottom: 3px;"> Past Due
+    </template>
+    <template if:false={isDue}>
+        <img src={currentLogo} alt="" style="margin-bottom: 3px;"> Current
+    </template>       
+    
+</template>

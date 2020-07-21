@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LD_CAT5_Days_Past_Due_Damage_Frequency__c</fullName>
+    <externalId>false</externalId>
+    <label>LD CAT5 Days Past Due Damage Frequency</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Day</fullName>
+                <default>false</default>
+                <label>Day</label>
+            </value>
+            <value>
+                <fullName>Occurence</fullName>
+                <default>false</default>
+                <label>Occurence</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

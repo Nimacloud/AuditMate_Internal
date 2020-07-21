@@ -1,0 +1,70 @@
+<template>
+
+    <c-request-update ids={selectedIds} account-id={accountId}></c-request-update>
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title=""></div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Inspection #">Inspection #</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Date">Date</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Due Date">Due Date</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Type">Type</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Pending Items">Pending Items</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Status">Status</div>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <template for:each={records} for:item="record">
+
+                <tr class="slds-hint-parent" key={record.Id} data-record-id={record.Id}>
+                    <td data-label={record.State_Inspection__r.Equipment__c}>
+                        <lightning-input type="checkbox" data-record-id={record.State_Inspection__r.Equipment__c} onchange={handleCheckboxChange}></lightning-input>
+                    </td>
+                    <td data-label="Inspection #">
+                        <div class="slds-truncate" title={record.Code__c}>{record.Code__c}</div>
+                    </td>
+                    <td data-label="Date">
+                        <div class="slds-truncate" title={record.Inspection_Date__c}>
+                            <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={record.Inspection_Date__c}></lightning-formatted-date-time>
+                        </div>
+                    </td>
+                    <td data-label="Due Date">
+                        <div class="slds-truncate" title={record.Due_Date__c}>
+                            <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={record.Due_Date__c}></lightning-formatted-date-time>
+                        </div>
+                    </td>
+                    <td data-label="Type">
+                        <div class="slds-truncate" title=""></div>
+                    </td>
+                    <td data-label="Pending Items">
+                        <div class="slds-truncate" title={record.Finding__c} style="white-space: normal;">{record.Finding__c}</div>
+                    </td>
+                    <td data-label="Status">
+                        <div class="slds-truncate" title={record.Status__c}>{record.Status__c}</div>
+                    </td>
+                </tr>
+
+            </template>
+
+        </tbody>
+
+    </table>
+
+</template>

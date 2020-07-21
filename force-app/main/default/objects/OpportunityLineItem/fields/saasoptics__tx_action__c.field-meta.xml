@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>saasoptics__tx_action__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>SaaSOptics Action</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Renew at End of Term</fullName>
+                <default>true</default>
+                <label>Renew at End of Term</label>
+            </value>
+            <value>
+                <fullName>Cancel at End of Term</fullName>
+                <default>false</default>
+                <label>Cancel at End of Term</label>
+            </value>
+            <value>
+                <fullName>Contract Change</fullName>
+                <default>false</default>
+                <label>Contract Change</label>
+            </value>
+            <value>
+                <fullName>Early Termination</fullName>
+                <default>false</default>
+                <label>Early Termination</label>
+            </value>
+            <value>
+                <fullName>Reverse</fullName>
+                <default>false</default>
+                <label>Reverse</label>
+            </value>
+            <value>
+                <fullName>Simple Edit</fullName>
+                <default>false</default>
+                <label>Simple Edit</label>
+            </value>
+            <value>
+                <fullName>Delete</fullName>
+                <default>false</default>
+                <label>Delete</label>
+            </value>
+            <value>
+                <fullName>Add</fullName>
+                <default>false</default>
+                <label>Add</label>
+            </value>
+            <value>
+                <fullName>(No Action)</fullName>
+                <default>false</default>
+                <label>(No Action)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

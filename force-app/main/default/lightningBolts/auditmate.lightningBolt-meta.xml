@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningBolt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <category>FinancialServices</category>
+    <lightningBoltFeatures>
+        <order>1</order>
+        <title>Finance</title>
+    </lightningBoltFeatures>
+    <lightningBoltFeatures>
+        <order>2</order>
+        <title>Service</title>
+    </lightningBoltFeatures>
+    <lightningBoltFeatures>
+        <order>3</order>
+        <title>Summary</title>
+    </lightningBoltFeatures>
+    <lightningBoltFeatures>
+        <order>4</order>
+        <title>Insights</title>
+    </lightningBoltFeatures>
+    <lightningBoltImages>
+        <image>AuditMate_logo_landscape_brighter1</image>
+        <order>1</order>
+    </lightningBoltImages>
+    <lightningBoltItems>
+        <name>Lead_Generation</name>
+        <type>CustomApplication</type>
+    </lightningBoltItems>
+    <lightningBoltItems>
+        <name>Relationship_Management</name>
+        <type>CustomApplication</type>
+    </lightningBoltItems>
+    <lightningBoltItems>
+        <name>Sales_Leadership</name>
+        <type>CustomApplication</type>
+    </lightningBoltItems>
+    <lightningBoltItems>
+        <name>Sales_Operations</name>
+        <type>CustomApplication</type>
+    </lightningBoltItems>
+    <masterLabel>AuditMate</masterLabel>
+    <publisher>Auditmate</publisher>
+    <summary>Our client&apos;s community page</summary>
+</LightningBolt>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- When services are available to the customer - including maintenance, testing, call backs and repairs. --></help>
+    <label><!-- Coverage Hours --></label>
+    <name>Coverage_Hours__c</name>
+    <picklistValues>
+        <masterLabel>24/7</masterLabel>
+        <translation><!-- 24/7 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Regular Business Hours - Defined</masterLabel>
+        <translation><!-- Regular Business Hours - Defined --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Regular Business Hours - Undefined</masterLabel>
+        <translation><!-- Regular Business Hours - Undefined --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

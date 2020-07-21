@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SamlSsoConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <errorUrl>https://myauditmate.my.salesforce.com?login=1</errorUrl>
+    <identityLocation>SubjectNameId</identityLocation>
+    <identityMapping>UserId</identityMapping>
+    <issuer>https://nimacloud.my.salesforce.com</issuer>
+    <loginUrl>https://nimacloud.my.salesforce.com/idp/endpoint/HttpPost</loginUrl>
+    <name>nimacloud SAML SSO Setting</name>
+    <oauthTokenEndpoint>https://myauditmate.my.salesforce.com/services/oauth2/token</oauthTokenEndpoint>
+    <redirectBinding>false</redirectBinding>
+    <requestSigningCertId>0P13k000001Rh6W</requestSigningCertId>
+    <salesforceLoginUrl>https://myauditmate.my.salesforce.com</salesforceLoginUrl>
+    <samlEntityId>https://saml.salesforce.com/00D3k000000vLMmEAM</samlEntityId>
+    <samlVersion>SAML2_0</samlVersion>
+    <useConfigRequestMethod>false</useConfigRequestMethod>
+    <userProvisioning>false</userProvisioning>
+    <validationCert>MIIErDCCA5SgAwIBAgIOAU7/ieAxAAAAAGjackwwDQYJKoZIhvcNAQELBQAwgZAxKDAmBgNVBAMMH1NlbGZTaWduZWRDZXJ0XzA1QXVnMjAxNV8yMDI1MDIxGDAWBgNVBAsMDzAwRDUwMDAwMDAwSk5ObzEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20xFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNVU0EwHhcNMTUwODA1MjAyNTAyWhcNMTcwODA1MTIwMDAwWjCBkDEoMCYGA1UEAwwfU2VsZlNpZ25lZENlcnRfMDVBdWcyMDE1XzIwMjUwMjEYMBYGA1UECwwPMDBENTAwMDAwMDBKTk5vMRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJB6nC1WGOp0+/PFr6HkzjaFsYFrYcwPsFJC2bXdpGSIaHyWQtQzyMNcW4Lv2UYkKd8TlKySc/tGb+y8pPQ+cutYN0diCu+RZIR96CbgZ/Vve50CORD9pcGLwAcS2xccd2T4yxUxRPQb47uZwVogB0Jo7S1pqvBRYNnDlRQ/fSdZ6de7h31trXucMmloTJKjIAXqO87ONFoQiwTgkVdWdHAQZXaacMWvtMjHOv0o3OUEoPRQYR+8PMRPgGETIHdXurRJsKiJikFWr0oFY/BltgZOX61Krtzgsx3D4QSAy/X1NQHQ7yLmwEyabHOYb37DSWM1QFsZ54bZ/rmUzL8WA9UCAwEAAaOCAQAwgf0wHQYDVR0OBBYEFMGT/eGTRcwKDD0tCg35ILZlEbrTMA8GA1UdEwEB/wQFMAMBAf8wgcoGA1UdIwSBwjCBv4AUwZP94ZNFzAoMPS0KDfkgtmURutOhgZakgZMwgZAxKDAmBgNVBAMMH1NlbGZTaWduZWRDZXJ0XzA1QXVnMjAxNV8yMDI1MDIxGDAWBgNVBAsMDzAwRDUwMDAwMDAwSk5ObzEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20xFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNVU0GCDgFO/4ngMQAAAABo2nJMMA0GCSqGSIb3DQEBCwUAA4IBAQBkuyrf8Uw3HdujyN7d8Tx5/Fv/CEjUFK8CDlmJhAjBWCBvMclXgRH9ogZaHp203k3by9j95M+o0ZXhs3g/2YKgosoFfXMoOMWcVVae+TW8qnZCI2/9GnjEX2wm8CFd8FHauiJeoD96QCMHb6U77gu0i4FMdNEBZSFQRSjY8sfBciwJYu5mrc0ieNGV5ZhnEynsQ6cx8jltZ2NoxO8Jxyd7stsUqNyZhz7T8ZKrIoiz38KIfHsey1VW0vjG+nsKqJNJXUldSX52+mvOg8tSdNeDs/R67V3dkGGxlR0Vqbqe6x1JRVWSVIT1dm8kN7inDLDIan8k9TWhkEjvMdr2I30N</validationCert>
+</SamlSsoConfig>

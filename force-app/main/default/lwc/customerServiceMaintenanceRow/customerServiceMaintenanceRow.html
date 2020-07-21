@@ -1,0 +1,28 @@
+<template>
+
+    <tr class="slds-hint-parent" key={record.Id} data-equipment-id={record.equipment.Id} data-activity-id={record.activity.Id}>
+
+        <th data-label="Unit" scope="row">
+            <div class="slds-truncate" title={record.equipment.Display_Name__c}>{record.equipment.Display_Name__c}</div>
+        </th>
+        <td data-label="Last Visit">
+            <div class="slds-truncate" title={record.equipment.Last_Visit_Date__c}>{record.equipment.Last_PM_Date__c}</div>
+        </td>
+        <td data-label="Next Visit">
+            <div class="slds-truncate" title={record.equipment.Next_PM_Date__c}>{record.equipment.Next_PM_Date__c}</div>
+        </td>
+        <td data-label="Status">
+            <div class="slds-truncate" title={record.equipment.State_Status__c}>
+                
+                <template if:true={isDue}>
+                    <img src={dueLogo} alt="">
+                </template>
+                <template if:false={isDue}>
+                    <img src={currentLogo} alt="">
+                </template>                
+                
+            </div>
+        </td>                    
+    </tr>    
+    
+</template>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>TimeTrade_SF1__Notify_Event_Owner_on_Web_Conference_Failure</fullName>
+        <description>Notify Event Owner on Web Conference Failure</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>TimeTrade_SF1__TimeTrade_Emails/TimeTrade_SF1__TimeTrade_Meeting_Error_New</template>
+    </alerts>
+    <rules>
+        <fullName>TimeTrade_SF1__Web Conference Failure</fullName>
+        <actions>
+            <name>TimeTrade_SF1__Notify_Event_Owner_on_Web_Conference_Failure</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>false</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

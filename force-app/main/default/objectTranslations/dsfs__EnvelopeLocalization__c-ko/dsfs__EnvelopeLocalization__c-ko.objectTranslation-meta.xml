@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- DocuSign 로컬라이제이션 --></value>
+    </caseValues>
+    <nameFieldLabel><!-- Language --></nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- When the equipment was born. --></help>
+    <label><!-- State Certificate First Issue Date --></label>
+    <name>State_Certificate_First_Issue_Date__c</name>
+</CustomFieldTranslation>

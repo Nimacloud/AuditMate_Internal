@@ -1,0 +1,16 @@
+<template>
+
+    <lightning-card>
+
+        <p class="slds-text-heading_small slds-m-left_small">
+            Total Billed Invoices: <lightning-formatted-number value={totalAmount} currency-code="USD" format-style="currency"></lightning-formatted-number>
+        </p>
+
+        <div style="width: 60%; margin: 0 auto;" class="slds-p-horizontal_small">
+            <canvas class="myChart" width="100" height="100" lwc:dom="manual"></canvas>
+        </div>
+
+    </lightning-card>
+
+
+</template>

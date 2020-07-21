@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- LD CAT1 Days Past Due  Damage Amount --></label>
+    <name>LD_CAT1_Days_Past_Due_Damage_Amount__c</name>
+</CustomFieldTranslation>

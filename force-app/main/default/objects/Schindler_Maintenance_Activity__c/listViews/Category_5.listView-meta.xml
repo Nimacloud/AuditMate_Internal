@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category_5</fullName>
+    <booleanFilter>(1 OR 2 OR 4) AND 3</booleanFilter>
+    <columns>NAME</columns>
+    <columns>VisitDate__c</columns>
+    <columns>Category__c</columns>
+    <columns>Type__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Description__c</field>
+        <operation>contains</operation>
+        <value>cat5</value>
+    </filters>
+    <filters>
+        <field>Description__c</field>
+        <operation>contains</operation>
+        <value>cat 5</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>TEST</value>
+    </filters>
+    <filters>
+        <field>Description__c</field>
+        <operation>contains</operation>
+        <value>full load</value>
+    </filters>
+    <label>Category 5</label>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

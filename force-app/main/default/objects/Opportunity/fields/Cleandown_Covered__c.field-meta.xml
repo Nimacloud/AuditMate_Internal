@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cleandown_Covered__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check if cleandowns are included in the contract</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if cleandown is included in contract.</inlineHelpText>
+    <label>Cleandown Covered</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

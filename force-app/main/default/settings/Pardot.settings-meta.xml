@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PardotSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableB2bmaAppEnabled>false</enableB2bmaAppEnabled>
+    <enableEngagementHistoryDashboards>true</enableEngagementHistoryDashboards>
+    <enablePardotAppV1Enabled>true</enablePardotAppV1Enabled>
+    <enablePardotEnabled>false</enablePardotEnabled>
+    <enableProspectActivityDataset>false</enableProspectActivityDataset>
+</PardotSettings>

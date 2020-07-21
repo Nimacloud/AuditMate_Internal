@@ -1,0 +1,56 @@
+<template>
+
+
+    <div class="slds-m-horizontal_large">
+
+        <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium">
+            <div class="slds-col slds-size_2-of-12">
+
+                <lightning-combobox
+                    value={elevatorValue}
+                    options={elevatorOptions}
+                    onchange={handleElevatorChange}>
+                </lightning-combobox>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="slds-m-horizontal_large slds-m-top_large">
+
+        <lightning-card>
+
+            <div class="slds-p-horizontal_large">
+
+                <lightning-tabset>
+
+                    <lightning-tab label="Preventive Maintenance">
+                        <c-customer-service-maintenance records={units} account-id={accountId}></c-customer-service-maintenance>
+                    </lightning-tab>
+
+                    <lightning-tab label="Testing">
+                        <c-customer-service-testing records={units} account-id={accountId}></c-customer-service-testing>
+                    </lightning-tab>
+
+                    <!-- <lightning-tab label="Repair">
+                        <c-customer-service-repair records={units}></c-customer-service-repair>
+                    </lightning-tab> -->
+
+                    <lightning-tab label="Callbacks">
+                        <c-customer-service-callback records={units} account-id={accountId}></c-customer-service-callback>
+                    </lightning-tab>
+
+                    <lightning-tab label="History">
+                        <c-customer-service-activities account-id={accountId} elevator-value={elevatorValue}></c-customer-service-activities>
+                    </lightning-tab>
+
+                </lightning-tabset>
+
+            </div>
+
+        </lightning-card>
+
+    </div>
+
+</template>

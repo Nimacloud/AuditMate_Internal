@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Material charges. If not specified leave blank. --></help>
+    <label><!-- Material --></label>
+    <name>Material__c</name>
+</CustomFieldTranslation>

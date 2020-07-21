@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check if escalator index testing is covered. --></help>
+    <label><!-- Index Testing Covered --></label>
+    <name>Index_Testing_Covered__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,144 @@
+<template>
+
+    <template if:true={record}>
+
+    <div class="slds-truncate slds-text-align_center" title="" style="cursor: pointer;">
+        <lightning-icon icon-name="utility:info" variant="success" size="x-small" onclick={handleClick}>></lightning-icon>
+    </div>
+
+    <template if:true={showDetailModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <lightning-button-icon icon-name="utility:close" onclick={handleClick} class="slds-text-align_right slds-m-bottom_small" variant="bare-inverse"></lightning-button-icon>
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{record.Description__c}</h2>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning-card>
+
+                        <lightning-record-view-form record-id={record.Id} object-api-name="Schindler_Maintenance_Activity__c">
+                            <div class="slds-p-horizontal_medium">
+
+                                <div class="slds-grid slds-gutters slds-wrap">
+
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Location
+                                        </div>
+                                        <div class="slds-truncate">{record.Location__c}</div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Contract No
+                                        </div>
+                                        <div class="slds-truncate">{record.ContractNo__c}</div>
+                                    </div>
+
+                                    <!-- ROW -->
+
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Visit Date
+                                        </div>
+                                        <div class="">{record.VisitDate__c}</div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Unit No
+                                        </div>
+                                        <div class="">{record.EquipNo__c}</div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Unit Name
+                                        </div>
+                                        <div class="">{record.EquipName__c}</div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Unit Status
+                                        </div>
+                                        <div class="">{record.EquipStatus__c}</div>
+                                    </div>
+
+                                    <!-- ROW -->
+
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Type
+                                        </div>
+                                        <div class="">{record.Type__c}</div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Caller
+                                        </div>
+                                        <div class="">{record.Caller__c}</div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Resolution
+                                        </div>
+                                        <div class="">{record.Resolution__c}</div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Employee
+                                        </div>
+                                        <div class="">{record.Employee__c}</div>
+                                    </div>
+
+                                    <!-- ROW -->
+
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Call Placed
+                                        </div>
+                                        <lightning-output-field field-name="Call_Placed_DateTime__c" variant="label-hidden"></lightning-output-field>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Dispatched
+                                        </div>
+                                        <lightning-output-field field-name="Dispatched_DateTime__c" variant="label-hidden"></lightning-output-field>
+                                    </div>      
+                                    
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Arrival
+                                        </div>
+                                        <div class="">
+                                            <lightning-output-field field-name="Arrival_DateTime__c" variant="label-hidden"></lightning-output-field>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Departure
+                                        </div>
+                                        <lightning-output-field field-name="Departure_DateTime__c" variant="label-hidden"></lightning-output-field>
+                                    </div>                                          
+
+                                </div>
+                            </div>
+                        </lightning-record-view-form>
+
+                    </lightning-card>
+                </div>
+            </div>
+        </section>
+
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    </template>
+</template>

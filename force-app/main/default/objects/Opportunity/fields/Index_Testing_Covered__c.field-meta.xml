@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Index_Testing_Covered__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check if escalator index testing is covered.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if escalator index testing is covered.</inlineHelpText>
+    <label>Index Testing Covered</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

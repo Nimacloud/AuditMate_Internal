@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Total number of square feet a customer manages or owns --></help>
+    <label><!-- Square Feet --></label>
+    <name>Total_Square_Feet__c</name>
+</CustomFieldTranslation>

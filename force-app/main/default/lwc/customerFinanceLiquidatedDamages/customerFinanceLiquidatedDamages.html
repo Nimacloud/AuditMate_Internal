@@ -1,0 +1,63 @@
+<template>
+
+    <p class="slds-text-heading_small slds-m-vertical_small">
+        Liquidated Damages
+    </p> 
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Month">Month</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Description">Description</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Est. Damage">Est. Damage</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Action">Action</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Report">Report</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Message">Message</div>
+                </th>                
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <template for:each={liquidatedDamages} for:item="liquidatedDamage">
+
+                <tr class="slds-hint-parent" key={invoice.Id}>
+                    <td data-label="Month">
+                        <!-- <div class="slds-truncate" title={invoice.Invoice_Number__c}>{invoice.Invoice_Number__c}</div> -->
+                    </td>
+                    <td data-label="Description">
+                        <!-- <div class="slds-truncate" title={invoice.Description__c} style="white-space:nowrap;overflow: hidden; width: 200px;"></div> -->
+                    </td>                    
+                    <td data-label="Est. Damage">
+                        <!-- <div class="slds-truncate" title={invoice.Invoice_Due_Date__c}>{invoice.Invoice_Due_Date__c}</div> -->
+                    </td>
+
+                    <td data-label="Action">
+                        <div class="slds-truncate" title="PDF">
+                            <c-customer-file-download object-id={invoice.Id}></c-customer-file-download>
+                        </div>
+                    </td>
+                    <td data-label="Message">
+                        <div class="slds-truncate" title="Message">
+                            <c-customer-file-download object-id={invoice.Id}></c-customer-file-download>
+                        </div>
+                    </td>   
+                </tr>
+
+            </template>
+
+        </tbody>
+
+    </table>    
+    
+</template>

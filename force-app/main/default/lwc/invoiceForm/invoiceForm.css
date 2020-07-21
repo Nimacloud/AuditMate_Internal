@@ -1,0 +1,82 @@
+.ta-local-office {
+  width: 200px;
+  height: 70px;
+}
+  
+.ta-bill-to {
+  width:  243px;
+  height:  83px;
+}
+  
+.ta-service-location {
+  width:  272px;
+  height:  67px;
+}
+  
+.ta-description {
+  width:  857px;
+  height: 100px;
+}
+
+.ta-payer {
+  width: 187px;
+  height: 93px;
+}
+
+.ta-remit-to {
+  width: 194px;
+  height: 93px;
+}
+
+.tables-container2 {
+  clear: both;
+}
+
+.tables-container3 {
+  clear: both;
+  height: 300px;
+}
+
+.table1-container,.table3-container {
+  width: 50%;
+  float: left;
+  min-height: 465px;
+}
+
+.table2-container,.table4-container {
+  width: 50%;
+  float: left;
+}
+
+.local-office-row {
+  height: 110px;
+}
+
+.bill-to-row {
+  height: 250px;
+}
+
+.notification-row {
+  display: flex;
+  padding-top: 6px;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.notification-label {
+  font-weight: bold;
+  padding-right: 15px;
+}
+
+.notification-input {
+  padding-right: 10px;
+}
+
+.service-location-row {
+  height: 160px;
+}
+
+.right {
+  text-align: right;
+  padding-right: 10px;
+}

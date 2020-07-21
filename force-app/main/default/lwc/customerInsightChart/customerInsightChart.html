@@ -1,0 +1,17 @@
+<template>
+
+    <lightning-card>
+
+        <!-- <div class="slds-text-heading_small slds-m-left_small"></div> -->
+        <p class="slds-text-heading_small slds-m-left_small">
+            {label}
+        </p>                    
+
+        <div style="width: 50%; margin: 0 auto;">
+            <div class="custom-rating">{percent}%</div>
+            <canvas class="myChart" width="100" height="100" lwc:dom="manual"></canvas>
+        </div>        
+
+    </lightning-card>    
+
+</template>

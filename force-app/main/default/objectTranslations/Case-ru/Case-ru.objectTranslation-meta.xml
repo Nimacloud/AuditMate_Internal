@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Case Layout</layout>
+        <sections>
+            <label><!-- CARE --></label>
+            <section>CARE</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Close Case --></label>
+        <name>Close_Case</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Email Case Comment --></label>
+        <name>Email_Case_Comment</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewChildCase --></label>
+        <name>NewChildCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <webLinks>
+        <label><!-- Close_Cases --></label>
+        <name>Close_Cases</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- OCR_Invoice --></label>
+        <name>OCR_Invoice</name>
+    </webLinks>
+</CustomObjectTranslation>

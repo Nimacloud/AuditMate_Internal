@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Took_Place_Last_12_Months__c</fullName>
+    <externalId>false</externalId>
+    <formula>VisitDate__c &gt;  (TODAY() - 365)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The activity took place on the last 12 months</inlineHelpText>
+    <label>Took Place Last 12 Months</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

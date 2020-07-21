@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disputed_Result__c</fullName>
+    <description>I think there is a list of options this should have, like void, accepted, rejected but I can&apos;t find it at the moment.</description>
+    <externalId>false</externalId>
+    <label>Disputed Result</label>
+    <length>40</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,407 @@
+<template>
+
+    <template if:true={showModal}>
+
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-modal_medium slds-fade-in-open">
+
+            <template if:true={showFirstScreen}>
+
+                <div class="slds-modal__container">
+
+                    <lightning-card>
+
+                        <div class="slds-grid slds-wrap slds-gutters slds-p-around_medium">
+                            <div class="slds-col slds-size_1-of-1 slds-m-bottom_small custom-image_logo">
+                                <img src={logo} alt="">
+                            </div>
+                        </div>
+
+                        <div class="slds-grid slds-wrap slds-gutters slds-p-around_large">
+
+                            <div class="slds-col slds-size_1-of-1">
+                                <div class="slds-text-heading_large slds-m-bottom_small">Cut the confusion, everything in one place.</div>
+                                <div class="slds-text-heading_small">
+                                    Connect your contract, records and invoices to get insights in your elevator vendor.
+                                    <br> Get more from your contract. A lot more.
+                                </div>
+                            </div>
+
+                            <div class="slds-col slds-size_8-of-12">
+                                <div class="slds-grid slds-wrap slds-gutters">
+
+                                    <div class="slds-col slds-size_1-of-2 slds-m-vertical_large">
+                                        <div class="slds-text-heading_small">
+                                            Select your vendor
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-1">
+
+                                        <div class="slds-grid slds-wrap slds-gutters">
+
+                                            <div class="slds-col slds-size_1-of-4">
+                                                <c-customer-provisioning-vendor data-vendor-name="otis" vendor-name="otis" vendor-id="0013k00002er820" data-vendor="0013k00002er820" onclick={handleVendorClicked}></c-customer-provisioning-vendor>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-4">
+                                                <c-customer-provisioning-vendor data-vendor-name="schindler" vendor-name="schindler" vendor-id="0013k00002er82O" data-vendor="0013k00002er82O" onclick={handleVendorClicked}></c-customer-provisioning-vendor>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-4">
+                                                <c-customer-provisioning-vendor data-vendor-name="kone" vendor-name="kone" vendor-id="0013k00002er81x" data-vendor="0013k00002er81x" onclick={handleVendorClicked}></c-customer-provisioning-vendor>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-4">
+                                                <c-customer-provisioning-vendor data-vendor-name="tk" vendor-name="tk" vendor-id="0013k00002er82F" data-vendor="0013k00002er82F" onclick={handleVendorClicked}></c-customer-provisioning-vendor>
+                                            </div>
+
+                                            <!-- <div class="slds-col slds-size_1-of-4">
+                                                <c-customer-provisioning-vendor data-vendor-name="mitsubishi" vendor-name="mitsubishi" vendor-id="0013k00002er81z" data-vendor="0013k00002er81z" onclick={handleVendorClicked}></c-customer-provisioning-vendor>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-4">
+                                                <c-customer-provisioning-vendor data-vendor-name="hitachi" vendor-name="hitachi" vendor-id="0013k00002er81z" data-vendor="0013k00002er81z" onclick={handleVendorClicked}></c-customer-provisioning-vendor>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-4">
+                                                <c-customer-provisioning-vendor data-vendor-name="toshiba" vendor-name="toshiba" vendor-id="0013k00002er81z" data-vendor="0013k00002er81z" onclick={handleVendorClicked}></c-customer-provisioning-vendor>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-4">
+                                                <c-customer-provisioning-vendor data-vendor-name="fujitec" vendor-name="fujitec" vendor-id="0013k00002er81z" data-vendor="0013k00002er81z" onclick={handleVendorClicked}></c-customer-provisioning-vendor>
+                                            </div> -->
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-col slds-size_4-of-12 slds-m-top_medium vertical-line">
+
+                                <div class="slds-text-heading_medium">It’ll take you 3 steps to get started</div>
+                                <div class="slds-text-body_regular slds-p-top_large">
+
+                                    <p>Connect your vendor securely to Auditmate</p>
+                                    <br>
+                                    <p>Auditmate will contact you once your <br> account is ready (About 5 days).</p>
+                                    <br>
+                                    <p>Let Auditmate take care of the rest.</p>
+                                </div>
+                                <div class="slds-text-color_weak slds-text-body_small slds-p-top_medium">
+                                    <a href="/customers/s/beta-service-agreement" target="_blank">Subscription Agreement</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </lightning-card>
+
+                </div>
+
+            </template>
+
+            <template if:true={showSecondScreen}>
+
+                <div class="slds-modal__container">
+
+                    <lightning-card>
+
+                        <div class="slds-grid slds-wrap slds-gutters slds-m-top_large">
+                            <div class="slds-col slds-size_1-of-1 slds-m-bottom_small custom-image_logo">
+                                <img src={logo} alt="">
+                            </div>
+                        </div>
+
+                        <div class="slds-grid slds-wrap slds-gutters slds-m-top_x-large">
+
+                            <div class="slds-col slds-size_1-of-1">
+                                <div class="slds-text-heading_large">Attach your Vendor Contract</div>
+                                <img src={selectedLogo} alt="" style="width: 129px;" class="slds-m-top_large">
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-1 slds-m-top_large">
+
+                                <lightning-file-upload
+                                    label="Attach Contract"
+                                    name="fileUploader"
+                                    accept={acceptedFormats}
+                                    record-id={accountId}
+                                    onuploadfinished={handleUploadFinished}>
+                                </lightning-file-upload>
+
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-1 slds-m-vertical_large">
+
+                                <lightning-button variant="neutral" label="Back" title="Back" onclick={handleBack}></lightning-button>
+
+                                <lightning-button class="slds-m-left_small" variant="brand" label="Continue" title="Continue" onclick={handleContinue}></lightning-button>
+
+                            </div>
+
+                        </div>
+
+                    </lightning-card>
+
+                </div>
+
+
+            </template>
+
+            <template if:true={showThirdScreen}>
+
+                <div class="slds-modal__container">
+
+                    <lightning-card>
+
+                        <div class="slds-grid slds-wrap slds-gutters slds-p-around_medium">
+                            <div class="slds-col slds-size_1-of-1 slds-m-bottom_small custom-image_logo">
+                                <img src={logo} alt="">
+                            </div>
+                        </div>
+
+                        <div class="slds-grid slds-wrap slds-gutters slds-p-top_large">
+
+                            <div class="slds-col slds-size_1-of-1">
+                                <div class="slds-text-heading_large slds-m-around_small">Connect your vendor</div>
+
+                                <img src={selectedLogo} alt="" style="width: 129px;" class="slds-m-left_small">
+                            </div>
+
+                            <div class="slds-col slds-size_8-of-12">
+
+                                <div class="slds-grid slds-wrap">
+
+                                    <div class="slds-col slds-size_1-of-1 slds-m-top_large">
+                                        <div class="slds-size_8-of-12">
+                                            <div class="slds-text-heading_small">
+                                                User ID
+                                            </div>
+                                            <lightning-input type="text" placeholder="Enter your User Id" class="input-username"></lightning-input>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-1 slds-m-top_large">
+                                        <div class="slds-size_8-of-12">
+                                            <div class="slds-text-heading_small">
+                                                Password
+                                            </div>
+                                            <lightning-input type="password" placeholder="Enter your password" class="input-password"></lightning-input>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-1 slds-m-vertical_large">
+
+                                        <lightning-button variant="neutral" label="Back" title="Back" onclick={handleBack}></lightning-button>
+
+                                        <lightning-button class="slds-m-left_small" variant="brand" label="Continue" title="Continue" onclick={handleVendorContinue}></lightning-button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="slds-col slds-size_4-of-12 slds-m-top_medium vertical-line">
+
+                                <div class="slds-text-heading_medium">It’ll take you 3 steps to get started</div>
+                                <div class="slds-text-body_regular slds-p-top_large">
+
+                                    <p>Connect your vendor securely to Auditmate</p>
+                                    <br>
+                                    <p>Auditmate will contact you once your <br> account is ready (About 5 days).</p>
+                                    <br>
+                                    <p>Let Auditmate take care of the rest.</p>
+                                </div>
+                                <div class="slds-text-color_weak slds-text-body_small slds-p-top_medium">
+                                    <a href="/customers/s/beta-service-agreement" target="_blank">Subscription Agreement</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </lightning-card>
+
+                </div>
+
+            </template>
+
+            <template if:true={showFourthScreen}>
+
+                <div class="slds-modal__container">
+
+                    <lightning-card>
+
+                        <div class="slds-grid slds-wrap slds-gutters slds-p-around_medium">
+                            <div class="slds-col slds-size_1-of-1 slds-m-bottom_small custom-image_logo">
+                                <img src={logo} alt="">
+                            </div>
+                        </div>
+
+                        <div class="slds-grid slds-wrap slds-gutters slds-p-top_large">
+
+                            <div class="slds-col slds-size_1-of-1">
+                                <div class="slds-text-heading_large slds-m-around_small">Contact Information</div>
+                            </div>
+
+                            <div class="slds-col slds-size_8-of-12">
+
+                                <div class="slds-grid slds-wrap">
+
+                                    <div class="slds-text-heading_small slds-m-around_small">Accounts Payable Contact</div>
+
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <div class="slds-text-weak">The person within your company responsible for processing approved invoices</div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-1 slds-m-top_x-small">
+                                        <div class="slds-size_8-of-12">
+                                            <lightning-input type="text" placeholder="Name" class="ap-username" label="Name"></lightning-input>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-1 slds-m-top_x-small">
+                                        <div class="slds-size_8-of-12">
+                                            <lightning-input type="phone" placeholder="Phone" class="ap-phone" label="Phone"></lightning-input>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-1 slds-m-top_x-small">
+                                        <div class="slds-size_8-of-12">
+                                            <lightning-input type="email" placeholder="Email" class="ap-email" label="Email"></lightning-input>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-text-heading_small slds-m-around_small">Vendor Contact</div>
+
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <div class="slds-text-weak">The main point of contact for your vendor -
+                                            this is the person who will receive service, compliance, invoice and proposal questions</div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-1 slds-m-top_x-small">
+                                        <div class="slds-size_8-of-12">
+                                            <lightning-input type="text" placeholder="Name" class="v-username" label="Name"></lightning-input>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-1 slds-m-top_x-small">
+                                        <div class="slds-size_8-of-12">
+                                            <lightning-input type="phone" placeholder="Phone" class="v-phone" label="Phone"></lightning-input>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-1 slds-m-top_x-small">
+                                        <div class="slds-size_8-of-12">
+                                            <lightning-input type="email" placeholder="Email" class="v-email" label="Email"></lightning-input>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-1 slds-m-top_x-small margin-top-1rem">
+                                        <div class="slds-size_8-of-12">
+                                            <lightning-input 
+                                                data-id="forwardInvoiceCheckbox"
+                                                type="checkbox"
+                                                value={acceptedForwardInvoices}
+                                                label="I understand AuditMate will forward this email as needed"
+                                            ></lightning-input>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-1 slds-m-vertical_large">
+                                        <lightning-button variant="neutral" label="Back" title="Back" onclick={handleBack}></lightning-button>
+                                        <lightning-button class="slds-m-left_small" variant="brand" label="Continue" title="Continue" onclick={handleFinish}></lightning-button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="slds-col slds-size_4-of-12 slds-m-top_medium vertical-line">
+
+                                <div class="slds-text-heading_medium">It’ll take you 3 steps to get started</div>
+                                <div class="slds-text-body_regular slds-p-top_large">
+
+                                    <p>Connect your vendor securely to Auditmate</p>
+                                    <br>
+                                    <p>Auditmate will contact you once your <br> account is ready (About 5 days).</p>
+                                    <br>
+                                    <p>Let Auditmate take care of the rest.</p>
+                                </div>
+                                <div class="slds-text-color_weak slds-text-body_small slds-p-top_medium">
+                                    <a href="/customers/s/beta-service-agreement" target="_blank">Subscription Agreement</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </lightning-card>
+
+                </div>
+
+            </template>
+
+        </section>
+
+        <div class="slds-backdrop slds-backdrop_open"></div>
+
+    </template>
+
+    <template if:true={showStatusModal}>
+
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-modal_medium slds-fade-in-open">
+
+            <div class="slds-modal__container">
+
+                <lightning-card>
+
+                    <div class="slds-grid slds-wrap slds-gutters slds-p-around_medium">
+                        <div class="slds-col slds-size_1-of-1 slds-m-bottom_small custom-image_logo">
+                            <img src={logo} alt="">
+                        </div>
+                    </div>
+
+                    <div class="slds-grid slds-wrap slds-gutters slds-p-around_large">
+
+                        <div class="slds-col slds-size_8-of-12">
+                            <div class="slds-grid slds-wrap">
+
+                                <div class="slds-col slds-size_1-of-1 slds-m-top_large">
+                                    <div class="holder">
+                                        <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+                                    </div>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-1 slds-m-vertical_large">
+                                    <div class="slds-text-heading_small slds-text-align_center">
+                                        Connecting Vendor... <br>
+                                        We will inform you once the account is ready to view.
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="slds-col slds-size_4-of-12 slds-m-top_medium vertical-line">
+
+                            <div class="slds-text-heading_medium">It’ll take you 3 steps to get started</div>
+                            <div class="slds-text-body_regular slds-p-top_large">
+
+                                <p>Connect your vendor securely to Auditmate</p>
+                                <br>
+                                <p>Auditmate will contact you once your <br> account is ready (About 5 days).</p>
+                                <br>
+                                <p>Let Auditmate take care of the rest.</p>
+                            </div>
+                            <div class="slds-text-color_weak slds-text-body_small slds-p-top_medium">
+                                <a href="/customers/s/beta-service-agreement" target="_blank">Subscription Agreement</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </lightning-card>
+
+            </div>
+
+        </section>
+
+        <div class="slds-backdrop slds-backdrop_open"></div>
+
+    </template>
+
+</template>

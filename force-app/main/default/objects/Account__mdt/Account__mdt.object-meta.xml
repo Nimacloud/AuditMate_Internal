@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>A 1:1 map to Accounts that have InternalEmailAddress__c populated. This should be done by Account trigger, but it is a manual process at the moment.
+
+This allows EmailServices to query here for Id and name based on InternalEmailAddress__c, with the benefit that these metadata records are cached and the soql does not count for governor limits.</description>
+    <label>Account</label>
+    <pluralLabel>Accounts</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

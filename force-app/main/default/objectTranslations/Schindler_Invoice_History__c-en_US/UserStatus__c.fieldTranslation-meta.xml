@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- External Status that is visible to Portal User --></help>
+    <label><!-- User Status --></label>
+    <name>UserStatus__c</name>
+    <picklistValues>
+        <masterLabel>Awaiting User Action</masterLabel>
+        <translation><!-- Awaiting User Action --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dispute</masterLabel>
+        <translation><!-- Dispute --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pay</masterLabel>
+        <translation><!-- Pay --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Renegotiate</masterLabel>
+        <translation><!-- Renegotiate --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

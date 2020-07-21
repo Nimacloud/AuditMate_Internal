@@ -1,0 +1,22 @@
+<template>
+
+    <template if:true={customerStatus}>
+        <template if:false={isValidCustomerStatus}>
+            <img src={declinedLogo} alt="" style="margin-bottom: 3px;">
+        </template>
+        <template if:true={isValidCustomerStatus}>
+            <img src={approvedLogo} alt="" style="margin-bottom: 3px;"> 
+        </template>       
+        <span class="slds-m-left_xx-small">{customerStatus}</span>
+    </template>
+
+    <template if:true={value}>
+        <template if:true={isValid}>
+            <lightning-icon icon-name="utility:success" class="theme-success" size="x-small"></lightning-icon>
+        </template>
+        <template if:false={isValid}>
+            <lightning-icon icon-name="utility:clear" class="theme-error" size="x-small"></lightning-icon>
+        </template>       
+    </template>    
+    
+</template>

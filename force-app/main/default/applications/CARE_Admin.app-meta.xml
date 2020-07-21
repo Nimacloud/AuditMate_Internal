@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#ADC71E</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>CARE Admin</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>CARE Admin</label>
+    <navType>Console</navType>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>Equipment__c</tabs>
+    <tabs>Proposal__c</tabs>
+    <tabs>Schindler_Maintenance_Activity__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>CARE_Admin_UtilityBar</utilityBar>
+    <workspaceConfig>
+        <mappings>
+            <tab>Equipment__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Proposal__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Schindler_Maintenance_Activity__c</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Account</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Contact</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Opportunity</tab>
+        </mappings>
+    </workspaceConfig>
+</CustomApplication>

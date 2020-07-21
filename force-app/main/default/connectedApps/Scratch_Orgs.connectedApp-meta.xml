@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>ashleigh@auditmate.com</contactEmail>
+    <label>Scratch Orgs</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:1717/OauthRedirect</callbackUrl>
+        <certificate>MIIDrjCCApYCCQDn99y0d4nshDANBgkqhkiG9w0BAQsFADCBmDELMAkGA1UEBhMCVVkxEzARBgNVBAgMCk1vbnRldmlkZW8xEzARBgNVBAcMCk1vbnRldmlkZW8xEjAQBgNVBAoMCU5pbWFjbG91ZDESMBAGA1UECwwJTmltYWNsb3VkMRIwEAYDVQQDDAluaW1hY2xvdWQxIzAhBgkqhkiG9w0BCQEWFGRldm9wc0BuaW1hY2xvdWQuY29tMB4XDTIwMDMwMjIwMDEwNloXDTIxMDMwMjIwMDEwNlowgZgxCzAJBgNVBAYTAlVZMRMwEQYDVQQIDApNb250ZXZpZGVvMRMwEQYDVQQHDApNb250ZXZpZGVvMRIwEAYDVQQKDAlOaW1hY2xvdWQxEjAQBgNVBAsMCU5pbWFjbG91ZDESMBAGA1UEAwwJbmltYWNsb3VkMSMwIQYJKoZIhvcNAQkBFhRkZXZvcHNAbmltYWNsb3VkLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOV3xzJnwYBzPkACbkq5LJEw/BS5kgZklbPG+Zot3gTnE2rb5eQyi43iN3bJbgZhh2iXRynPJvcRLzV3KjLZO+SJ+Vq+lp/qKQVRG4MMM7FS/D7H8k8WV/46p0G/1tD2R8kkOdLMslsF54YInhgULI7wjb2b8j6vNxRLZlo9MlHaPscp/e2Phsh4e9wMn0egeBg/wCtrZHZgl/ah4ccKECXrzggY5EtcO8KRaQJa9rvZw3pz7szgiWyQcTycf7r3dqjqHOXh9rikI9NAigjMqPc6dajzuL5pL5280wRpcOMHOozCtyIoyvCRHWij7Gho5GbzGkgl/dOOE5vafA4IHD8CAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAoL8shK5LpT5DJolVYFXUQhQ97eggNcuqsUIKj8rg6cZs2hzWoslP0tsPSTMs+Dt++9qOoOaqFflTsNQhs0M9NqHl2g+F0ory5FkAyw7uSF0cwGFheMUq+fQt/S2vs76sYncUgYhWAXKwgXG+0Bp9TOZqT7oQqihTySVly4vdNNeaqmqTBmE6YybZMBwONI1iWtFxq2skDWEanaCFgRA6/TwozAt9hOv+h4Yq1ubR2AsTCMR91XOvX3iWYVYpEkuLOhdTHgEEkuk1TsvTUpkMmIQnwBV+kaOTDKms091u5HruENwK/YaM3v1QupS2Bx7DT+2YmdYxYp84EExC0GzJAQ==</certificate>
+        <consumerKey>3MVG9_XwsqeYoueIGPiyM5Zqdg0EL.3wCx7S56bC_yMUZlS25W3ZBiNmYHAPWQMzT5uOfiDyko24h0G1NtlK4</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <profileName>System Administrator</profileName>
+    <profileName>System Support</profileName>
+    <profileName>IT Support</profileName>
+</ConnectedApp>

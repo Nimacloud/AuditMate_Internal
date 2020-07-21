@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Comments__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>For Auditmate to record details on the invoice.  These are not visible by the customer.</inlineHelpText>
+    <label>Internal Comments</label>
+    <length>1024</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

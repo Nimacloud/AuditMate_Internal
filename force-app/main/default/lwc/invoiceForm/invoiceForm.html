@@ -1,0 +1,183 @@
+<template>
+  <lightning-card title="Invoice Form">
+    <div slot="actions">
+      <lightning-button data-button="Save"  label="Save"  onclick={handleClick}></lightning-button>
+      <lightning-button data-button="Debug" label="Debug" onclick={handleClick}></lightning-button>
+    </div>
+    <div class="slds-grid">
+      <div class="slds-col slds-size_3-of-12">
+      </div>
+    </div>
+
+    <div class="tables-container1">
+      <div class="table1-container">
+        <table class="slds-table">
+          <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="local-office-row">
+            <td>
+              <div>Local</div>
+              <div>Office</div>
+            </td>
+            <td><textarea name="inp-ta-local-office" class="ta-local-office" maxlength="1024">{localOffice}</textarea></td>
+          </tr> 
+          <tr class="bill-to-row">
+            <td>
+              <div>Bill</div>
+              <div>To</div>
+            </td>
+            <td><textarea name="inp-ta-bill-to" class="ta-bill-to">{billTo}</textarea></td>
+          </tr>
+          <tr class="service-location-row">
+            <td>
+              <div>Service</div>
+              <div>Location</div>
+            </td>
+            <td><textarea name="inp-ta-service-location" class="ta-service-location">{serviceLocation}</textarea></td>
+          </tr>          
+          </tbody>       
+        </table>
+      </div>    
+      <div class="table2-container">
+        <table class="slds-table">
+          <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Invoice Number</td><td><lightning-input name="inp-invoice-number" label="Invoice Number" variant="label-hidden" onchange={handleChange} value={invoiceNumber}></lightning-input></td>
+          </tr>
+          <tr>
+            <td>Invoice Date</td><td><lightning-input name="inp-invoice-date" type="date"  date-style="short" label="Invoice Date"   variant="label-hidden" onchange={handleChange} value={invoiceDate} required></lightning-input></td>            
+          </tr>
+          <tr>
+            <td>Billing Id</td><td><lightning-input name="inp-billing-id"     label="Billing Id"     variant="label-hidden" onchange={handleChange} value={billingId}></lightning-input></td>
+          </tr>
+          <tr>
+            <td>Purchase Order Number</td><td><lightning-input name="inp-purchase-orderno"     label="Purchase Order"     variant="label-hidden" onchange={handleChange} value={purchaseOrderNo}></lightning-input></td>
+          </tr>
+          <tr>
+            <td>Sales Contact</td><td><lightning-input name="inp-sales-contact"  label="Sales Contact"  variant="label-hidden" onchange={handleChange} value={salesContact}></lightning-input></td>
+          </tr>
+          <tr>
+            <td>Field Contact</td><td><lightning-input name="inp-field-contact"  label="Field Contact"  variant="label-hidden" onchange={handleChange} value={fieldContact}></lightning-input></td>
+          </tr>
+          <tr>
+            <td>Telephone</td><td><lightning-input name="inp-telephone"      label="Telephone"      variant="label-hidden" onchange={handleChange} value={telephone}></lightning-input></td>
+          </tr>
+          <tr>
+            <td>Fax</td><td><lightning-input name="inp-fax"            label="Fax"            variant="label-hidden" onchange={handleChange} value={fax}></lightning-input></td>
+          </tr>
+          <tr>
+            <td>Federal Tax Id</td><td><lightning-input name="inp-federal-tax-id" label="Federal Tax Id" variant="label-hidden" onchange={handleChange} value={federalTaxId}></lightning-input></td>
+          </tr>
+          <tr>
+            <td>DUNS Number</td><td><lightning-input name="inp-duns-number"    label="dunsNumber"     variant="label-hidden" onchange={handleChange} value={dunsNumber}></lightning-input></td>
+          </tr>
+          <tr>
+            <td>Order Type</td><td><lightning-input name="inp-order-type"     label="orderType"     variant="label-hidden" onchange={handleChange} value={orderType}></lightning-input></td>
+          </tr>
+          <tr>
+            <td>Order No</td><td><lightning-input name="inp-order-no"       label="orderNo"     variant="label-hidden" onchange={handleChange} value={orderNo}></lightning-input></td>
+          </tr>                                        
+          <tr>
+            <td>Contract</td><td><lightning-input name="inp-contract"   label="contract"     variant="label-hidden" onchange={handleChange} value={contract}></lightning-input></td>
+          </tr>
+          
+          </tbody>
+        </table>
+      </div> <!-- /table2-container -->      
+    </div> <!-- /tables-container1 --> 
+    <div class="tables-container2">
+      <table class="slds-table">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th class="right">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><textarea name="inp-ta-description" class="ta-description">{description}</textarea></td>
+        </tr>
+        </tbody> 
+      </table>
+      <div class="notification-row">
+        <div class="notification-label">
+          Notification
+        </div>
+        <div class="notification-input">
+          <lightning-input name="inp-notification" label="Notification" variant="label-hidden" onchange={handleChange} value={notification} style="width: 130px;"></lightning-input>
+        </div>
+      </div>
+    </div>
+
+    <div class="tables-container3">
+      <div class="table3-container">
+        <table class="slds-table">
+          <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr class="payer-row">
+              <td>
+                <div>Payer</div>
+              </td>
+              <td><textarea name="inp-ta-payer" class="ta-payer" maxlength="1024">{payer}</textarea></td>
+            </tr> 
+            <tr class="remit-to-row">
+              <td>
+                <div>Remit</div>
+                <div>To</div>
+              </td>
+              <td><textarea name="inp-ta-remit-to" class="ta-remit-to">{remitTo}</textarea></td>
+            </tr>
+          </tbody>       
+        </table>
+      </div> <!-- /table3-container -->          
+
+      <div class="table4-container">
+        <table class="slds-table">
+          <thead>
+            <tr>
+              <th>&nbsp;</th>
+              <th>&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Labor</td><td>      <lightning-input name="inp-labor"      type="number"  step="0.01"  label="Labor"          variant="label-hidden" onchange={handleChange} value={laborStr}></lightning-input></td>
+            </tr>
+            <tr>
+              <td>Expenses</td><td>   <lightning-input name="inp-expenses"    type="number"  step="0.01" label="Expenses"       variant="label-hidden" onchange={handleChange} value={expensesStr}></lightning-input></td>
+            </tr>
+           
+            <tr>
+              <td>Subtotal</td><td>   <lightning-input name="inp-subtotal"    type="number"  step="0.01" label="Subtotal"       variant="label-hidden" onchange={handleChange} value={subtotalStr}></lightning-input></td>
+            </tr>  
+               
+            <tr> 
+              <td>Tax</td><td>        <lightning-input name="inp-tax"          type="number" step="0.01" label="Tax"            variant="label-hidden" onchange={handleChange} value={taxStr}></lightning-input></td>
+            </tr>            
+           
+            <tr>           
+              <td>Invoice Total</td><td> <lightning-input name="inp-invoice-total" type="number" step="0.01" formatter="currency" label="Invoice Total"  variant="label-hidden" onchange={handleChange} value={invoiceTotalStr}></lightning-input></td>
+            </tr>
+           </tbody>
+        </table>
+      </div>
+    </div> <!-- /tables-container3 -->
+
+  </lightning-card>    
+</template>

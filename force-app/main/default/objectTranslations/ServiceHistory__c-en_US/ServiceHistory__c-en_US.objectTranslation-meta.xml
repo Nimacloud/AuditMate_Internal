@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Time Ticket</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Time Tickets</value>
+    </caseValues>
+    <layouts>
+        <layout>Service History Layout</layout>
+        <sections>
+            <label><!-- Call Details --></label>
+            <section>Call Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Labor Charges --></label>
+            <section>Labor Charges</section>
+        </sections>
+        <sections>
+            <label><!-- Onsite Time --></label>
+            <section>Onsite Time</section>
+        </sections>
+        <sections>
+            <label><!-- Vendor Details --></label>
+            <section>Vendor Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

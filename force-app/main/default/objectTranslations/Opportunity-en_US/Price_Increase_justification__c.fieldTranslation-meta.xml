@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Price Increase Justification --></label>
+    <name>Price_Increase_justification__c</name>
+    <picklistValues>
+        <masterLabel>80 Labor/20 Material</masterLabel>
+        <translation><!-- 80 Labor/20 Material --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Labor Only</masterLabel>
+        <translation><!-- Labor Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unspecified Increase Justification</masterLabel>
+        <translation><!-- Unspecified Increase Justification --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

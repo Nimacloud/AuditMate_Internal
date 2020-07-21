@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Crew_1_5_Billing_Rate__c</fullName>
+    <description>Crew is mechanic and helper/mechanic and mechanic on 1.5x overtime</description>
+    <externalId>false</externalId>
+    <label>Crew 1.5x Billing Rate</label>
+    <precision>8</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

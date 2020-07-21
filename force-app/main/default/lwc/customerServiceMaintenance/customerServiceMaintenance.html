@@ -1,0 +1,70 @@
+<template>
+
+    <c-request-update ids={selectedIds} account-id={accountId}></c-request-update>
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title=""></div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Unit">Unit</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Last Visit">Last Visit</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Next Visit">Next Visit</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="% Maintenance Completed">% Maintenance Completed</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Status">Status</div>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <template for:each={records} for:item="record">
+
+                <tr class="slds-hint-parent" key={record.Id} data-equipment-id={record.Id}>
+
+                    <td data-label="">
+                        <lightning-input type="checkbox" data-record-id={record.Id} value={record.Id} onchange={handleCheckboxChange}></lightning-input>
+                    </td>
+                    <th data-label="Unit" scope="row">
+                        <c-customer-service-link record={record}></c-customer-service-link>
+                    </th>
+                    <td data-label="Last Visit">
+                        <div class="slds-truncate" title={record.Last_Maintenance_Date__c}>
+                            <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={record.Last_Maintenance_Date__c}></lightning-formatted-date-time>
+                        </div>
+                    </td>
+                    <td data-label="Next Visit">
+                        <div class="slds-truncate" title={record.Next_Maintenance_Date__c}>
+                            <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={record.Next_Maintenance_Date__c}></lightning-formatted-date-time>
+                        </div>
+                    </td>
+                    <td data-label="% Maintenance Completed">
+                        <div class="" title={record.Last_12_Month_PM_Percent__c}>
+                            <!-- <c-customer-service-cell-status due-value={record.Last_12_Month_PM_Percent__c}></c-customer-service-cell-status> -->
+                            <lightning-formatted-number value={record.Last_12_Month_PM_Percent__c}></lightning-formatted-number>%
+                        </div>
+                    </td>
+                    <td data-label="Status">
+                        <div class="" data-pm-due={record.Maintenance_Due_Days__c}>
+                            <c-customer-service-cell-status due-value={record.Maintenance_Due_Days__c}></c-customer-service-cell-status>
+                        </div>
+                    </td>
+                </tr>
+
+            </template>
+
+        </tbody>
+
+    </table>
+
+</template>

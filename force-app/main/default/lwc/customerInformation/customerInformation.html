@@ -1,0 +1,38 @@
+<template>
+
+    <div class="slds-m-horizontal_large">
+
+        <lightning-card>
+
+            <div class="slds-grid slds-wrap slds-p-around_medium">
+
+                <div class="slds-col slds-size_3-of-12">
+                    <lightning-icon icon-name="utility:user" size="x-small"></lightning-icon>
+                    <span class="slds-m-left_small slds-text-heading_small">{nameValue}</span>
+                </div>
+                <div class="slds-col slds-size_2-of-12">
+                    <lightning-icon icon-name="utility:call" size="x-small"></lightning-icon>
+                    <span class="slds-m-left_small slds-text-heading_small">{phoneValue}</span>
+                </div>
+                <div class="slds-col slds-size_3-of-12">
+                    <lightning-icon icon-name="utility:email" size="x-small"></lightning-icon>
+                    <span class="slds-m-left_small slds-text-heading_small">{emailValue}</span>
+                </div>
+                <div class="slds-col slds-size_4-of-12">
+                    <lightning-icon icon-name="utility:location" size="x-small"></lightning-icon>
+                    <span class="slds-m-left_small slds-text-heading_small">{addressValue}</span>
+                </div>
+
+            </div>
+
+            <div class="slds-grid slds-wrap slds-gutters slds-m-around_medium">
+                <template for:each={units} for:item="unit">
+                    <c-customer-unit-badge key={unit.Id} unit={unit}></c-customer-unit-badge>
+                </template>
+            </div>
+
+        </lightning-card>
+
+    </div>
+
+</template>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CARE_Past_Due_Update_Request</fullName>
+        <description>CARE - Past Due Update Request</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@auditmate.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Customer_Alerts/Past_Due_please_request_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Customer_Request_Update</fullName>
+        <description>Customer Request Update</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>andrea.arceneaux@auditmate.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>support@auditmate.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Test_Emails/Customer_Notification_Request</template>
+    </alerts>
+    <alerts>
+        <fullName>Vendor_Request_Update</fullName>
+        <description>Vendor Request Update</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>andrea.arceneaux@auditmate.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>support@auditmate.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Test_Emails/Vendor_Notification_Request</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Equipment_Customer_Email_Update</fullName>
+        <field>Customer_Email__c</field>
+        <formula>Opportunity__r.Account.Customer_Contact__r.Email</formula>
+        <name>Equipment - Customer Email Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Display_Name</fullName>
+        <field>Display_Name__c</field>
+        <formula>IF( ISBLANK( Display_Name__c ) ,
+
+Name, 
+
+Display_Name__c)</formula>
+        <name>Update Display Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Last_12_Months_PM</fullName>
+        <field>Last_12_Month_PM_Percent__c</field>
+        <formula>IF( TEXT(Opportunity__r.Frequency_of_service__c) == &quot;Monthly&quot; , 
+
+(Last_12_Month_PM_Count__c / 12) * 100, 
+
+NULL)</formula>
+        <name>Update Last 12 Months PM %</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>CARE - Past Due Updates</fullName>
+        <actions>
+            <name>CARE_Past_Due_Update_Request</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Equipment_Customer_Email_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Equipment__c.Past_Due__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CARE - Update Last Year Values</fullName>
+        <actions>
+            <name>Update_Last_12_Months_PM</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>// Previous Value
+
+ISCHANGED( Last_12_Month_PM_Count__c )</description>
+        <formula>TRUE</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Display Name</fullName>
+        <actions>
+            <name>Update_Display_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>TRUE</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

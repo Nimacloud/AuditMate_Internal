@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Equipment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Equipments</value>
+    </caseValues>
+    <layouts>
+        <layout>CARE Equipment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Detail Section --></label>
+            <section>Detail Section</section>
+        </sections>
+        <sections>
+            <label><!-- Main Section --></label>
+            <section>Main Section</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Equipment Layout</layout>
+        <sections>
+            <label><!-- Call Backs --></label>
+            <section>Call Backs</section>
+        </sections>
+        <sections>
+            <label><!-- Cat 5 --></label>
+            <section>Cat 5</section>
+        </sections>
+        <sections>
+            <label><!-- Cat1 --></label>
+            <section>Cat1</section>
+        </sections>
+        <sections>
+            <label><!-- Compliance --></label>
+            <section>Compliance</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Equipment --></label>
+            <section>Equipment</section>
+        </sections>
+        <sections>
+            <label><!-- Escalator Testing --></label>
+            <section>Escalator Testing</section>
+        </sections>
+        <sections>
+            <label><!-- Insights --></label>
+            <section>Insights</section>
+        </sections>
+        <sections>
+            <label><!-- Preventative Maintenance --></label>
+            <section>Preventative Maintenance</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>IT Equipment Layout</layout>
+        <sections>
+            <label><!-- Call Backs --></label>
+            <section>Call Backs</section>
+        </sections>
+        <sections>
+            <label><!-- Cat 5 --></label>
+            <section>Cat 5</section>
+        </sections>
+        <sections>
+            <label><!-- Cat1 --></label>
+            <section>Cat1</section>
+        </sections>
+        <sections>
+            <label><!-- Compliance --></label>
+            <section>Compliance</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Equipment --></label>
+            <section>Equipment</section>
+        </sections>
+        <sections>
+            <label><!-- Escalator Testing --></label>
+            <section>Escalator Testing</section>
+        </sections>
+        <sections>
+            <label><!-- Insights --></label>
+            <section>Insights</section>
+        </sections>
+        <sections>
+            <label><!-- New Data MD --></label>
+            <section>New Data MD</section>
+        </sections>
+        <sections>
+            <label><!-- Preventative Maintenance --></label>
+            <section>Preventative Maintenance</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Request Update --></label>
+        <name>Request_Update</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- test --></label>
+        <name>test</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- test2 --></label>
+        <name>test2</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Request_Update --></label>
+        <name>Request_Update</name>
+    </webLinks>
+</CustomObjectTranslation>

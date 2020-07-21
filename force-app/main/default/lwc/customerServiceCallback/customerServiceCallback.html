@@ -1,0 +1,46 @@
+<template>
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Unit">Unit</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Last callback">Last callback</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="#callback YTD">#callback YTD</div>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <template for:each={records} for:item="record">
+
+                <tr class="slds-hint-parent" key={record.Id} data-equipment={record.Id}>
+
+                    <th data-label="Unit" scope="row">
+                        <c-customer-service-link record={record}></c-customer-service-link>
+                    </th>
+                    <td data-label="Last callback">
+                        <div class="slds-truncate" title={record.Last_Callback_Date__c}>
+                            <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={record.Last_Callback_Date__c}></lightning-formatted-date-time>
+                        </div>
+                    </td>
+                    <td data-label="#callback YTD">
+                        <div class="slds-truncate" title={record.Last_12_Month_CB_Count__c}>
+                            {record.Last_12_Month_CB_Count__c}
+                        </div>
+                    </td>
+                </tr>
+
+            </template>
+
+        </tbody>
+
+    </table>
+
+</template>

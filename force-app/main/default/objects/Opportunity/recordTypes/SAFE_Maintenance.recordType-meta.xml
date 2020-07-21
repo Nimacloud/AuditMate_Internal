@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAFE_Maintenance</fullName>
+    <active>true</active>
+    <businessProcess>Vendor Contract</businessProcess>
+    <label>SAFE Maintenance</label>
+    <picklistValues>
+        <picklist>Billing_Frequency__c</picklist>
+        <values>
+            <fullName>Dover Composite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dover DMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dover Oildraulic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Otis B Series Controls</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Otis Gen II</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schindler 300A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schindler 3300</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schindler 330A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schindler 400A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schindler 5500</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schindler Miconic A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schindler Miconic TX-R5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schindler Miconic TX-RS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thyssen TAC20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Westinghouse MPH2</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Call_Back_Coverage__c</picklist>
+        <values>
+            <fullName>24 Hours</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Coverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regular Business Hours - Defined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regular Business Hours with Conditions</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Call_Back_Hours_Available__c</picklist>
+        <values>
+            <fullName>24%2F7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24%2F7-OT Billing Rates Apply</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal Business Hours</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Commitment_Terms__c</picklist>
+        <values>
+            <fullName>Per Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Per Unit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Renewal__c</picklist>
+        <values>
+            <fullName>Auto-renews into annual term</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto-renews into monthly term</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto-renews into similar subsequent terms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Does not auto-renew</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Coverage_Hours__c</picklist>
+        <values>
+            <fullName>24%2F7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regular Business Hours - Defined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regular Business Hours - Undefined</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ForecastCategoryName</picklist>
+        <values>
+            <fullName>Best Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pipeline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Frequency_of_service__c</picklist>
+        <values>
+            <fullName>Annually</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bi-Annually</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Periodically</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hourly_requirement__c</picklist>
+        <values>
+            <fullName>1 hour every 6 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1 hour per month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1 hour per quarter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 hours every 6 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 hours per month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 hours per quarter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 hours every 6 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 hours per month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 hours per quarter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 hours every 6 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 hours per month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 hours per quarter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 hours every 6 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 hours per month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 hours per quarter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 hours every 6 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 hours per month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 hours per quarter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 hours every 6 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 hours per month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 hours per quarter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 hour every 6 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 hour per month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 hour per quarter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 hours every 6 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 hours per month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 hours per quarter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 hours every 6 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 hours per month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 hours per quarter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unspecified</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry__c</picklist>
+        <values>
+            <fullName>Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Transit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residential</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LD_CAT1_Days_Past_Due_Damage_Frequency__c</picklist>
+        <values>
+            <fullName>Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Occurrence</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LD_CAT5_Days_Past_Due_Damage_Frequency__c</picklist>
+        <values>
+            <fullName>Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Occurence</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LD_Callbacks_within_30_Day_Damage_Freque__c</picklist>
+        <values>
+            <fullName>Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Occurence</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LD_Inspection_Damage_Frequency__c</picklist>
+        <values>
+            <fullName>Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Occurance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LD_Maintenance_Damage_Frequency__c</picklist>
+        <values>
+            <fullName>Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Occurence</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LD_Response_Time_Damage_Frequency__c</picklist>
+        <values>
+            <fullName>Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Occurence</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LD_Unit_OOS_Damage_Frequency__c</picklist>
+        <values>
+            <fullName>Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Occurence</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google AdWords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchased List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Loss_Reason__c</picklist>
+        <values>
+            <fullName>Lost to Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Budget %2F Lost Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Decision %2F Non-Responsive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OT_Callbacks_included_if__c</picklist>
+        <values>
+            <fullName>Elevator Group Control System Malfunction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passanger Entrapment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Two or More Elevators Out in a Bank</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Price_Increase_justification__c</picklist>
+        <values>
+            <fullName>80 Labor%2F20 Material</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Labor Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unspecified Increase Justification</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Existing Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Business</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Vendor_Contract__c</picklist>
+        <values>
+            <fullName>Consultant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vendor_Contract_Stage__c</picklist>
+        <values>
+            <fullName>Data Loading</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor_Contract_Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verification</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>price_increase_Maximum__c</picklist>
+        <values>
+            <fullName>No Maximum</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

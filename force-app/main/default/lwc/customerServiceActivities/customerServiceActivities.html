@@ -1,0 +1,80 @@
+<template>
+
+    <div class="slds-m-horizontal_large">
+
+        <div class="slds-grid slds-wrap slds-gutters slds-m-bottom_medium">
+            <div class="slds-col slds-size_2-of-12">
+
+                <lightning-combobox
+                    value={dateValue}
+                    label="Period"
+                    options={dateOptions}
+                    onchange={handleDateChange}></lightning-combobox>
+
+            </div>
+            <template if:true={isCustom}>
+                <div class="slds-col slds-size_2-of-12">
+                    <lightning-input type="date" name="startdate" label="From" onchange={handleStartDateChange} required></lightning-input>
+                </div>
+                <div class="slds-col slds-size_2-of-12">
+                    <lightning-input type="date" name="enddate" label="To" onchange={handleEndDateChange} required></lightning-input>
+                </div>
+                <div class="slds-col slds-size_2-of-12 slds-m-top_large">
+                    <lightning-button label="Go" onclick={handleGoClick}></lightning-button>
+                </div>
+            </template>
+        </div>
+
+    </div>
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Unit">Unit</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Visit Date">Visit Date</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Type">Type</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Work Description">Work Description</div>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <template for:each={records} for:item="record">
+
+                <tr class="slds-hint-parent" key={record.activity.Id}>
+
+                    <th data-label="Unit" scope="row">
+                        <!-- <div class="slds-truncate" title={record.equipment.Display_Name__c}>{record.equipment.Display_Name__c}</div> -->
+                        <c-customer-activity-link record={record}></c-customer-activity-link>
+                    </th>
+                    <td data-label="Visit Date">
+                        <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={record.activity.VisitDate__c}></lightning-formatted-date-time>
+                    </td>
+                    <td data-label="Type">
+                        <div class="slds-truncate" title={record.activity.Type__c}>{record.activity.Type__c}</div>
+                    </td>
+                    <td data-label="Work Description">
+                        <div class="slds-truncate" title={record.activity.Description__c}>{record.activity.Description__c}</div>
+                    </td>
+                </tr>
+
+            </template>
+
+        </tbody>
+
+    </table>
+
+    <div class="slds-m-bottom_x-large">
+
+    </div>
+
+</template>

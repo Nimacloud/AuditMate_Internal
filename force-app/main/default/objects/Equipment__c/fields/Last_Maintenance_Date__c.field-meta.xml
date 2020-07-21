@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Maintenance_Date__c</fullName>
+    <externalId>false</externalId>
+    <label>Last Maintenance Date</label>
+    <summarizedField>Schindler_Maintenance_Activity__c.VisitDate__c</summarizedField>
+    <summaryFilterItems>
+        <field>Schindler_Maintenance_Activity__c.Type__c</field>
+        <operation>equals</operation>
+        <value>MNT</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Schindler_Maintenance_Activity__c.Equipment__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

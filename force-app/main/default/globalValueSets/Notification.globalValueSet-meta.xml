@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Eq_Past_Due</fullName>
+        <default>false</default>
+        <label>Eq Past Due</label>
+    </customValue>
+    <customValue>
+        <fullName>Eq_Request</fullName>
+        <default>false</default>
+        <label>Eq Request</label>
+    </customValue>
+    <masterLabel>Notification</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

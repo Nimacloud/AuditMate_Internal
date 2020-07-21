@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>verActualResponseTime__c</fullName>
+    <description>Verification field</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Contracted response time and actual response time</inlineHelpText>
+    <label>Actual response time</label>
+    <length>40</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

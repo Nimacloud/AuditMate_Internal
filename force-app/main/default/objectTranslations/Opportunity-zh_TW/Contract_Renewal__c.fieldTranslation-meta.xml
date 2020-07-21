@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Auto-renewal language in contract will be found in term section. --></help>
+    <label><!-- Contract Renewal --></label>
+    <name>Contract_Renewal__c</name>
+    <picklistValues>
+        <masterLabel>Auto-renews into annual term</masterLabel>
+        <translation><!-- Auto-renews into annual term --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Auto-renews into monthly term</masterLabel>
+        <translation><!-- Auto-renews into monthly term --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Auto-renews into similar subsequent terms</masterLabel>
+        <translation><!-- Auto-renews into similar subsequent terms --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Does not auto-renew</masterLabel>
+        <translation><!-- Does not auto-renew --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SMA_CompactLayout</fullName>
+    <fields>Type__c</fields>
+    <fields>EquipName__c</fields>
+    <fields>Arrival_date__c</fields>
+    <fields>Call_placed_date__c</fields>
+    <fields>Call_placed_time__c</fields>
+    <fields>Description__c</fields>
+    <label>SMA CompactLayout</label>
+</CompactLayout>

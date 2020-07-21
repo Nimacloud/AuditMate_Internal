@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Invoice Status --></label>
+    <name>Invoice_Status__c</name>
+    <picklistValues>
+        <masterLabel>Approved</masterLabel>
+        <translation><!-- Approved --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Paid in Full</masterLabel>
+        <translation><!-- Paid in Full --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Partially Credited</masterLabel>
+        <translation><!-- Partially Credited --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Void</masterLabel>
+        <translation><!-- Void --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

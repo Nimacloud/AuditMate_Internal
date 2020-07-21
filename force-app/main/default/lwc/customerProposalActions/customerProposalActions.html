@@ -1,0 +1,16 @@
+<template>
+
+    <lightning-button-group>
+        <lightning-button label="Accept" variant="base" class="slds-m-right_small" onclick={handleAccept}></lightning-button>
+        <lightning-button label="Decline" variant="base" onclick={handleDecline}></lightning-button>
+    </lightning-button-group>
+
+    <template if:true={showDeclineModal}>
+        <c-customer-proposal-decline record={record} onclosemodal={handleCloseModal}></c-customer-proposal-decline>
+    </template>
+
+    <template if:true={showAcceptModal}>
+        <c-customer-proposal-accept record={record} onclosemodal={handleCloseModal}></c-customer-proposal-accept>
+    </template>
+
+</template>

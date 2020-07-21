@@ -1,0 +1,3 @@
+<apex:page standardController="Case" extensions="CaseCloseActionController" recordSetVar="caseRecords" action="{!closeCases}">
+
+</apex:page>

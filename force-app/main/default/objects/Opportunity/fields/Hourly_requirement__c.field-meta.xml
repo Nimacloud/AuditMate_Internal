@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hourly_requirement__c</fullName>
+    <externalId>false</externalId>
+    <label>Hourly requirement</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unspecified</fullName>
+                <default>true</default>
+                <label>Unspecified</label>
+            </value>
+            <value>
+                <fullName>0 hours</fullName>
+                <default>false</default>
+                <label>0 hours</label>
+            </value>
+            <value>
+                <fullName>1 hour per month</fullName>
+                <default>false</default>
+                <label>1 hour per month</label>
+            </value>
+            <value>
+                <fullName>2 hours per month</fullName>
+                <default>false</default>
+                <label>2 hours per month</label>
+            </value>
+            <value>
+                <fullName>3 hours per month</fullName>
+                <default>false</default>
+                <label>3 hours per month</label>
+            </value>
+            <value>
+                <fullName>4 hours per month</fullName>
+                <default>false</default>
+                <label>4 hours per month</label>
+            </value>
+            <value>
+                <fullName>5 hours per month</fullName>
+                <default>false</default>
+                <label>5 hours per month</label>
+            </value>
+            <value>
+                <fullName>6 hours per month</fullName>
+                <default>false</default>
+                <label>6 hours per month</label>
+            </value>
+            <value>
+                <fullName>7 hour per month</fullName>
+                <default>false</default>
+                <label>7 hour per month</label>
+            </value>
+            <value>
+                <fullName>8 hours per month</fullName>
+                <default>false</default>
+                <label>8 hours per month</label>
+            </value>
+            <value>
+                <fullName>9 hours per month</fullName>
+                <default>false</default>
+                <label>9 hours per month</label>
+            </value>
+            <value>
+                <fullName>10 hours per month</fullName>
+                <default>false</default>
+                <label>10 hours per month</label>
+            </value>
+            <value>
+                <fullName>1 hour per quarter</fullName>
+                <default>false</default>
+                <label>1 hour per quarter</label>
+            </value>
+            <value>
+                <fullName>2 hours per quarter</fullName>
+                <default>false</default>
+                <label>2 hours per quarter</label>
+            </value>
+            <value>
+                <fullName>3 hours per quarter</fullName>
+                <default>false</default>
+                <label>3 hours per quarter</label>
+            </value>
+            <value>
+                <fullName>4 hours per quarter</fullName>
+                <default>false</default>
+                <label>4 hours per quarter</label>
+            </value>
+            <value>
+                <fullName>5 hours per quarter</fullName>
+                <default>false</default>
+                <label>5 hours per quarter</label>
+            </value>
+            <value>
+                <fullName>6 hours per quarter</fullName>
+                <default>false</default>
+                <label>6 hours per quarter</label>
+            </value>
+            <value>
+                <fullName>7 hour per quarter</fullName>
+                <default>false</default>
+                <label>7 hour per quarter</label>
+            </value>
+            <value>
+                <fullName>8 hours per quarter</fullName>
+                <default>false</default>
+                <label>8 hours per quarter</label>
+            </value>
+            <value>
+                <fullName>9 hours per quarter</fullName>
+                <default>false</default>
+                <label>9 hours per quarter</label>
+            </value>
+            <value>
+                <fullName>10 hours per quarter</fullName>
+                <default>false</default>
+                <label>10 hours per quarter</label>
+            </value>
+            <value>
+                <fullName>1 hour every 6 months</fullName>
+                <default>false</default>
+                <label>1 hour every 6 months</label>
+            </value>
+            <value>
+                <fullName>2 hours every 6 months</fullName>
+                <default>false</default>
+                <label>2 hours every 6 months</label>
+            </value>
+            <value>
+                <fullName>3 hours every 6 months</fullName>
+                <default>false</default>
+                <label>3 hours every 6 months</label>
+            </value>
+            <value>
+                <fullName>4 hours every 6 months</fullName>
+                <default>false</default>
+                <label>4 hours every 6 months</label>
+            </value>
+            <value>
+                <fullName>5 hours every 6 months</fullName>
+                <default>false</default>
+                <label>5 hours every 6 months</label>
+            </value>
+            <value>
+                <fullName>6 hours every 6 months</fullName>
+                <default>false</default>
+                <label>6 hours every 6 months</label>
+            </value>
+            <value>
+                <fullName>7 hour every 6 months</fullName>
+                <default>false</default>
+                <label>7 hour every 6 months</label>
+            </value>
+            <value>
+                <fullName>8 hours every 6 months</fullName>
+                <default>false</default>
+                <label>8 hours every 6 months</label>
+            </value>
+            <value>
+                <fullName>9 hours every 6 months</fullName>
+                <default>false</default>
+                <label>9 hours every 6 months</label>
+            </value>
+            <value>
+                <fullName>10 hours every 6 months</fullName>
+                <default>false</default>
+                <label>10 hours every 6 months</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

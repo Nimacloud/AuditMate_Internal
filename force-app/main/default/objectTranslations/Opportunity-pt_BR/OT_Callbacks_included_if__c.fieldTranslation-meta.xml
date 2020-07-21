@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- OT Callbacks included if: --></label>
+    <name>OT_Callbacks_included_if__c</name>
+    <picklistValues>
+        <masterLabel>Dispatching failure</masterLabel>
+        <translation><!-- Dispatching failure --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Elevator Group Control System Malfunction</masterLabel>
+        <translation><!-- Elevator Group Control System Malfunction --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Emergency Service</masterLabel>
+        <translation><!-- Emergency Service --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Parking garage elevator failure</masterLabel>
+        <translation><!-- Parking garage elevator failure --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Passanger Entrapment</masterLabel>
+        <translation><!-- Passanger Entrapment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service car failure</masterLabel>
+        <translation><!-- Service car failure --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Two or More Elevators Out in a Bank</masterLabel>
+        <translation><!-- Two or More Elevators Out in a Bank --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

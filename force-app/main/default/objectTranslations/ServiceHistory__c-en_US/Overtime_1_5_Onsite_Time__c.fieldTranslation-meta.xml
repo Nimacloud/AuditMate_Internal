@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Overtime 1.5x Onsite Time --></label>
+    <name>Overtime_1_5_Onsite_Time__c</name>
+</CustomFieldTranslation>

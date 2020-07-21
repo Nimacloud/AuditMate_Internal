@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Dover Composite</fullName>
+        <default>false</default>
+        <label>Dover Composite</label>
+    </customValue>
+    <customValue>
+        <fullName>Dover DMC</fullName>
+        <default>false</default>
+        <label>Dover DMC</label>
+    </customValue>
+    <customValue>
+        <fullName>Dover Oildraulic</fullName>
+        <default>false</default>
+        <label>Dover Oildraulic</label>
+    </customValue>
+    <customValue>
+        <fullName>Otis B Series Controls</fullName>
+        <default>false</default>
+        <label>Otis B Series Controls</label>
+    </customValue>
+    <customValue>
+        <fullName>Otis Gen II</fullName>
+        <default>false</default>
+        <label>Otis Gen II</label>
+    </customValue>
+    <customValue>
+        <fullName>Schindler 300A</fullName>
+        <default>false</default>
+        <label>Schindler 300A</label>
+    </customValue>
+    <customValue>
+        <fullName>Schindler 3300</fullName>
+        <default>false</default>
+        <label>Schindler 3300</label>
+    </customValue>
+    <customValue>
+        <fullName>Schindler 330A</fullName>
+        <default>false</default>
+        <label>Schindler 330A</label>
+    </customValue>
+    <customValue>
+        <fullName>Schindler 400A</fullName>
+        <default>false</default>
+        <label>Schindler 400A</label>
+    </customValue>
+    <customValue>
+        <fullName>Schindler 5500</fullName>
+        <default>false</default>
+        <label>Schindler 5500</label>
+    </customValue>
+    <customValue>
+        <fullName>Schindler Miconic A</fullName>
+        <default>false</default>
+        <label>Schindler Miconic A</label>
+    </customValue>
+    <customValue>
+        <fullName>Schindler Miconic TX-R5</fullName>
+        <default>false</default>
+        <label>Schindler Miconic TX-R5</label>
+    </customValue>
+    <customValue>
+        <fullName>Schindler Miconic TX-RS</fullName>
+        <default>false</default>
+        <label>Schindler Miconic TX-RS</label>
+    </customValue>
+    <customValue>
+        <fullName>Thyssen TAC20</fullName>
+        <default>false</default>
+        <label>Thyssen TAC20</label>
+    </customValue>
+    <customValue>
+        <fullName>Thyssen Tac32</fullName>
+        <default>false</default>
+        <label>Thyssen TAC32</label>
+    </customValue>
+    <customValue>
+        <fullName>Thyssen TAC 50</fullName>
+        <default>false</default>
+        <label>Thyssen TAC 50</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown model</fullName>
+        <default>false</default>
+        <label>Unknown model</label>
+    </customValue>
+    <customValue>
+        <fullName>Westinghouse MPH2</fullName>
+        <default>false</default>
+        <label>Westinghouse MPH2</label>
+    </customValue>
+    <masterLabel>Controller Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

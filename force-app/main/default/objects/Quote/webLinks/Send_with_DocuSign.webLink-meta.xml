@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_with_DocuSign</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Send with DocuSign</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/apex/dsfs__DocuSign_JavaScript&quot;)} var sourceId = DSGetPageIDFromHref(); var RQD=DSGetPageIDFromHref(); window.location.href = &quot;/apex/dsfs__DocuSign_CreateEnvelope?DSEID=0 &amp;SourceID=&quot;+sourceId+&quot;&amp;RQD=&quot;+RQD;</url>
+</WebLink>

@@ -1,0 +1,106 @@
+<template>
+
+    <template if:false={compact}>
+
+        <div class="fixed-width">
+
+            <lightning-card>
+
+                <div class="slds-m-left_small">
+
+                    <div class="">
+                        <img src={pic} style="height: 60px;">
+                    </div>
+
+                    <div class="slds-text-heading_small slds-m-top_medium">{label}</div>
+
+                    <div style="margin-top: 6.15rem;">
+
+                        <template if:false={isDate}>
+                            <span class="slds-text-heading_large slds-m-right_small">{value}</span>
+                        </template>
+                        <template if:true={isDate}>
+                            <lightning-formatted-date-time value={value} class="slds-text-heading_large slds-m-right_small"></lightning-formatted-date-time>
+                        </template>
+
+                        <template if:true={hasHelpText}>
+                            <lightning-helptext content={helptext}></lightning-helptext>
+                        </template>
+                    </div>
+
+                    <div class="slds-m-top_xx-large">
+                        <div class="slds-text-title">{message}</div>
+                    </div>
+
+                </div>
+
+            </lightning-card>
+
+        </div>
+
+    </template>
+
+    <template if:true={compact}>
+
+        <div class="fixed-width">
+
+            <lightning-card>
+
+                <div class="slds-m-left_small">
+
+                    <div class="">
+                        <img src={pic} style="height: 60px;">
+                    </div>
+
+                    <div class="slds-text-heading_small slds-m-top_medium">{label}</div>
+
+                    <div class="slds-m-top_large">
+
+                        <div class="value-size">
+
+                            <template if:false={isCurrency}>
+                                <template if:false={isDate}>
+                                    <span class=" slds-m-right_small">{valueResult}</span>
+                                </template>
+                                <template if:true={isDate}>
+                                    <lightning-formatted-date-time value={value} class="slds-m-right_small"></lightning-formatted-date-time>
+                                </template>
+                            </template>
+
+                            <template if:true={isCurrency}>
+                                <lightning-formatted-number value={value} format-style="currency" currency-code="USD" class="slds-m-right_small"></lightning-formatted-number>
+                            </template>
+
+                        </div>
+
+                        <template if:true={hasHelpText}>
+                            <lightning-helptext content={helptext}></lightning-helptext>
+                        </template>
+                    </div>
+
+                    <div class="slds-m-top_medium">
+                        <template if:true={hasMessage}>
+
+                            <template if:true={showMessage}>
+                                <div class="slds-text-title">{message}</div>
+                            </template>
+
+                            <template if:false={showMessage}>
+                                <div class="slds-text-title">&nbsp;</div>
+                            </template>
+
+                        </template>
+                        <template if:false={hasMessage}>
+                            <div class="slds-text-title">&nbsp;</div>
+                        </template>
+                    </div>
+
+                </div>
+
+            </lightning-card>
+
+        </div>
+
+    </template>
+
+</template>

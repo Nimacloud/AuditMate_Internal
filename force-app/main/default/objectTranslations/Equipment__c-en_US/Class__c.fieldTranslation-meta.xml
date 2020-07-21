@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Class --></label>
+    <name>Class__c</name>
+    <picklistValues>
+        <masterLabel>Dumbwaiter</masterLabel>
+        <translation><!-- Dumbwaiter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Escalator</masterLabel>
+        <translation><!-- Escalator --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Freight Elevator</masterLabel>
+        <translation><!-- Freight Elevator --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Moving Walks</masterLabel>
+        <translation><!-- Moving Walks --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Passenger Elevator</masterLabel>
+        <translation><!-- Passenger Elevator --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

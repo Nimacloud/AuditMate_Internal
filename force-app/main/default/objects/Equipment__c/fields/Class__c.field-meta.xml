@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class__c</fullName>
+    <externalId>false</externalId>
+    <label>Class</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Passenger Elevator</fullName>
+                <default>false</default>
+                <label>Passenger Elevator</label>
+            </value>
+            <value>
+                <fullName>Freight Elevator</fullName>
+                <default>false</default>
+                <label>Freight Elevator</label>
+            </value>
+            <value>
+                <fullName>Escalator</fullName>
+                <default>false</default>
+                <label>Escalator</label>
+            </value>
+            <value>
+                <fullName>Moving Walks</fullName>
+                <default>false</default>
+                <label>Moving Walks</label>
+            </value>
+            <value>
+                <fullName>Dumbwaiter</fullName>
+                <default>false</default>
+                <label>Dumbwaiter</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

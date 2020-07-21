@@ -1,0 +1,22 @@
+<template>
+
+    <template if:true={statusValue}>
+        <template if:true={isVoid}>
+            <img src={voidLogo} alt="" style="margin-bottom: 3px;">
+        </template>
+        <template if:false={isVoid}>
+            <img src={paidLogo} alt="" style="margin-bottom: 3px;"> 
+        </template>       
+        <span class="slds-m-left_xx-small">{statusValue}</span>
+    </template>
+
+    <template if:true={systemValue}>
+        <template if:true={isValid}>
+            <lightning-icon icon-name="utility:success" class="theme-success" size="x-small" alternative-text="Valid" title="Valid"></lightning-icon>
+        </template>
+        <template if:false={isValid}>
+            <lightning-icon icon-name="utility:clear" class="theme-error" size="x-small" alternative-text="Invalid" title="Invalid"></lightning-icon>
+        </template>       
+    </template>    
+    
+</template>

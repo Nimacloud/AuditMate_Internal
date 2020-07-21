@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Vendor_Equipment_No__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>State_Elevator_Type__c</columns>
+    <columns>Last_12_Month_CB_Count__c</columns>
+    <columns>Last_12_Month_PM_Percent__c</columns>
+    <columns>Last_Visit_Reason__c</columns>
+    <columns>Last_Visit_Date__c</columns>
+    <columns>Last_PM_Date__c</columns>
+    <columns>Next_PM_Date__c</columns>
+    <columns>Last_Cat1_Date__c</columns>
+    <columns>Next_Cat1_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

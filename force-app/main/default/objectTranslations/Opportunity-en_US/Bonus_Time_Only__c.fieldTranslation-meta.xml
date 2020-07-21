@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check box if contract states covered repairs will be charged bonus time only on overtime. For example, if it is 1.7x OT customer will be charged .7x only. --></help>
+    <label><!-- Bonus Time Only --></label>
+    <name>Bonus_Time_Only__c</name>
+</CustomFieldTranslation>

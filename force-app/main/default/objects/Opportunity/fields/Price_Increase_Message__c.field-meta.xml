@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_Increase_Message__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(TEXT(price_increase_Maximum__c) = &apos;Percentage&apos;, 
+
+TEXT(Price_Increase__c * 100) + &quot;%&quot; , 
+
+TEXT(price_increase_Maximum__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Price Increase Message</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

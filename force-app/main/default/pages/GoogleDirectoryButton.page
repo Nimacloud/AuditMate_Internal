@@ -1,0 +1,28 @@
+<apex:page controller="GoogleDirectoryController">
+
+    <apex:slds ></apex:slds>
+
+    <script>
+
+        function authorize() {
+
+            var url = 'https://accounts.google.com/o/oauth2/v2/auth' +
+                    '?client_id=' + encodeURI('{!clientId}') +
+                    '&redirect_uri=' + encodeURI('{!redirectUri}') +
+                    '&response_type=code' +
+                    '&scope=' + encodeURI('{!scopes}') +
+                    '&access_type=offline' +
+                    '&prompt=consent';
+
+            window.open(url);
+
+        }
+    </script>
+
+    <div class="slds-scope">
+
+        <button onclick="authorize()" class="slds-button slds-button_brand">Authorize</button>
+
+    </div>
+
+</apex:page>

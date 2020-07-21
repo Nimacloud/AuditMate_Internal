@@ -1,0 +1,86 @@
+<template>
+
+    <template if:true={dataRecord}>
+
+    <div class="slds-m-horizontal_large">
+
+        <lightning-spinner variant="inverse" if:false={showCharts}></lightning-spinner>
+
+        <p class="slds-text-heading_small slds-m-bottom_small slds-m-top_x-large">
+            Service
+        </p>
+        <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" id="service">
+            <div class="slds-col slds-size_1-of-3">
+                <template if:true={showCharts}>
+                    <c-customer-advanced-insight-chart wrapper={dataRecord.maintenance} label="Maintenance" variant="true"></c-customer-advanced-insight-chart>
+                </template>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <template if:true={showCharts}>
+                    <c-customer-advanced-insight-chart wrapper={dataRecord.category1} label="Category 1" variant="true"></c-customer-advanced-insight-chart>
+                </template>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <template if:true={showCharts}>
+                    <c-customer-advanced-insight-chart wrapper={dataRecord.category5} label="Category 5" variant="true"></c-customer-advanced-insight-chart>
+                </template>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" id="service2">
+            <div class="slds-col slds-size_1-of-3">
+                <c-customer-information-panel compact="true" icon="utility-2" label="Average Duration of Maintenance" value={maintenanceDuration}></c-customer-information-panel>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <c-customer-information-panel compact="true" icon="utility-2" label="Average Response Time" value={responseTime}></c-customer-information-panel>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <c-customer-information-panel compact="true" icon="utility-5" label="Number of Callbacks" value={dataRecord.callbacks}></c-customer-information-panel>
+            </div>
+        </div>
+
+        <p class="slds-text-heading_small slds-m-bottom_small slds-m-top_x-large">
+            Finance
+        </p>
+        <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" id="finance">
+            <!-- <div class="slds-col slds-size_1-of-3">
+                <c-customer-advanced-insight-chart has-third-amount="true" label="Total Contract Spending"></c-customer-advanced-insight-chart>
+            </div> -->
+            <div class="slds-col slds-size_1-of-3">
+                <template if:true={showCharts}>
+                    <c-customer-advanced-insight-chart show-amount="true" wrapper={dataRecord.totalBilledInvoices} has-third-amount="true" label="Total Billed Invoices"></c-customer-advanced-insight-chart>
+                </template>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <template if:true={showCharts}>
+                    <c-customer-advanced-insight-chart show-amount="true" wrapper={dataRecord.totalProposedRepairs} has-third-amount="true" label="Proposed Repairs"></c-customer-advanced-insight-chart>
+                </template>
+            </div>
+        </div>
+
+        <p class="slds-text-heading_small slds-m-bottom_small slds-m-top_x-large">
+            Compliance
+        </p>
+        <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" id="violations">
+            <div class="slds-col slds-size_1-of-3">
+                <c-customer-information-panel compact="true" icon="warning-2" label="Average Violations Per Inspection Report" value={dataRecord.violationAverage}></c-customer-information-panel>
+            </div>
+        </div>
+        <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" id="compliance">
+            <div class="slds-col slds-size_1-of-3">
+                <template if:true={showCharts}>
+                    <c-customer-advanced-insight-chart wrapper={dataRecord.stateInspectionReports} has-third-amount="true" label="State Inspection Reports" variant="true"></c-customer-advanced-insight-chart>
+                </template>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <template if:true={showCharts}>
+                    <c-customer-advanced-insight-chart wrapper={dataRecord.certificates} label="Certificates"></c-customer-advanced-insight-chart>
+                </template>
+            </div>
+        </div>
+
+    </div>
+
+    </template>
+
+</template>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Does vendor contract include cure clause? --></help>
+    <label><!-- Cure Clause present --></label>
+    <name>Cure_Clause_present__c</name>
+</CustomFieldTranslation>

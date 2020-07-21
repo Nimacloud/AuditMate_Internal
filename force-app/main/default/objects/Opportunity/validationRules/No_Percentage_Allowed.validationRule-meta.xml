@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Percentage_Allowed</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL( price_increase_Maximum__c , &quot;Percentage&quot;)
+&amp;&amp;
+ISBLANK( Price_Increase__c )</errorConditionFormula>
+    <errorDisplayField>Price_Increase__c</errorDisplayField>
+    <errorMessage>The percentage cannot be selected if Price Increase Maximum is not &quot;Percentage&quot;</errorMessage>
+</ValidationRule>

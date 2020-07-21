@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Order</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Onboarding</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;Set up a meeting with your manager, to review the customers portal for approval to Go Live. &lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Approval &amp; Go Live</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;Enter all of the data from the Onboarding Questionnaire&lt;/li&gt;&lt;li&gt;Create new opportunity and load contract details&lt;/li&gt;&lt;li&gt;Add emails to sub account&lt;/li&gt;&lt;li&gt;Verify account structure and access&lt;/li&gt;&lt;li&gt;Verify you can login to the customers vendor portal&lt;/li&gt;&lt;li&gt;Let the Engineer know the portal data is ready to be loaded to Salesforce&lt;/li&gt;&lt;li&gt;Ensure contact is set up&lt;/li&gt;&lt;li&gt;Activate community user&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Data Entry</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;Email the customer and include a Calendly link for an Onboarding call and include the Onboarding Questionnaire, to gather additional information prior to the call. &lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Gather</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;Host a virtual demo where you screen share with customer, to help them login to their portal. &lt;/li&gt;&lt;li&gt;Ensure they approve email to begin forwarding invoices. &lt;/li&gt;&lt;li&gt;Gather customer feedback from the call, and enter it into notes. &lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Mate Training</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

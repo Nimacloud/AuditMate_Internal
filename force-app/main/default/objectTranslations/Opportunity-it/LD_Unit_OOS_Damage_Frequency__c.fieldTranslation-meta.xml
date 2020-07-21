@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- LD Unit OOS Damage Frequency --></label>
+    <name>LD_Unit_OOS_Damage_Frequency__c</name>
+    <picklistValues>
+        <masterLabel>Day</masterLabel>
+        <translation><!-- Day --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Occurence</masterLabel>
+        <translation><!-- Occurence --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

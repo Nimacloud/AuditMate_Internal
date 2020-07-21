@@ -1,0 +1,160 @@
+<template>
+
+    <a href="javascript:void()" onclick={handleToggleModal}>{record.Name}</a>
+
+    <template if:true={showModal}>
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_medium">
+            <div class="slds-modal__container">
+                <lightning-button-icon icon-name="utility:close" onclick={handleCloseModal} class="slds-text-align_right slds-m-bottom_small" variant="bare-inverse"></lightning-button-icon>
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+
+                        Invoice Details {validText}
+
+                    </h2>
+                    <h3 class="slds-text-title slds-hyphenate">
+                        Reviewed by AuditMate
+                    </h3>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+
+                    <lightning-card>
+
+                            <div class="slds-grid slds-wrap slds-gutters">
+
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="slds-text-title_caps">Vendor Name</div>
+                                    <lightning-formatted-text value={record.Vendor_Name__c}  style="white-space: normal;"></lightning-formatted-text>
+                                </div>
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="slds-text-title_caps">Invoice Number</div>
+                                    <lightning-formatted-text value={record.Name} ></lightning-formatted-text>
+                                </div>
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="slds-text-title_caps">Amount Due</div>
+                                    <lightning-formatted-number value={record.Invoice_Total__c} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                </div>
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="slds-text-title_caps">Date of Service</div>
+                                    <lightning-formatted-date-time value={record.Invoice_Date__c} ></lightning-formatted-date-time>
+                                </div>
+                            </div>
+
+                            <div class="slds-grid slds-wrap slds-gutters slds-m-top_large">
+
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="slds-text-title_caps">Unit Number</div>
+                                    <lightning-formatted-text value={record.Equipment_Name__c} ></lightning-formatted-text>
+                                </div>
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="slds-text-title_caps">Time Call Placed</div>
+                                    <lightning-formatted-date-time value={record.Invoice_Date__c} ></lightning-formatted-date-time>
+                                </div>
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="slds-text-title_caps">Tech Name</div>
+                                    <lightning-formatted-text value={record.Field_Contact__c} ></lightning-formatted-text>
+                                </div>
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="slds-text-title_caps">Technician Arrival</div>
+                                    <lightning-formatted-date-time value={record.Invoice_Date__c} ></lightning-formatted-date-time>
+                                </div>
+
+                            </div>
+
+                            <div class='slds-grid slds-wrap slds-gutters slds-m-top_large' style="height: 100px;">
+
+                                <div class="slds-col slds-size_1-of-1">
+                                    <!-- <lightning-output-field field-name="Problems__c"  field-class="slds-truncate"></lightning-output-field> -->
+                                    <!-- <lightning-textarea label="Description" readonly value={record.Problems__c} style="height: 100px;"></lightning-textarea> -->
+                                    <!-- <lightning-output-field field-name="Invoice_Date__c" ></lightning-output-field> -->
+                                    <div class="slds-text-title_caps">Description</div>
+                                    <div class="slds-p-around_medium">
+                                        <lightning-formatted-text value={record.Description__c} style="white-space: normal;"></lightning-formatted-text>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium" style="background-color: #f4f6f9;">
+
+                                <div class="slds-col slds-size_1-of-1 slds-m-vertical_small">
+                                    <div class='slds-grid slds-wrap slds-gutters' style="height: 200px; overflow:scroll">
+
+                                        <div class="slds-col slds-size_1-of-1">
+
+                                            <template for:each={record.Invoice_Comments__r} for:item="invoiceComment">
+
+                                                <div key={invoiceComment.Id} class="slds-m-vertical_small">
+                                                    <div class="slds-text-title_caps">Vendor Response</div>
+
+                                                    <lightning-formatted-date-time value={invoiceComment.CreatedDate} class="slds-text-color_success"></lightning-formatted-date-time>
+                                                    <br/>
+
+                                                    <lightning-formatted-text value={invoiceComment.Description__c} class="slds-m-top_small" style="white-space: normal;height: 100px;"></lightning-formatted-text>
+                                                </div>
+                                            </template>
+
+                                        </div>
+
+                                        <div class="slds-col slds-size_1-of-1">
+                                            <div class="slds-text-title_caps">Mate Support Notes</div>
+                                            <lightning-formatted-text value={record.Audit_Comments__c} class="slds-m-top_small" style="white-space: normal;height: 100px;"></lightning-formatted-text>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="slds-col slds-size_1-of-2">
+                                    <lightning-textarea class="input-comments" placeholder="Your comment (optional)" style="height: 200px;"></lightning-textarea>
+                                </div> -->
+
+                            </div>
+
+                    </lightning-card>
+
+                </div>
+
+                <footer class="slds-modal__footer">
+
+                    <template if:true={isOpen}>
+
+                        <lightning-button label="Dispute" onclick={handleDispute}></lightning-button>
+                        <lightning-button label="Accept" variant="brand" class="slds-m-left_medium" onclick={handlePay}></lightning-button>
+
+                    </template>
+
+                    <template if:false={isOpen}>
+
+                        <!-- <lightning-button label="Renegotiate" onclick={handleRenegociate}></lightning-button> -->
+                        <lightning-button label="Accept" variant="brand" class="slds-m-left_medium" onclick={handlePay}></lightning-button>
+
+                    </template>
+
+                </footer>
+            </div>
+        </section>
+
+        <div class="slds-backdrop slds-backdrop_open"></div>
+
+    </template>
+
+    <template if:true={showPaymentModal}>
+        <c-customer-invoice-payment record={record} onclosemodal={handleCloseModal}></c-customer-invoice-payment>
+    </template>
+
+    <template if:true={showDisputeModal}>
+        <c-customer-invoice-dispute record={record} onclosemodal={handleCloseModal}></c-customer-invoice-dispute>
+    </template>
+
+    <template if:true={showAcceptModal}>
+        <!-- <c-customer-invoice-accept record={record} onclosemodal={handleCloseModal}></c-customer-invoice-accept> -->
+        <c-customer-invoice-payment record={record} onclosemodal={handleCloseModal}></c-customer-invoice-payment>
+    </template>
+
+    <template if:true={showRenegociateModal}>
+        <c-customer-invoice-renegociate record={record} onclosemodal={handleCloseModal}></c-customer-invoice-renegociate>
+    </template>
+
+</template>

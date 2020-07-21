@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Opportunity Sales</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Sales Demo Questions --></label>
+            <section>Sales Demo Questions</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SAFE Maintenance</layout>
+        <sections>
+            <label><!-- Account --></label>
+            <section>Account</section>
+        </sections>
+        <sections>
+            <label><!-- Additional Terms and Conditions --></label>
+            <section>Additional Terms and Conditions</section>
+        </sections>
+        <sections>
+            <label><!-- Call Back Coverage --></label>
+            <section>Call Back Coverage</section>
+        </sections>
+        <sections>
+            <label><!-- Hours of Service --></label>
+            <section>Hours of Service</section>
+        </sections>
+        <sections>
+            <label><!-- Liquidated Damages --></label>
+            <section>Liquidated Damages</section>
+        </sections>
+        <sections>
+            <label><!-- Maintenance Coverage --></label>
+            <section>Maintenance Coverage</section>
+        </sections>
+        <sections>
+            <label><!-- Repair Coverage --></label>
+            <section>Repair Coverage</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Term --></label>
+            <section>Term</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Vendor Contract</layout>
+        <sections>
+            <label><!-- Account --></label>
+            <section>Account</section>
+        </sections>
+        <sections>
+            <label><!-- Additional Terms and Conditions --></label>
+            <section>Additional Terms and Conditions</section>
+        </sections>
+        <sections>
+            <label><!-- Call Back Coverage --></label>
+            <section>Call Back Coverage</section>
+        </sections>
+        <sections>
+            <label><!-- Hours of Service --></label>
+            <section>Hours of Service</section>
+        </sections>
+        <sections>
+            <label><!-- Liquidated Damges --></label>
+            <section>Liquidated Damges</section>
+        </sections>
+        <sections>
+            <label><!-- Maintenance Coverage --></label>
+            <section>Maintenance Coverage</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Price --></label>
+            <section>Price</section>
+        </sections>
+        <sections>
+            <label><!-- Repair Coverage --></label>
+            <section>Repair Coverage</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Term --></label>
+            <section>Term</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Log a Call --></label>
+        <name>Log_a_Call</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Task --></label>
+        <name>New_Task</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Send Email --></label>
+        <name>Send_Email</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- SAFE Maintenance --></label>
+        <name>SAFE_Maintenance</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SAFE Modernization --></label>
+        <name>SAFE_Modernization</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SAFE Repair --></label>
+        <name>SAFE_Repair</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- CARE Sales Opportunity --></description>
+        <label><!-- Sales Opportunity --></label>
+        <name>Sales_Opportunity</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Vendor Contract --></description>
+        <label><!-- Vendor Contract --></label>
+        <name>Vendor_Contract</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- The percentage cannot be selected if Price Increase Maximum is not &quot;Percentage&quot; --></errorMessage>
+        <name>No_Percentage_Allowed</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Generate_Contract --></label>
+        <name>Generate_Contract</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Order --></label>
+        <name>Generate_Order</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Order_Contract --></label>
+        <name>Generate_Order_Contract</name>
+    </webLinks>
+</CustomObjectTranslation>

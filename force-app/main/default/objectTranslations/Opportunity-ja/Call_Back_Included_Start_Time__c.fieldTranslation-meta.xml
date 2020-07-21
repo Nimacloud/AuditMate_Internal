@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Call Back Included Start Time --></label>
+    <name>Call_Back_Included_Start_Time__c</name>
+</CustomFieldTranslation>

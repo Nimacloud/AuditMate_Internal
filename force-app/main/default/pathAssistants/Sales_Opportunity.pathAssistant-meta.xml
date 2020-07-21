@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity</entityName>
+    <fieldName>StageName</fieldName>
+    <masterLabel>Sales Opportunity</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Attach signed PDF to the account in SalesForce.&lt;/p&gt;</info>
+        <picklistValueName>Closed Won</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10pt;&quot;&gt;Send a follow-up email to the customer in 3 days, if needed.&lt;/span&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10pt;&quot;&gt;If the customer does not wish to fulfill the DocuSign request, leave the status in &lt;/span&gt;&lt;b style=&quot;font-size: 10pt;&quot;&gt;Follow-Up&lt;/b&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;&lt;b style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/b&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;Once you hear a response from the customer with the DocuSign executed, select &lt;/span&gt;&lt;b style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;Mark Stage as Complete&lt;/b&gt;&lt;span style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Follow Up</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;Call customer and get a feel for their needs &amp;amp; frustrations&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;Send an introduction email to the customer.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;Coordinate scheduling a demo. &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: Arial; font-size: 11pt;&quot;&gt;Select &lt;/span&gt;&lt;b style=&quot;font-family: Arial; font-size: 11pt;&quot;&gt;Mark Stage as Complete&lt;/b&gt;&lt;span style=&quot;font-family: Arial; font-size: 11pt;&quot;&gt;.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Qualification</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;Select &lt;b&gt;New Quote&lt;/b&gt;.&lt;/li&gt;&lt;li&gt;Fill out &lt;b&gt;New Quote &lt;/b&gt; details, including &lt;b&gt;Quote Information, New Section, Totals, Prepared For &lt;/b&gt;and &lt;b&gt;Address Information&lt;/b&gt; and then select &lt;b&gt;Save. &lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;Navigate to the &lt;/span&gt;&lt;b style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;Products&lt;/b&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt; section, under the dropdown menu select &lt;/span&gt;&lt;b style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;Add Products&lt;/b&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;. Qnt. - initiation # units. CARE SaaS - Annualized value of vendor maintenance.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10pt;&quot;&gt;Use the canned email to send a &amp;quot;Thank you” note, along with the DocuSign quote. &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;Select &lt;/span&gt;&lt;b style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;Mark Stage as Complete&lt;/b&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Quote</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;Remember, we are on a “MISSION TO LISTEN”.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;Host the new customer demo according to the industry presentation.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;At the end of the demo, ask the customer if they are interested in receiving a Quote.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;Select &lt;/span&gt;&lt;b style=&quot;font-size: 11pt;&quot;&gt;Mark Stage as Complete&lt;/b&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Sales Demo</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Sales_Opportunity</recordTypeName>
+</PathAssistant>

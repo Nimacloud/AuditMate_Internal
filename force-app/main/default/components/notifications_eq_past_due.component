@@ -1,0 +1,113 @@
+<apex:component controller="notifications_eq_past_due_controller" access="global">
+
+  <apex:attribute name="NotificationItemId" type="ID" description="N ID" assignTo="{!itemId}"/> 
+  <apex:attribute name="RecipientN" type="String" description="who" assignTo="{!emailRecipient}"/> 
+  <apex:attribute name="RecipientFN" type="String" description="who" assignTo="{!emailRecipientFN}"/> 
+  <apex:attribute name="AccountN" type="String" description="account name" assignTo="{!accountName}"/> 
+
+  <style type="text/css">
+    .request-button {
+      width:185px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background-color:rgb(93,155,17);
+      color:white;
+      cursor: pointer;
+    }
+    .request-button:hover {
+      font-weight: bold;
+    }
+
+    a {
+      color:white;
+      text-decoration:none;
+    }
+    #past-eq-body {
+      font-family: 'Roboto'; 
+      font-size: 20px !important;
+    }
+    .button-div {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+  </style>
+
+  <div id="past-eq-body">
+    <div>
+		  <p>Hi&nbsp;<apex:outputText value="{!RecipientFN}"/>,</p> 
+      <p>Our records indicate that some of your equipment has missed a scheduled CAT 1, CAT 5 or Preventative Maintenance visit. </p>
+      <p>Please follow the link below to request an update from our portal.</p>
+      <p>Should you have any questions, please do not hesitate to reach out.</p>
+      <p>Your humble contract helper,</p>
+      <p><span style="font-style:italic;font-weight:normal;">Ellie.</span></p>
+    </div>
+      
+    <div name="table-container" style="margin-left:10px;margin-top:10px;width:780px;">
+      <div>
+        <h3 style="color:red;">PAST DUE NOTIFICATION</h3>
+        <div class="button-div">
+          <button class="request-button">
+            <a href="{!MyRequest}">
+              Click for Portal
+            </a>
+          </button>
+        </div>
+<!--        
+        <apex:outputLink value="{!MyRequest}">Link To Portal</apex:outputLink>
+        <apex:outputText value="{!MyRequest}"></apex:outputText><span>debug only</span>
+-->
+      </div>
+      
+      <table style="border:none;border-color:#c5bfbf;background-color: white;width:100%;border-collapse:collapse;">
+        <thead>
+          <tr>
+            <th colspan="3" style="color: #a43939;text-align:center;border:1px solid #c5bfbf;">{!AccountN}</th>
+            <th colspan="3" style="color: #a43939;text-align:center;border:1px solid #c5bfbf;">Days Lates</th>
+          </tr>
+          <tr>
+            <th style="width: 120px;color:#7d6f6f;text-align:left;border-collapse:collapse;border:1px solid #c5bfbf;padding-left: 4px;padding-top: 2px;padding-bottom: 2px;">Equipment</th>
+            <th style="width: 100px;color:#7d6f6f;text-align:center;border-collapse:collapse;border:1px solid #c5bfbf;padding-left: 4px;padding-top: 2px;padding-bottom: 2px;">Schindler Id</th>
+            <th style="width: 120px;color:#7d6f6f;text-align:center;border-collapse:collapse;border:1px solid #c5bfbf;padding-left: 4px;padding-top: 2px;padding-bottom: 2px;">Last Visit</th>
+            <th style="width: 90px;color:#7d6f6f;text-align:right;border-collapse:collapse;border:1px solid #c5bfbf;padding-right: 4px;padding-top: 2px;padding-bottom: 2px;">CAT 1 </th>
+            <th style="width: 90px;color:#7d6f6f;text-align:right;border-collapse:collapse;border:1px solid #c5bfbf;padding-right: 4px;padding-top: 2px;padding-bottom: 2px;">CAT 5</th>
+            <th style="width: 90px;color:#7d6f6f;text-align:right;border-collapse:collapse;border:1px solid #c5bfbf;padding-right: 4px;padding-top: 2px;padding-bottom: 2px;">PM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <apex:repeat value="{!Notifications}" var="item">
+            <tr>
+              <td style="color:black;text-align:left;border-collapse:collapse;border:1px solid #c5bfbf;padding-left: 4px;padding-top: 2px;padding-bottom: 2px;">{!item.Equipment__r.Display_Name__c}</td>
+              <td style="color:black;text-align:center;border-collapse:collapse;border:1px solid #c5bfbf;padding-left: 4px;padding-top: 2px;padding-bottom: 2px;">{!item.Equipment__r.Vendor_Equipment_No__c}</td>
+              <td style="color:black;text-align:center;border-collapse:collapse;border:1px solid #c5bfbf;padding-left: 4px;padding-top: 2px;padding-bottom: 2px;">
+                <apex:outputText value="{0,date,MM-dd-yyyy}">
+                  <apex:param value="{!item.Equipment__r.Last_Visit_Date__c}"/>
+                </apex:outputText>
+              </td>
+              <td style="color:black;text-align:right;border-collapse:collapse;border:1px solid #c5bfbf;padding-right: 4px;padding-top: 2px;padding-bottom: 2px;">{!item.Equipment__r.Days_CAT1_Past_Due__c}</td>
+              <td style="color:black;text-align:right;border-collapse:collapse;border:1px solid #c5bfbf;padding-right: 4px;padding-top: 2px;padding-bottom: 2px;">{!item.Equipment__r.Days_CAT5_Past_Due__c}</td>
+              <td style="color:black;text-align:right;border-collapse:collapse;border:1px solid #c5bfbf;padding-right: 4px;padding-top: 2px;padding-bottom: 2px;">{!item.Equipment__r.Days_PM_Past_Due__c}</td>
+            </tr>
+          </apex:repeat>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<!-- 
+    <div>
+      <label>AccountN</label>
+      <apex:outputText value="{!AccountN}"/>
+      <label>NotificationItemId</label>
+      <apex:outputText value="{!NotificationItemId}"/>
+      <label>RecipientN</label>
+      <apex:outputText value="{!RecipientN}"/>
+    </div>
+  </div>
+
+  SELECT Notification__r.Account__c, Notification__r.Account__r.Name, Notification__r.Date_First_Sent__c, Notification__r.Date_Last_Sent__c, 
+    Notification__r.Send_Count__c, Notification__r.NotificationType__c, Notification__r.User_Disabled__c, Notification__r.Id, Notification__r.Max_Count__c,
+    Equipment__r.Days_CAT1_Past_Due__c,Equipment__r.Days_CAT5_Past_Due__c,Equipment__r.Days_PM_Past_Due__c,Equipment__r.Display_Name__c,
+    Equipment__r.Last_30_Day_Count__c,Equipment__r.Last_PM_Date__c,Equipment__r.Last_Visit_Date__c,Equipment__r.Vendor_Equipment_No__c,Equipment__r.Visit_Count__c       
+  FROM NotificationItem__c
+-->
+</apex:component>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Thyssen</fullName>
+        <default>false</default>
+        <label>Thyssen</label>
+    </customValue>
+    <customValue>
+        <fullName>Schindler</fullName>
+        <default>false</default>
+        <label>Schindler</label>
+    </customValue>
+    <customValue>
+        <fullName>Kone</fullName>
+        <default>false</default>
+        <label>Kone</label>
+    </customValue>
+    <customValue>
+        <fullName>Otis</fullName>
+        <default>false</default>
+        <label>Otis</label>
+    </customValue>
+    <masterLabel>Vendor Company</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

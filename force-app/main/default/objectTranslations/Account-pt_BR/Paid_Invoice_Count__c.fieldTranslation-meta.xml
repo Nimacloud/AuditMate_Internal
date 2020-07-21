@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Paid Invoice Count --></label>
+    <name>Paid_Invoice_Count__c</name>
+</CustomFieldTranslation>

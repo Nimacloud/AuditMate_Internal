@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AuditMate_Product_Layout</fullName>
+    <fields>Product2Id</fields>
+    <fields>product_start_date__c</fields>
+    <fields>product_end_date__c</fields>
+    <fields>TotalPrice</fields>
+    <fields>ProductCode</fields>
+    <label>AuditMate Product Layout</label>
+</CompactLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Primary</fullName>
+        <default>true</default>
+        <label>Primary Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Accounts</fullName>
+        <default>false</default>
+        <label>Accounts Payable Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Service</fullName>
+        <default>false</default>
+        <label>Vendor Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Billing</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Billing</label>
+    </customValue>
+    <description>Primary Contact - Customer contact who receives Notification Emails
+Accounts Payable Contact- Customer contact who receives Invoice related Emails
+Vendor Contact - Vendor contact who receives emails</description>
+    <masterLabel>Contact Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

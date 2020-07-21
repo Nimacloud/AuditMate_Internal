@@ -1,0 +1,90 @@
+<template>
+
+    <template if:true={record}>
+
+    <div class="slds-truncate slds-text-align_center" title="" style="cursor: pointer;">
+        <lightning-icon icon-name="utility:info" variant="success" size="x-small" onclick={handleClick}>></lightning-icon>
+    </div>        
+
+    <template if:true={showDetailModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <lightning-button-icon icon-name="utility:close" onclick={handleClick} class="slds-text-align_right slds-m-bottom_small" variant="bare-inverse"></lightning-button-icon>
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{record.Name}</h2>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning-card>
+
+                        <lightning-record-view-form record-id={record.Id} object-api-name="Equipment__c">
+                            <div class="slds-p-horizontal_medium">
+
+                                <div class="slds-grid slds-gutters slds-wrap">
+
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Equipment #
+                                        </div>
+                                        <div class="">{record.Vendor_Equipment_No__c}</div>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Class
+                                        </div>
+                                        <div class="">{record.Class__c}</div>                                        
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Controller
+                                        </div>
+                                        <div class="">{record.Controller_Type__c}</div>                                        
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Type
+                                        </div>
+                                        <div class="">{record.Type__c}</div>                                        
+                                    </div>
+
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Load
+                                        </div>
+                                        <div class="">{record.Load_Lb__c}</div>                                        
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Speed(f/min)
+                                        </div>
+                                        <div class="">{record.Speed__c}</div>                                        
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Stops
+                                        </div>
+                                        <div class="">{record.Stops__c}</div>                                        
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-4">
+                                        <div class="slds-text-title_caps slds-m-vertical_small">
+                                            Remote Monitoring
+                                        </div>
+                                        <div class="">
+                                            <template if:true={record.Remote_Monitoring__c}>Yes</template>
+                                            <template if:false={record.Remote_Monitoring__c}>No</template>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </lightning-record-view-form>
+
+                    </lightning-card>
+                </div>
+            </div>
+        </section>
+
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    </template>
+</template>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SystemStatus__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Internal Status that is not visible to Portal User</inlineHelpText>
+    <label>System Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Verified_As_Valid</fullName>
+                <default>false</default>
+                <label>Verified as Valid</label>
+            </value>
+            <value>
+                <fullName>Verified_As_Invalid</fullName>
+                <default>false</default>
+                <label>Verified as Invalid</label>
+            </value>
+            <value>
+                <fullName>Needs_Review</fullName>
+                <default>false</default>
+                <label>Needs Review</label>
+            </value>
+            <value>
+                <fullName>Data_Error</fullName>
+                <default>false</default>
+                <label>Data Error</label>
+            </value>
+            <value>
+                <fullName>Unverified</fullName>
+                <default>false</default>
+                <label>Unverified</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

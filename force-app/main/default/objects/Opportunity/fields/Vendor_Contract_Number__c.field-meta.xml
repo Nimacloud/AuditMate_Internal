@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vendor_Contract_Number__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Vendor&apos;s contract Number, also known as Customer Number.  Schindler data seems to label the same field two ways.</inlineHelpText>
+    <label>Vendor Contract Number</label>
+    <length>30</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

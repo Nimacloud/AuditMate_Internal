@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Testing_Activities</fullName>
+    <booleanFilter>(1 OR 2 OR 3 OR 6) AND 4 AND 5</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Opportunity__c</columns>
+    <columns>VisitDate__c</columns>
+    <columns>Category__c</columns>
+    <columns>Type__c</columns>
+    <columns>Description__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Description__c</field>
+        <operation>contains</operation>
+        <value>annual</value>
+    </filters>
+    <filters>
+        <field>Description__c</field>
+        <operation>contains</operation>
+        <value>cat1</value>
+    </filters>
+    <filters>
+        <field>Description__c</field>
+        <operation>contains</operation>
+        <value>cat 1</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>TEST</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>LAST_WEEK</value>
+    </filters>
+    <filters>
+        <field>Description__c</field>
+        <operation>contains</operation>
+        <value>test</value>
+    </filters>
+    <label>Category 1</label>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

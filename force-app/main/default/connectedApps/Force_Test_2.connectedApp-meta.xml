@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>graham.smith@auditmate.com</contactEmail>
+    <label>Force Test 3</label>
+    <oauthConfig>
+        <callbackUrl>https://force-test3.herokuapp.com
+http://localhost:5000</callbackUrl>
+        <consumerKey>3MVG9_XwsqeYoueIGPiyM5Zqdg4gtNK9e3v9D7k8LwJI6HDVX9iD.MQvJQX1eYCCXpgr3.ZBNY1NoeHjDR2ai</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <scopes>Full</scopes>
+    </oauthConfig>
+</ConnectedApp>

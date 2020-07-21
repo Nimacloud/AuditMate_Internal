@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Vendor Contract Stage --></label>
+    <name>Vendor_Contract_Stage__c</name>
+    <picklistValues>
+        <masterLabel>Data Loading</masterLabel>
+        <translation><!-- Data Loading --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order</masterLabel>
+        <translation><!-- Order --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vendor Contract - Not Active</masterLabel>
+        <translation><!-- Vendor Contract - Not Active --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vendor Contract Active</masterLabel>
+        <translation><!-- Vendor Contract Active --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Verification</masterLabel>
+        <translation><!-- Verification --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

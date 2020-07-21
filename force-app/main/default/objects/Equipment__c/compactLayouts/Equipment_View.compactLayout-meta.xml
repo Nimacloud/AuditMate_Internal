@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Equipment_View</fullName>
+    <fields>Name</fields>
+    <fields>State_Elevator_Type__c</fields>
+    <fields>Last_12_Month_PM_Percent__c</fields>
+    <fields>Last_Visit_Date__c</fields>
+    <fields>Last_Visit_Reason__c</fields>
+    <fields>Next_PM_Date__c</fields>
+    <fields>Last_PM_Date__c</fields>
+    <fields>Last_Cat1_Date__c</fields>
+    <fields>Next_Cat1_Date__c</fields>
+    <label>Equipment View</label>
+</CompactLayout>

@@ -1,0 +1,84 @@
+<template>
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Invoice #">Invoice #</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Due Date">Due Date</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Service Date">Service Date</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Description">Description</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Amount">Amount</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Disputed Date">Disputed Date</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="Action">Action</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-title_caps" title="PDF">PDF</div>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <template for:each={records} for:item="invoice">
+
+                <tr class="slds-hint-parent" key={invoice.Id}>
+                    <td data-label="Invoice #">
+                        <div class="slds-truncate" title={invoice.Name}>
+                            <c-customer-finance-invoice-detail record={invoice} onclosemodal={handleCloseModal}></c-customer-finance-invoice-detail>
+                        </div>
+                    </td>
+                    <td data-label="Due Date">
+                        <div class="slds-truncate" title={invoice.Invoice_Due_Date__c}>
+                            <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={invoice.Invoice_Due_Date__c}></lightning-formatted-date-time>
+                        </div>
+                    </td>
+                    <td data-label="Service Date">
+                        <div class="slds-truncate" title={invoice.Invoice_Date__c}>
+                            <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={invoice.Invoice_Date__c}></lightning-formatted-date-time>
+                        </div>
+                    </td>
+                    <td data-label="Description">
+                        <div class="slds-truncate" title={invoice.Description__c} style="white-space:nowrap;overflow: hidden; width: 200px;">{invoice.Description__c}</div>
+                    </td>
+                    <td data-label="Amount">
+                        <div class="slds-truncate" title={invoice.Invoice_Total__c}>
+                            <lightning-formatted-number value={invoice.Invoice_Total__c} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                        </div>
+                    </td>
+                    <td data-label="Disputed Date">
+                        <div class="slds-truncate" title="Unknown">
+                            <lightning-formatted-date-time year="numeric" month="numeric" day="numeric" value={invoice.Disputed_Date__c}></lightning-formatted-date-time>
+                        </div>
+                    </td>
+                    <td data-label="Action">
+                        <div class="slds-truncate" title="Action">
+                            <c-customer-invoice-actions record={invoice} onclosemodal={handleCloseModal} mode="dispute"></c-customer-invoice-actions>
+                        </div>
+                    </td>
+                    <td data-label="PDF">
+                        <div class="slds-truncate" title="PDF">
+                            <c-customer-file-download object-id={invoice.Id}></c-customer-file-download>
+                        </div>
+                    </td>
+                </tr>
+
+            </template>
+
+        </tbody>
+
+    </table>
+
+</template>

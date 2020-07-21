@@ -1,0 +1,1514 @@
+<apex:page docType="html-5.0" showHeader="false" standardStylesheets="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false" controller="CustomerPortalController">
+  <head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <meta name="referrer" content="always"></meta>
+    <title>Customer Portal</title>
+    <apex:includeScript value="{!$Resource.agGridCommunity}" />
+    <apex:includeScript value="{!$Resource.momentMin}" />
+    <apex:slds />
+    <style>
+      .page-container {
+     /*   max-width: 1000px;
+        margin-top: 50px; */
+        border: 1px solid gray;
+      }
+
+      #account-select-list {
+        font-family: 'Salesforce Sans', Arial, sans-serif;
+        padding: 4px;
+        margin: 4px;
+        -moz-appearance: none;        /* Firefox */
+        -webkit-appearance: none;     /* Safari and Chrome */
+        appearance: none;
+      }
+
+      .slds-scope .slds-modal__footer {
+        border: 0px !important;
+        padding: 0px !important;
+        background-color: none !important;
+        text-align: right;
+        box-shadow: none !important;
+      }
+
+      .slds-vertical-tabs__nav-item {
+        background-color: white !important;
+      }
+
+      .slds-vertical-tabs__nav-item:hover {
+        background-color: white !important;
+        color: #5D9C11 !important;
+      }
+
+      .slds-is-active {
+        background-color: #5D9C11 !important;
+        color: white !important;
+        font-weight: bold !important;
+      }
+
+      .slds-is-active :hover {
+        background-color: white !important;
+        color: #5D9C11 !important;
+      }
+
+      .slds-vertical-tabs__link:hover {
+        color: white !important;
+        background-color: #5D9C11 !important;
+      }
+
+      a {
+        text-decoration: none !important;
+      }
+
+      .slds-scope.slds-card__body a:hover,
+      .slds-scopeslds-card__body a:focus {
+        text-decoration: none;
+        color: white;
+      }
+
+      .slds-media__figure {
+        margin: 0px !important;
+      }
+
+      .slds-scope table {
+        width: auto;
+      }
+
+      .contact-table {
+        width: 80%;
+      }
+
+      .cell-icon {
+        width: 20px;
+      }
+
+      .cell-center {
+        text-align: center;
+      }
+
+      .contact-name {
+        width: 150px;
+      }
+
+      .contact-title {
+        width: 150px;
+      }
+
+      #contact-email {
+        width: 220px;
+      }
+
+      .contact-phone {
+        width: 100px;
+      }
+
+      .contact-address {
+        width: 200px;
+      }
+
+      #equipment-grid-div {
+        height: 200px;
+        max-height: 400px;
+        width: 100%;
+      }
+
+      #invoice-grid-div, #maintenance-grid-div {
+        height: 600px;
+        width: 100%;
+      }
+
+      .tile-header {
+        font-size: 16px;
+        color: white;
+        background-color: #5D9C11;
+        width: 100%;
+      }
+
+      .my-tile-container {
+        display: flex;
+        justify-content: center;
+        margin: 5px;
+        background-color: white;
+      }
+
+      .my-tile-wrapper-clickable {
+        cursor: cell;
+      }
+
+      .my-tile-body {
+        /* width: 7rem; */
+        border-radius: 16px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid #5D9C11;
+        width: 12rem;
+        height: 7rem;
+      }
+
+      .my-tile-footer {
+        color: black;
+      }
+
+      .my-tile-item1 {
+        color: #351f8e;
+        font-size: 17px;
+        text-align: center;
+      }
+
+      .my-tile-item2 {
+        color: #5D9C11;
+        font-size: 50px;
+        text-align: center;
+      }
+
+      #selected-account-lbl {padding-bottom: 4px;}
+
+      .content-header {
+/*        border: 1px solid red; */
+      }
+
+      #eq-button-div {
+        min-width: 600px;
+        padding: 10px;
+        margin: 5px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      .eq-button { 
+        border-radius: 15px;
+        border: 1px solid #a1b1c7;
+        width: 100px;
+        background-color: white !important;
+        color: #5D9C11 !important;
+        margin-right: 10px !important;
+        border-color: #a1b1c7 !important;
+        box-shadow: none !important;
+      }
+
+      .eq-button:focus {outline:none;}
+
+      .eq-button:hover {
+        background-color: #5D9C11 !important;
+        color:white !important;
+      }
+      
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 340px;
+        background-color: white;
+        color: #5D9C11;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: -62px;
+        margin-left: -60px;
+        margin-bottom: 10px;
+        border-color: #a1b1c7;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        background-color: #5D9C11;
+        color: white;
+      }
+
+      .tooltip .tooltiptext::after {
+        content: " ";
+        position: absolute;
+        top: 100%; /* At the bottom of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #5D9C11 transparent transparent transparent;
+      }
+
+      .content-wrapper {
+   /*     background-color: lightcyan;
+        border: 1px solid red; */
+      }
+      .page-wrapper {
+        display: grid;
+        grid-template-columns: 200px 1600px;
+    /*    border: 1px solid blue; */
+      }
+
+      .eq-table {
+        padding-top: 6px;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        margin-left: 15%;
+      }
+      .eq-label1 {
+        color: silver;
+      }
+      .eq-label2 {
+        width: 150px;
+      }
+      .eq-label-div {
+        width: 150px;
+   /*     border: 1px solid lightgray; */
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+
+  <body class="">
+
+    <header class="slds-scope slds-global-header_container">
+      <div class="slds-global-header slds-grid slds-grid_align-spread">
+        <div class="slds-global-header__item">
+          <apex:image url="{!$Resource.Logo2}" width="40" height="40" />
+        </div>
+
+        <div class="slds-scope slds-global-header__item">
+          <div class="slds-form-element">
+            <div class="slds-form-element__control">
+              <div class="slds-select_container">
+                <select id="account-select-list"></select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slds-scope slds-global-header__item">
+          <ul class="slds-global-actions" id="global-actions">
+
+            <li class="slds-global-actions__item" id="global-action-notifications">
+              <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                <button class="slds-button slds-button_icon slds-button_icon slds-button_icon-container slds-button_icon-small slds-global-actions__notifications slds-global-actions__item-action"
+                  title="no new notifications" aria-live="assertive" aria-atomic="true" id="notification-button">
+                  <svg class="slds-button__icon slds-global-header__icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#notification')}"></use>
+                  </svg>
+                  <span class="slds-assistive-text">
+                    <label id="notifications-label-desc"></label>
+                  </span>
+                </button>
+                <span aria-hidden="true" id="notifications-span" class="slds-notification-badge"></span>
+              </div>
+            </li>
+
+            <li class="slds-global-actions__item" id="global-action-user">
+              <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                <button class="slds-button slds-global-actions__avatar slds-global-actions__item-action" id="userNameBtn" title="{!$User.FirstName}"
+                  aria-haspopup="true">
+                  <span class="slds-avatar slds-avatar_circle slds-avatar_small">
+                    <img alt="Person name" src="https://www.lightningdesignsystem.com/assets/images/avatar1.jpg" title="{!$User.FirstName}" />
+                  </span>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <article class="slds-scope slds-card page-container">
+      <div class="slds-card__body slds-card__body_inner">
+        <div class="page-wrapper">
+          <div class="tabs-wrapper">
+            <div class="slds-vertical-tabs">
+              <ul class="slds-vertical-tabs__nav" role="tablist" aria-orientation="vertical">
+                <li class="slds-vertical-tabs__nav-item slds-is-active" title="Summary" role="presentation" id="summary-tab">
+                  <a class="slds-vertical-tabs__link" href="javascript:void(0)" role="tab" tabindex="0" aria-selected="true" aria-controls="slds-vertical-tabs-0"
+                    id="summary-content__nav">
+                    <span class="slds-vertical-tabs__left-icon">
+                      <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+                        <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#metrics')}"></use>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="slds-truncate" title="Summary">Summary</span>
+                    <span class="slds-vertical-tabs__right-icon"></span>
+                  </a>
+                </li>
+                <li class="slds-vertical-tabs__nav-item" title="Service" role="presentation" id="service-tab">
+                  <a class="slds-vertical-tabs__link" href="javascript:void(0)" role="tab" tabindex="-1" aria-selected="false" aria-controls="slds-vertical-tabs-1" id="service-content__nav">
+                    <span class="slds-vertical-tabs__left-icon">
+                      <span class="slds-icon_container slds-icon-standard-maintenance_plan" title="Description of icon when needed">
+                        <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#maintenance_plan')}"></use>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="slds-truncate" title="Service">Service</span>
+                  </a>
+                </li>
+                <li class="slds-vertical-tabs__nav-item" title="Finance" role="presentation" id="finance-tab">
+                  <a class="slds-vertical-tabs__link" href="javascript:void(0)" role="tab" tabindex="-1" aria-selected="false" aria-controls="slds-vertical-tabs-2"
+                    id="finance-content__nav">
+                    <span class="slds-vertical-tabs__left-icon">
+                      <span class="slds-icon_container slds-icon-standard-lightning_usage" title="Description of icon when needed">
+                        <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#lightning_usage')}"></use>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="slds-truncate" title="Finance">Finance</span>
+                    <span class="slds-vertical-tabs__right-icon"></span>
+                  </a>
+                </li>
+                <li class="slds-vertical-tabs__nav-item" title="Insights" role="presentation" id="insights-tab">
+                  <a class="slds-vertical-tabs__link" href="javascript:void(0)" role="tab" tabindex="-1" aria-selected="false" aria-controls="slds-vertical-tabs-3"  id="insights-content__nav">
+                    <span class="slds-vertical-tabs__left-icon">
+                      <span class="slds-icon_container slds-icon-standard-sales_value" title="Description of icon when needed">
+                        <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#sales_value')}"></use>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="slds-truncate" title="Insights">Insights</span>
+                    <span class="slds-vertical-tabs__right-icon"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        <div class="content-wrapper">
+
+          <section  id="eq-modal" role="dialog" tabindex="-1" class="slds-modal slds-modal_small" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+            <div class="slds-modal__container">
+              <header class="slds-modal__header">
+                <button id='modal-close-btn' class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                  <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+                  </svg>
+                  <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 id="selected-eq-lbl" class="slds-modal__title slds-hyphenate">Modal Header</h2>
+              </header>
+              <div class="slds-modal__content slds-p-around_small" id="modal-content-id-1">
+
+                <!--  EQUIPMENT MODAL -->
+                <div class="eq-table">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td> 
+                          <div class="eq-label-div">
+                            <label class="eq-label1">Equipment No</label>
+                          </div>
+                          <div class="eq-label-div">
+                            <label id="eq-no-label"></label>
+                          </div>
+                        </td>
+                        <td> 
+                          <div class="eq-label-div">
+                            <label class="eq-label1">Class</label>
+                          </div>
+                          <div class="eq-label-div">
+                            <label id="eq-class-label"></label>
+                          </div>
+                        </td>   
+                        <td> 
+                          <div class="eq-label-div">
+                            <label class="eq-label1">Controller</label>
+                          </div>
+                          <div class="eq-label-div">
+                            <label id="eq-controller-label"></label>
+                          </div>
+                        </td>                        
+                        <td> 
+                          <div class="eq-label-div">
+                            <label class="eq-label1">Type</label>
+                          </div>
+                          <div class="eq-label-div">
+                            <label id="eq-type-label"></label>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td> 
+                          <div class="eq-label-div">
+                            <label class="eq-label1">Load</label>
+                          </div>
+                          <div class="eq-label-div">
+                            <label id="eq-load-label"></label>
+                          </div>
+                        </td>
+                        <td> 
+                          <div class="eq-label-div">
+                            <label class="eq-label1">Speed</label>
+                          </div>
+                          <div class="eq-label2">
+                            <label id="eq-speed-label"></label>
+                          </div>
+                        </td>   
+                        <td> 
+                          <div class="eq-label-div">
+                            <label class="eq-label1">Stops</label>
+                          </div>
+                          <div class="eq-label-div">
+                            <label id="eq-stops-label"></label>
+                          </div>
+                        </td>                        
+                        <td> 
+                          <div class="eq-label-div">
+                            <label class="eq-label1">Remote Monitoring</label>
+                          </div>
+                          <div class="eq-label-div">
+                            <label id="eq-remote-label"></label>
+                          </div>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div id='modal-backdrop' class="slds-backdrop"></div> <!-- slds-backdrop_open -->
+
+          <article id="common-header" class="slds-card slds-hide">
+            <div class="slds-card__body slds-card__body_inner">
+              <div class="content-header"> 
+                <h3 class="slds-text-heading_medium">
+                  <label id="selected-account-lbl">Selected Account</label>
+                </h3>
+                <div class="contact-table">
+                  <table class="slds-table ">
+                  <tbody>
+                    <tr>
+                      <td class="cell-icon">
+                        <div class="slds-media__figure" style="width: 6px;">
+                          <span class="slds-icon_container slds-icon-utility-user">
+                            <svg class="slds-icon slds-icon-text-default slds-icon_x-small" aria-hidden="true">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#user')}"></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </td>
+                      <td id="contact-name" class="contact-name">Name</td>
+                      <td id="contact-title">Title</td>
+
+                      <td class="cell-icon">
+                        <div class="slds-media__figure">
+                          <span class="slds-icon_container slds-icon-utility-email">
+                            <svg class="slds-icon slds-icon-text-default slds-icon_x-small" aria-hidden="true">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#email')}"></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </td>
+                      <td id="contact-email" class="contact-email">Email</td>
+
+                      <td class="cell-icon">
+                        <div class="slds-media__figure">
+                          <span class="slds-icon_container slds-icon-utility-call">
+                            <svg class="slds-icon slds-icon-text-default slds-icon_x-small" aria-hidden="true">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#call')}"></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </td>
+                      <td id="contact-phone" class="contact-phone">Phone</td>
+
+                      <td id="contact-address" class="contact-address">Address</td>
+                    </tr>
+                  </tbody>
+                  </table>
+                </div>
+                <div id="eq-button-div" ><h2>Insert here</h2></div>
+              </div>
+            </div>
+          </article>
+
+          <div class="slds-vertical-tabs__content slds-show" id="summary-content" role="tabpanel" aria-labelledby="summary-content__nav">
+            <article id="summary-inner" class="slds-card slds-hide">
+              <div class="slds-card__body slds-card__body_inner">
+           
+                <article id="summary-inner2" class="slds-card">
+                  <div class="slds-card__body slds-card__body_inner">
+                    <div id="equipment-grid-container" class="equipment-container">
+                      <div id="equipment-grid-div" class="BaseGrid ag-theme-balham"></div>
+                    </div>
+                  </div>
+                </article>
+            
+                <article class="slds-card" title="Insights">
+                  <div class="slds-card__body slds-card__body_inner">
+                    <div class="tile-header">no title bar</div>
+                  </div>
+                  pictures
+                </article>
+            
+                <article class="slds-card" title="Invoices">
+                  <div class="slds-card__body slds-card__body_inner">
+                    <div class="tile-header">Upcoming Service</div>
+                      <div class="slds-grid">
+
+                        <div class="slds-col slds-size_4-of-12">
+                          <div class="my-tile-container">
+                            <div class="my-tile-wrapper">
+                              <div class="my-tile-header"></div>
+                              <div class="my-tile-body">
+                                <div class="my-tile-item1">Maintenance</div>
+                                <div class="my-tile-item2"></div>
+                                <div class="my-tile-item">&nbsp;</div>
+                              </div>
+                              <div class="my-tile-footer"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slds-col slds-size_4-of-12">
+                          <div class="my-tile-container">
+                            <div class="my-tile-wrapper">
+                              <div class="my-tile-header"></div>
+                              <div class="my-tile-body">
+                                <div class="my-tile-item1">Category 1</div>
+                                <div class="my-tile-item2"></div>
+                                <div class="my-tile-item">&nbsp;</div>
+                              </div>
+                              <div class="my-tile-footer"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slds-col slds-size_4-of-12">
+                          <div class="my-tile-container">
+                            <div class="my-tile-wrapper">
+                              <div class="my-tile-header"></div>
+                              <div class="my-tile-body">
+                                <div class="my-tile-item1">Category 5</div>
+                                <div class="my-tile-item2"></div>
+                                <div class="my-tile-item">&nbsp;</div>
+                              </div>
+                              <div class="my-tile-footer"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                  </div>
+                </article>
+            
+                <article class="slds-card" title="Upcoming Service">
+                  <div class="slds-card__body slds-card__body_inner">
+                      <div class="tile-header">
+                        Invoices
+                      </div>
+                      <div class="slds-grid">
+                        <div class="slds-col slds-size_4-of-12">
+                          <div class="my-tile-container">
+                            <div class="my-tile-wrapper">
+                              <div class="my-tile-header"></div>
+                              <div class="my-tile-body">
+                                <div class="my-tile-item1">New Invoices</div>
+                                <div class="my-tile-item2">
+                                  <label id="new-invoices-label"></label>
+                                </div>
+                                <div class="my-tile-item">&nbsp;</div>
+                              </div>
+                              <div class="my-tile-footer"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slds-col slds-size_4-of-12">
+                          <div class="my-tile-container">
+                            <div class="my-tile-wrapper">
+                              <div class="my-tile-header"></div>
+                              <div class="my-tile-body">
+                                <div class="my-tile-item1">Disputed Invoices</div>
+                                <div class="my-tile-item2">
+                                  <label id="disputed-invoices-label"></label>
+                                </div>
+                                <div class="my-tile-item">&nbsp;</div>
+                              </div>
+                              <div class="my-tile-footer">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slds-col slds-size_4-of-12">
+                          <div class="my-tile-container">
+                            <div class="my-tile-wrapper">
+                              <div class="my-tile-header"></div>
+                              <div class="my-tile-body">
+                                <div class="my-tile-item1">Past Due Invoices</div>
+                                <div class="my-tile-item2">
+                                  <label id="past-due-invoices-label"></label>
+                                </div>
+                                <div class="my-tile-item">&nbsp;</div>
+                              </div>
+                              <div class="my-tile-footer">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                  </div>
+                </article>
+            
+                <article class="slds-card" title="Invoices">
+                  <div class="slds-card__body slds-card__body_inner">
+                    <div class="tile-header">Insights</div>
+                  </div>
+                </article>
+            
+              </div>
+            </article>
+          </div>
+          <!-- SERVICE CONTENT -->
+          <div class="slds-vertical-tabs__content slds-hide" id="service-content" role="tabpanel" aria-labelledby="service-content__nav">
+            <article id="service-inner" class="slds-card slds-hide">
+              <div class="slds-card__body slds-card__body_inner">
+                <p>Content for Tab 2</p>
+                <article class="slds-card">
+                  <div class="slds-card__body slds-card__body_inner">
+                    <div id="maintenance-grid-container" class="maintenance-container">
+                      <div id="maintenance-grid-div" class="BaseGrid ag-theme-balham"></div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </article>
+          </div>
+
+          <!-- FINANCE CONTENT -->
+          <div class="slds-vertical-tabs__content slds-hide" id="finance-content" role="tabpanel" aria-labelledby="finance-content__nav">
+            <article id="finance-inner" class="slds-card slds-hide">
+              <div class="slds-card__body slds-card__body_inner">
+                <p>Content for Tab 3</p>
+                <article class="slds-card">
+                  <div class="slds-card__body slds-card__body_inner">
+                    <div id="invoice-grid-container" class="invoice-container">
+                      <div id="invoice-grid-div" class="BaseGrid ag-theme-balham"></div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </article>
+          </div>
+
+          <!-- INSIGHTS CONTENT -->
+          <div class="slds-vertical-tabs__content slds-hide" id="insights-content" role="tabpanel" aria-labelledby="insights-content__nav">
+            <article id="insights-inner" class="slds-card slds-hide">
+              <div class="slds-card__body slds-card__body_inner">
+                <p>Content for Tab 4</p>
+                <p>Lorem ipsum dolor...</p>
+                <p>Lorem ipsum dolor...</p>
+              </div>
+            </article>
+          </div>
+
+      </div>
+        </div>
+      </div>
+    
+    </article>
+
+    <script type="text/javascript">
+      'use strict';
+
+      async function getData() {
+        let tStart, tEnd;
+        tStart = performance.now();
+        accountData = await getAccountData();
+        tEnd = performance.now();
+        console.log(`Call to getAccountData() took ${tEnd - tStart} milliseconds.`);
+        console.log(accountData);
+
+        tStart = performance.now();
+        status = await processAccountData(accountData);
+        tEnd = performance.now();
+        console.log(`Processing accounts took ${tEnd - tStart} milliseconds.`);
+
+        return 'Ok';
+      }
+
+      function getAccountEquipmentData() {
+        return new Promise(function (resolve, reject) {
+          CustomerPortalController.getAccountEquipment(selectedAccountId, (result, event) => {
+            if (event.status) {
+              console.log('Retrieved Account Equipment data');
+              resolve(result);
+            }
+            else {
+              console.log('Error retrieving Account Equipment data');
+              reject(event);
+            }
+          }, { buffer: false });
+        });
+      }
+
+      
+      function getAccountInvoiceData() {
+        return new Promise(function (resolve, reject) {
+          CustomerPortalController.getAccountInvoices(selectedAccountId, (result, event) => {
+            if (event.status) {
+              console.log('Retrieved Account Invoice data');
+              resolve(result);
+            }
+            else {
+              console.log('Error retrieving Invoice data');
+              reject(event);
+            }
+          }, { buffer: false });
+        });
+      }
+
+      function getAccountMaintenanceData() {
+        return new Promise(function (resolve, reject) {
+          CustomerPortalController.getAccountMaintenance(selectedAccountId, (result, event) => {
+            if (event.status) {
+              console.log('Retrieved Account Maintenance data');
+              resolve(result);
+            }
+            else {
+              console.log('Error retrieving Account Maintenance data');
+              reject(event);
+            }
+          }, { buffer: false });
+        });
+      }
+
+      function getAccountData() {
+        return new Promise(function (resolve, reject) {
+          CustomerPortalController.getAccounts((result, event) => {
+            if (event.status) {
+              console.log('Retrieved Account data');
+              resolve(result);
+            }
+            else {
+              console.log('Error retrieving Account data');
+              reject(event);
+            }
+          }, { buffer: false });
+        });
+      }
+
+      function processAccountData(results) {
+        /* 
+          Id: "0013k00002fZbqNAAS"
+          IsCustomerPortal: false
+          Name: "St Luke&#39;s Fruitland Health Plan"
+          ParentId: "0013k00002fZSp1AAG"
+          ShippingCity: "FruitLand"
+          ShippingPostalCode: "83619"
+          ShippingState: "ID"
+          ShippingStreet: "1210 NW 16th St"        
+          Average_Response_Time__c,Callsbacks_YTD__c,Disputed_Invoice_Count__c,Maintenance_Visits_YTD__c,New_Invoice_Count__c,Notification_Count__c,Paid_Invoice_Count__c,Testing_Completion_Rate__c
+        */
+        return new Promise(function (resolve, reject) {
+          addOption(accountDropdown, 'Select Account', '0');
+          const r2 = new RegExp(/&#39;/, 'gm');
+          results.forEach(rec => {
+            //            let recName = rec.Name;
+            //            let s2 = recName.replace(r2, "'");
+            //            let recName = rec.Name.replace(r2, "'");
+            //            console.log(recName); 
+            rec.Name = rec.Name.replace(r2, "'");
+            addOption(accountDropdown, rec.Name, rec.Id);
+            accountMap[rec.Id] = rec;
+          });
+          console.log(accountMap);
+          resolve('ok');
+        });
+      }
+
+      // Arrival_DateTime__c,Caller__c,Call_Placed_DateTime__c,ContractNo__c,Departure_DateTime__c,Description__c,Dispatched_DateTime__c,Employee__c,EquipName__c,EquipNo__c,EquipStatus__c,Id,JobID__c,Location__c,Name,Opportunity__c,Resolution__c,Task_Completed__c,Type__c,VisitDate__c 
+
+      function populateContactTable() {
+        console.log('populateContactTable()');
+        contactName = '', contactTitle = '', contactEmail = '', contactPhone = '', contactAddress = '';
+        if ('Contacts' in selectedAccount) {
+          if (selectedAccount.Contacts) {
+            let rec = selectedAccount.Contacts[0]; // Change to select Primary Contact
+            if (rec.FirstName && rec.LastName) {
+              contactName = `${rec.FirstName} ${rec.LastName}`;
+            }
+            if (rec.Title) {
+              contactTitle = rec.Title;
+            }
+            if (rec.Email) {
+              contactEmail = rec.Email;
+            }
+            if (rec.Phone) {
+              contactPhone = phoneFormat(rec.Phone);
+            }
+            if (rec.MailingStreet && rec.MailingCity && rec.MailingState && rec.MailingPostalCode) {
+              contactAddress = `${rec.MailingStreet}, ${rec.MailingCity}, ${rec.MailingState}, ${rec.MailingPostalCode}`;
+            }
+            contactNameCell.innerHTML     = contactName;
+            contactTitleCell.innerHTML    = contactTitle;
+            contactEmailCell.innerHTML    = contactEmail;
+            contactPhoneCell.innerHTML    = contactPhone;
+            contactAddressCell.innerHTML  = contactAddress;
+          }
+        }
+      }
+
+      function clean(s) {
+        const r1 = new RegExp(/&amp/, 'gm');
+        const r2 = new RegExp(/&#39/, 'gm');
+        const r3 = new RegExp(/&;/, 'gm');
+        const r4 = new RegExp(/&quot/, 'gm');
+        const r5 = new RegExp(/';/, 'gm');
+        const r6 = new RegExp(/&gt/, 'gm');
+        const r7 = new RegExp(/>;/, 'gm');
+        const r8 = new RegExp(/&lt/, 'gm');
+        const r9 = new RegExp(/<;/, 'gm');
+        const rQuote = new RegExp(/'/, 'g');
+        let s1, s2, s3, s4, s5, s6, s7, s8, s9 = '';
+
+        if (s == null || s == undefined)
+          s9 = '';
+        else {
+          s1 = s.replace(r1, "&");
+          s2 = s1.replace(r2, "'");
+          s3 = s2.replace(r3, "&");
+          s4 = s3.replace(r4, "'");
+          s5 = s4.replace(r5, "'");
+          s6 = s5.replace(r6, ">");
+          s7 = s6.replace(r7, ">");
+          s8 = s7.replace(r8, "<");
+          s9 = s8.replace(r9, "<");
+        }
+        return s9;
+      }
+
+      function phoneFormat(s) {
+        let s1;
+        if (s == null)
+          s1 = null;
+        else {
+          s1 = s.trim().replace(/[^0-9]/g, '');
+          if (s1.length < 10)
+            s1 = null;
+          else
+            s1 = '(' + s1.substr(0, 3) + ') ' + s1.substr(3, 3) + '-' + s1.substr(6);
+        }
+        return s1;
+      }
+
+      function insertIconHtml(icon) {
+        let iconPath = `assets/icons/utility-sprite/svg/symbols.svg#${icon}`;
+        let html = `
+          <div class="slds-media__figure">
+            <span class="slds-icon_container slds-icon-utility-announcement" title="Description of icon when needed">
+              <svg class="slds-icon slds-icon-text-default slds-icon_x-small" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '${iconPath}')}"></use>
+              </svg>
+            </span>
+          </div>  
+        `;
+        return html;
+      }
+
+      function globalActionsULHandlerClick(event) {
+        let clickedItem = event.currentTarget.id;
+        switch (clickedItem) {
+          case 'summary-tab':
+            setTab(summaryTab, summaryContent);
+            break;
+          case 'service-tab':
+            setTab(serviceTab, serviceContent);
+            break;
+          case 'finance-tab':
+            setTab(financeTab, financeContent);
+            break;
+          case 'insights-tab':
+            setTab(insightsTab, insightsContent);
+            break;
+          default:
+            console.log('globalActionsULHandlerClick');
+            console.log(event.currentTarget.id);
+        }
+      }
+
+      function setTab(tabItem, contentItem) {
+        currentTab.setAttribute('class', 'slds-vertical-tabs__nav-item');
+        tabItem.setAttribute('class', 'slds-vertical-tabs__nav-item slds-is-active');
+        currentTab = tabItem;
+        currentContent.setAttribute('class', 'slds-vertical-tabs__content slds-hide');
+        contentItem.setAttribute('class', 'slds-vertical-tabs__content');
+        currentContent = contentItem;
+      }
+
+      function setNotification(cnt) {
+        if (cnt == 0) {
+          notificationsLabelDesc.textContent = 'No new notification';
+          notificationButton.title = 'No new notification';
+          notificationsSpan.textContent = '';
+          notificationsSpan.setAttribute('class', 'slds-notification-badge');
+        } else {
+          notificationsSpan.setAttribute('class', 'slds-notification-badge slds-incoming-notification slds-show-notification');
+          notificationsSpan.textContent = cnt;
+          if (cnt == 1) {
+            notificationsLabelDesc.textContent = '1 new notification';
+            notificationButton.title = '1 new notification';
+          } else {
+            notificationsLabelDesc.textContent = `${cnt} new notifications`;
+            notificationButton.title = `${cnt} new notifications`;
+          }
+        }
+      }
+
+      async function getRelatedData() {
+        equipmentData   = await getAccountEquipmentData();
+        invoiceData     = await getAccountInvoiceData();
+        maintenanceData = await getAccountMaintenanceData();
+      }
+
+      function setLabels() {
+        selectedAccountLabel.textContent  = selectedAccount.Name;
+        newInvoicesLabel.textContent      = selectedAccount.New_Invoice_Count__c;
+        disputedInvoicesLabel.textContent = selectedAccount.Disputed_Invoice_Count__c;
+        pastdueInvoicesLabel.textContent  = selectedAccount.Paid_Invoice_Count__c;
+      }
+
+      function accountDropdownChangeHandler(event) {
+        selectedAccountId = event.target.value;
+        reset();
+        if (selectedAccountId == '0') {
+          selectedAccount = '';
+          selectedAccountLabel.textContent = 'Select an Account';
+          hideInner();
+        } else {
+          selectedAccount = accountMap[selectedAccountId];
+          setLabels();
+          getRelatedData().then( function() {
+            console.log('got related Data');
+            processEquipmentData(equipmentData);
+            processInvoiceData(invoiceData);
+            processMaintenanceData(maintenanceData);
+            populateContactTable();
+            showEquipmentGrid();
+            showInvoiceGrid();
+            showMaintenanceGrid();
+            setNotification(0); // Setting it to zero causes it to animate if next line sets it to a non zero value.
+            setNotification(selectedAccount.Notification_Count__c);
+            showInner();
+          }).catch(error => {
+            console.log('Error' + error);
+          });
+
+        }
+      }
+
+      // Arrival_DateTime__c,Caller__c,Call_Placed_DateTime__c,ContractNo__c,Departure_DateTime__c,Description__c,Dispatched_DateTime__c,Employee__c,EquipName__c,EquipNo__c,EquipStatus__c,Id,JobID__c,Location__c,Name,Opportunity__c,Resolution__c,Task_Completed__c,Type__c,VisitDate__c 
+      function processMaintenanceData(data) {
+        let arrivalDateTime,caller,callPlacedDateTime,contractNo,departureDateTime,description,dispatchedDateTime,employee,equipName,equipNo,equipStatus,id,jobID,location,name,opportunity,resolution,taskCompleted,type,visitDate;
+        maintenanceArray.length = 0;
+        if(data) {
+          data.forEach(rec => {
+            arrivalDateTime    = moment(rec.Arrival_DateTime__c).format('MM/DD/YYYY h:m a');
+            caller             = rec.Caller__c;
+            callPlacedDateTime = moment(rec.Call_Placed_DateTime__c).format('MM/DD/YYYY h:m a');
+            contractNo         = rec.ContractNo__c;
+            departureDateTime  = moment(rec.Departure_DateTime__c).format('MM/DD/YYYY h:m a');
+            description        = rec.Description__c;
+            dispatchedDateTime = moment(rec.Dispatched_DateTime__c).format('MM/DD/YYYY h:m a');
+            employee           = rec.Employee__c;
+            equipName          = rec.EquipName__c;
+            equipNo            = rec.EquipNo__c;
+            equipStatus        = rec.EquipStatus__c;
+            id                 = rec.Id;
+            jobID              = rec.JobID__c;
+            location           = rec.Location__c;
+            name               = rec.Name;
+            opportunity        = rec.Opportunity__c;
+            resolution         = rec.Resolution__c;
+            taskCompleted      = rec.Task_Completed__c;
+            type               = rec.Type__c;
+            visitDate          = moment(rec.VisitDate__c).format('MM/DD/YYYY');
+            maintenanceArray.push({
+              ArrivalDateTime    : arrivalDateTime,
+              Caller             : caller,
+              CallPlacedDateTime : callPlacedDateTime,
+              ContractNo         : contractNo,
+              DepartureDateTime  : departureDateTime,
+              Description        : description,
+              DispatchedDateTime : dispatchedDateTime,
+              Employee           : employee,
+              EquipName          : equipName,
+              EquipNo            : equipNo,
+              EquipStatus        : equipStatus,
+              Id                 : id,
+              JobID              : jobID,
+              Location           : location,
+              Name               : name,
+              Opportunity        : opportunity,
+              Resolution         : resolution,
+              TaskCompleted      : taskCompleted,
+              Type               : type,
+              VisitDate          : visitDate
+            });
+          });
+          console.log('Processed MaintenanceData', data.length);
+        }
+      }
+
+      function processEquipmentData(data) {
+        let id, name, cat1Count, cat5Count, last30DayCount, last12MonthCount, lastCat1Date, lastCat5Date, lastVisitDate, lastVisitReason, nextCat1Date, nextCat5Date, equipmentNo, visitCount;
+        let eqClass,controllerType,inspectionWitness,lastCleandownDate,lastIndexTestDate,lastPMDate,loadLb,nextCleandownDate,nextIndexTestDate,nextPMDate,remoteMonitoring,speed,stateStatus,stops,eqType;
+        let stateCertificateExpirationDate, stateCertificateFirstIssueDate, stateCertificateIssueDate, stateElevatorSubtype, stateElevatorType, stateID, stateLocationCity, stateLocationDescription, stateLocationStreet, stateLocationZip, stateOwnerName, stateRegion, stateSerialNumber;
+
+        let unitCnt = 0;
+        equipmentArray.length = 0;
+        if (data) {
+          data.forEach(rec => {
+            eqClass = controllerType = speed = stops = eqType = 'n/a';
+
+            unitCnt++;
+            id                 = rec.Id;
+            name               = clean(rec.Name);
+            cat1Count          = rec.Cat1_Count__c;
+            cat5Count          = rec.Cat5_Count__c;
+            last30DayCount     = rec.Last_30_Day_Count__c;
+            last12MonthCount   = rec.Last_12_Month_Count__c;
+            lastCat1Date       = moment(rec.Last_Cat1_Date__c).format('MM/DD/YYYY'); 
+            lastCat5Date       = moment(rec.Last_Cat5_Date__c).format('MM/DD/YYYY'); 
+            lastVisitDate      = moment(rec.Last_Visit_Date__c).format('MM/DD/YYYY'); 
+            lastVisitReason    = rec.Last_Visit_Reason__c;
+            nextCat1Date       = moment(rec.Next_Cat1_Date__c).format('MM/DD/YYYY'); 
+            nextCat5Date       = moment(rec.Next_Cat5_Date__c).format('MM/DD/YYYY'); 
+            equipmentNo        = rec.Vendor_Equipment_No__c;
+            visitCount         = rec.Visit_Count__c;
+            inspectionWitness  = rec.Inspection_Witness__c ? 'Yes' : 'No';
+            lastCleandownDate  = moment(rec.Last_Cleandown_Date__c).format('MM/DD/YYYY');
+            lastIndexTestDate  = moment(rec.Last_Index_Test_Date__c).format('MM/DD/YYYY');
+            lastPMDate         = moment(rec.Last_PM_Date__c).format('MM/DD/YYYY');
+            loadLb             = rec.Load_Lb__c;
+            nextCleandownDate  = moment(rec.Next_Cleandown_Date__c).format('MM/DD/YYYY');
+            nextIndexTestDate  = moment(rec.Next_Index_Test_Date__c).format('MM/DD/YYYY');
+            nextPMDate         = moment(rec.Next_PM_Date__c).format('MM/DD/YYYY');
+            remoteMonitoring   = rec.Remote_Monitoring__c ? 'Yes' : 'No';
+            if(rec.Class__c) {
+              eqClass          = rec.Class__c;
+            }
+            if(rec.Controller_Type__c) {
+              controllerType   = rec.Controller_Type__c;
+            }
+            if(rec.Speed__c) {
+              speed            = rec.Speed__c;
+            }
+            if(rec.Stops__c) {
+              stops            = rec.Stops__c;
+            }
+            if(rec.Type__c) {
+              eqType           = rec.Type__c;
+            }
+            stateCertificateExpirationDate  = moment(rec.State_Certificate_Expiration_Date__c).format('MM/DD/YYYY');
+            stateCertificateFirstIssueDate  = moment(rec.State_Certificate_First_Issue_Date__c).format('MM/DD/YYYY');
+            stateCertificateIssueDate       = moment(rec.State_Certificate_Issue_Date__c).format('MM/DD/YYYY');
+            stateElevatorSubtype            = rec.State_Elevator_Subtype__c;
+            stateElevatorType               = rec.State_Elevator_Type__c;
+            stateID                         = rec.State_ID__c;
+            stateLocationCity               = rec.State_Location_City__c;
+            stateLocationDescription        = rec.State_Location_Description__c;
+            stateLocationStreet             = rec.State_Location_Street__c;
+            stateLocationZip                = rec.State_Location_Zip__c;
+            stateOwnerName                  = rec.State_Owner_Name__c;
+            stateRegion                     = rec.State_Region__c;
+            stateSerialNumber               = rec.State_Serial_Number__c;
+            stateStatus                     = rec.State_Status__c;
+
+            equipmentMap[id] = {
+              Id: id, Name: name, Cat1Count: cat1Count, Cat5Count: cat5Count, Last30DayCount: last30DayCount, Last12MonthCount: last12MonthCount, LastCat1Date: lastCat1Date, LastCat5Date: lastCat5Date,
+              LastVisitDate: lastVisitDate, LastVisitReason: lastVisitReason, NextCat1Date: nextCat1Date, NextCat5Date: nextCat5Date, EquipmentNo: equipmentNo, VisitCount: visitCount,
+              EqClass:eqClass,ControllerType:controllerType,InspectionWitness:inspectionWitness,LastCleandownDate:lastCleandownDate,LastIndexTestDate:lastIndexTestDate,LastPMDate:lastPMDate,LoadLb:loadLb,NextCleandownDate:nextCleandownDate,NextIndexTestDate:nextIndexTestDate,NextPMDate:nextPMDate,RemoteMonitoring:remoteMonitoring,Speed:speed,StateCertificateExpirationDate:stateCertificateExpirationDate,StateCertificateFirstIssueDate:stateCertificateFirstIssueDate,StateCertificateIssueDate:stateCertificateIssueDate,StateElevatorSubtype:stateElevatorSubtype,StateElevatorType:stateElevatorType,StateID:stateID,StateLocationCity:stateLocationCity,StateLocationDescription:stateLocationDescription,StateLocationStreet:stateLocationStreet,StateLocationZip:stateLocationZip,StateOwnerName:stateOwnerName,StateRegion:stateRegion,StateSerialNumber:stateSerialNumber,StateStatus:stateStatus,Stops:stops,Type:eqType 
+            };
+
+            equipmentArray.push({
+              Id: id, Name: name, Cat1Count: cat1Count, Cat5Count: cat5Count, Last30DayCount: last30DayCount, Last12MonthCount: last12MonthCount, LastCat1Date: lastCat1Date, LastCat5Date: lastCat5Date,
+              LastVisitDate: lastVisitDate, LastVisitReason: lastVisitReason, NextCat1Date: nextCat1Date, NextCat5Date: nextCat5Date, EquipmentNo: equipmentNo, VisitCount: visitCount
+            });
+
+            let btn = makeButton(name,id,unitCnt);
+            eqButtonDiv.appendChild(btn);
+
+          });
+          console.log('Processed Equipment', data.length);
+        }
+      }
+
+      function makeButton(pLabel,pId,pCnt) {
+        let btnDiv,tooltipDiv,btn;
+        btnDiv           = document.createElement('div');
+        tooltipDiv       = document.createElement('div');
+  
+        btnDiv.className     = 'tooltip';
+        tooltipDiv.innerHTML = pLabel;
+        tooltipDiv.className = 'tooltiptext';
+
+        btn                  = document.createElement('button');
+        btn.innerHTML        = `Unit ${pCnt}`;
+        btn.className        = 'eq-button';
+
+        btn.setAttribute('data-eq-id',pId);
+        btn.addEventListener('click',equipmentButtonHandler,false);
+
+        btnDiv.appendChild(btn);
+        btnDiv.appendChild(tooltipDiv);
+
+        return btnDiv;
+      }
+
+      function equipmentButtonHandler(event) {
+        selectedEquipmentId = event.target.getAttribute('data-eq-id');
+        console.log( selectedEquipmentId );
+        openModal();
+      }
+
+      function processInvoiceData(data) {
+        let pdfFilename,billing_Id,bill_To,contentVersionId,contract,description,duns_Number,expenses,fax,federal_Tax_Id,field_Contact,id,invoice_Date,invoice_Number,invoice_Total,labor,local_Office,notification;
+        let order_No,order_Type,payer,problems,problem_Count,remit_To,sales_Contact,service_Location,sub_Total,tax,telephone;
+        invoiceArray.length = 0;
+        if (data) {
+          data.forEach(rec => {
+            pdfFilename      = rec.PdfFilename__c;
+            billing_Id       = rec.Billing_Id__c;
+            bill_To          = rec.Bill_To__c;
+            contentVersionId = rec.ContentVersionId__c;
+            contract         = rec.Contract__c;
+            description      = rec.Description__c;
+            duns_Number      = rec.Duns_Number__c;
+            expenses         = rec.Expenses__c;
+            fax              = rec.Fax__c;
+            federal_Tax_Id   = rec.Federal_Tax_Id__c;
+            field_Contact    = rec.Field_Contact__c;
+            id               = rec.Id;
+            invoice_Date     = rec.Invoice_Date__c;
+            invoice_Number   = rec.Invoice_Number__c;
+            invoice_Total    = rec.Invoice_Total__c;
+            labor            = rec.Labor__c;
+            local_Office     = rec.Local_Office__c;
+            notification     = rec.Notification__c;
+            order_No         = rec.Order_No__c;
+            order_Type       = rec.Order_Type__c;
+            payer            = rec.Payer__c;
+            problems         = rec.Problems__c;
+            problem_Count    = rec.Problem_Count__c;
+            remit_To         = rec.Remit_To__c;
+            sales_Contact    = rec.Sales_Contact__c;
+            service_Location = rec.Service_Location__c;
+            sub_Total        = rec.Sub_Total__c;
+            tax              = rec.Tax__c;
+            telephone        = rec.Telephone__c;            
+            invoiceArray.push({
+              PdfFilename      : pdfFilename,
+              Billing_Id       : billing_Id,
+              Bill_To          : bill_To,
+              ContentVersionId : contentVersionId,
+              Contract         : contract,
+              Description      : description,
+              Duns_Number      : duns_Number,
+              Expenses         : expenses,
+              Fax              : fax,
+              Federal_Tax_Id   : federal_Tax_Id,
+              Field_Contact    : field_Contact,
+              Id               : id,
+              Invoice_Date     : invoice_Date,
+              Invoice_Number   : invoice_Number,
+              Invoice_Total    : invoice_Total,
+              Labor            : labor,
+              Local_Office     : local_Office,
+              Notification     : notification,
+              Order_No         : order_No,
+              Order_Type       : order_Type,
+              Payer            : payer,
+              Problems         : problems,
+              Problem_Count    : problem_Count,
+              Remit_To         : remit_To,
+              Sales_Contact    : sales_Contact,
+              Service_Location : service_Location,
+              Sub_Total        : sub_Total,
+              Tax              : tax,
+              Telephone        : telephone
+            });
+          });
+          console.log('Processed Invoices', data.length);
+        }
+      }
+
+      function showEquipmentGrid() {
+        if (equipmentGridOptions) {
+          if (equipmentGridOptions.api) {
+            equipmentGridOptions.api.destroy();
+          }
+        }
+        equipmentGridOptions = {
+          columnDefs: equipmentColDefs,
+          defaultColDef: defaultDefs,
+          rowData: equipmentArray
+        }
+        var gd = document.querySelector('#equipment-grid-div');
+        new agGrid.Grid(gd, equipmentGridOptions);
+      }
+
+      function showInvoiceGrid() {
+        if (invoiceGridOptions) {
+          if (invoiceGridOptions.api) {
+            invoiceGridOptions.api.destroy();
+          }
+        }
+        invoiceGridOptions = {
+          columnDefs: invoiceColDefs,
+          defaultColDef: defaultDefs,
+          rowData: invoiceArray
+        }
+        let gd = document.querySelector('#invoice-grid-div');
+        new agGrid.Grid(gd, invoiceGridOptions);
+      }
+
+      function showMaintenanceGrid() {
+        if (maintenanceGridOptions) {
+          if (maintenanceGridOptions.api) {
+            maintenanceGridOptions.api.destroy();
+          }
+        }
+        maintenanceGridOptions = {
+          columnDefs: maintenanceColDefs,
+          defaultColDef: defaultDefs,
+          rowData: maintenanceArray
+        }
+        let gd = document.querySelector('#maintenance-grid-div');
+        new agGrid.Grid(gd, maintenanceGridOptions);
+      }
+
+      function addOption(dropDown, name, id) {
+        let opt = document.createElement("option");
+        opt.text = name;
+        opt.value = id;
+        dropDown.add(opt, null);
+      }
+
+      function initAgGrid() {
+        equipmentColDefs = [
+          { headerName: 'Name',          field: 'Name',             width: 290, sort: 'asc' },
+          { headerName: 'Equip No',      field: 'EquipmentNo',      width: 100},
+          { headerName: 'Visit Count',   field: 'VisitCount',       width:  90, cellClass: 'cell-center' },
+          { headerName: 'Cat 1 Count',   field: 'Cat1Count',        width: 100, cellClass: 'cell-center' },
+          { headerName: 'Cat 5 Count',   field: 'Cat5Count',        width: 100, cellClass: 'cell-center' },
+          { headerName: 'Last 30 Day',   field: 'Last30DayCount',   width: 100, cellClass: 'cell-center' },
+          { headerName: 'Last 12 Month', field: 'Last12MonthCount', width: 110, cellClass: 'cell-center' },
+          { headerName: 'Last Cat 1',    field: 'LastCat1Date',     width: 100},
+          { headerName: 'Last Cat 5',    field: 'LastCat5Date',     width: 100},
+          { headerName: 'Last Visit',    field: 'LastVisitDate',    width: 100},
+          { headerName: 'Last Reason',   field: 'LastVisitReason',  width: 100},
+          { headerName: 'Next Cat 1',    field: 'NextCat1Date',     width: 100},
+          { headerName: 'Next Cat 5',    field: 'NextCat5Date',     width: 100}
+        ];
+
+        invoiceColDefs = [
+/*        { headerName: 'PdfFilename        ',   field: 'PdfFilename',      width: 100},
+            { headerName: 'Billing_Id         ',   field: 'Billing_Id',       width: 100},
+            { headerName: 'Bill_To            ',   field: 'Bill_To',          width: 100},
+            { headerName: 'ContentVersionId   ',   field: 'ContentVersionId', width: 100},
+            { headerName: 'Contract           ',   field: 'Contract',         width: 100},
+            { headerName: 'Description        ',   field: 'Description',      width: 100},
+            { headerName: 'Duns_Number        ',   field: 'Duns_Number',      width: 100},
+            { headerName: 'Expenses           ',   field: 'Expenses',         width: 100},
+            { headerName: 'Fax                ',   field: 'Fax',              width: 100},
+            { headerName: 'Federal_Tax_Id     ',   field: 'Federal_Tax_Id',   width: 100},
+            { headerName: 'Field_Contact      ',   field: 'Field_Contact',    width: 100},
+            { headerName: 'Id                 ',   field: 'Id',               width: 100}, */
+            { headerName: 'Invoice Date       ',   field: 'Invoice_Date',     width: 100},
+            { headerName: 'Invoice Number     ',   field: 'Invoice_Number',   width: 100},
+            { headerName: 'Invoice Total      ',   field: 'Invoice_Total',    width: 100},
+            { headerName: 'Labor              ',   field: 'Labor',            width: 100},
+            { headerName: 'Local Office       ',   field: 'Local_Office',     width: 100},
+            { headerName: 'Notification       ',   field: 'Notification',     width: 100},
+            { headerName: 'Order No           ',   field: 'Order_No',         width: 100},
+            { headerName: 'Order Type         ',   field: 'Order_Type',       width: 100},
+            { headerName: 'Payer              ',   field: 'Payer',            width: 100},
+            { headerName: 'Problems           ',   field: 'Problems',         width: 100},
+            { headerName: 'Problem Count      ',   field: 'Problem_Count',    width: 100},
+            { headerName: 'Remit To           ',   field: 'Remit_To',         width: 100},
+            { headerName: 'Sales Contact      ',   field: 'Sales_Contact',    width: 100},
+            { headerName: 'Service Location   ',   field: 'Service_Location', width: 100},
+            { headerName: 'Sub Total          ',   field: 'Sub_Total',        width: 100},
+            { headerName: 'Tax                ',   field: 'Tax',              width: 100}
+//        { headerName: 'Telephone          ',   field: 'Telephone',        width: 100}
+        ];
+
+        maintenanceColDefs = [
+          { headerName: 'VisitDate',          field: 'VisitDate',          width: 100},
+            { headerName: 'EquipName',          field: 'EquipName',          width: 100, sort: 'asc'},
+            { headerName: 'Caller',             field: 'Caller',             width: 100},
+            { headerName: 'Call Placed',        field: 'CallPlacedDateTime', width: 100},
+          { headerName: 'Dispatched',         field: 'DispatchedDateTime', width: 100},
+            { headerName: 'Description',        field: 'Description',        width: 100},
+            { headerName: 'Employee',           field: 'Employee',           width: 100},
+            { headerName: 'EquipNo',            field: 'EquipNo',            width: 100},
+            { headerName: 'EquipStatus',        field: 'EquipStatus',        width: 100},
+          { headerName: 'Arrival',            field: 'ArrivalDateTime   ', width: 100},          
+            { headerName: 'Departure',          field: 'DepartureDateTime ', width: 100},
+            { headerName: 'Id',                 field: 'Id',                 width: 100},
+          { headerName: 'Contract',           field: 'ContractNo',         width: 100},
+          { headerName: 'JobID',              field: 'JobID',              width: 100},
+            { headerName: 'Location',           field: 'Location',           width: 100},
+            { headerName: 'Name',               field: 'Name',               width: 100},
+            { headerName: 'Opportunity',        field: 'Opportunity',        width: 100},
+            { headerName: 'Resolution',         field: 'Resolution',         width: 100},
+            { headerName: 'TaskCompleted',      field: 'TaskCompleted',      width: 100},
+            { headerName: 'Type',               field: 'Type',               width: 100}
+        ];
+
+        defaultDefs = {sortable: 'true',sortingOrder: ['asc', 'desc']};
+
+      }
+
+      function showInner() {
+        summaryInner.className  = 'slds-card';
+        commonHeader.className  = 'slds-card';
+       serviceInner.className  = 'slds-card';
+        financeInner.className  = 'slds-card';
+//        financeInner2.className = 'slds-card';
+        insightsInner.className = 'slds-card';
+      }
+
+      function hideInner() {
+        summaryInner.className  = 'slds-hide';
+        commonHeader.className  = 'slds-hide';
+        serviceInner.className  = 'slds-hide';
+        financeInner.className  = 'slds-hide';
+        insightsInner.className = 'slds-hide';
+      }
+
+      function reset() {
+        while (eqButtonDiv.firstChild) {
+          eqButtonDiv.removeChild(eqButtonDiv.firstChild);
+        }
+      }
+
+      function openModal() {
+        let selectedEq = equipmentMap[selectedEquipmentId];
+        selectedEquipmentLabel.textContent = selectedEq.Name;
+        eqNoLabel.textContent         = selectedEq.EquipmentNo;
+        eqTypeLabel.textContent       = selectedEq.Type;
+        eqClassLabel.textContent      = selectedEq.EqClass;
+        eqControllerLabel.textContent = selectedEq.ControllerType;
+        eqLoadLabel.textContent       = selectedEq.LoadLb;
+        eqSpeedLabel.textContent      = selectedEq.Speed;
+        eqStopsLabel.textContent      = selectedEq.Stops;
+        eqRemoteLabel.textContent     = selectedEq.RemoteMonitoring;
+
+        eqModalDiv.className = 'slds-modal slds-fade-in-open slds-modal_small';
+        modalBackdropDiv.className = 'slds-backdrop slds-backdrop_open';
+      }
+
+      function closeModalHandler() {
+        eqModalDiv.className = 'slds-modal slds-modal_small';
+        modalBackdropDiv.className = 'slds-backdrop';
+      }
+
+      const sessionId = '{!$Api.Session_ID}';
+      const userId = '{!$User.Id}';
+      const userFirstName = '{!$User.FirstName}';
+      const userLastName = '{!$User.LastName}';
+      const userDepartment = '{!$User.Department}';
+      const userTitle = '{!$User.Title}';
+      const userProfileId = '{!$User.ProfileId}';
+      const userRoleId = '{!$User.UserRoleId}';
+      const baseURL = '{!$CurrentPage.URL}';
+      const userName = `${userFirstName} ${userLastName}`;
+      console.log(userFirstName, userLastName, userTitle, userDepartment, userId, userProfileId, userRoleId);
+      console.log(baseURL);
+      console.log(sessionId);
+
+//    const modalCancelButton      = document.getElementById('modal-cancel-btn');
+      const modalCloseButton       = document.getElementById('modal-close-btn');
+      const eqModalDiv             = document.getElementById('eq-modal');
+      const modalBackdropDiv       = document.getElementById('modal-backdrop');
+
+      const globalNotificationsLi  = document.getElementById('global-action-notifications');
+      const globalUserLi           = document.getElementById('global-action-user');
+      const notificationButton     = document.getElementById('notification-button');
+
+      const notificationsLabelDesc = document.getElementById('notifications-label-desc');
+      const notificationsSpan      = document.getElementById('notifications-span');
+
+      const selectedEquipmentLabel = document.getElementById('selected-eq-lbl');
+      const selectedAccountLabel   = document.getElementById('selected-account-lbl');
+      const newInvoicesLabel       = document.getElementById('new-invoices-label');
+      const disputedInvoicesLabel  = document.getElementById('disputed-invoices-label');
+      const pastdueInvoicesLabel   = document.getElementById('past-due-invoices-label');
+
+      const summaryTab         = document.getElementById('summary-tab');
+      const serviceTab         = document.getElementById('service-tab');
+      const financeTab         = document.getElementById('finance-tab');
+      const insightsTab        = document.getElementById('insights-tab');
+
+      const summaryContent     = document.getElementById('summary-content');
+      const serviceContent     = document.getElementById('service-content');
+      const financeContent     = document.getElementById('finance-content');
+      const insightsContent    = document.getElementById('insights-content');
+      const commonHeader       = document.getElementById('common-header');
+      const summaryInner       = document.getElementById('summary-inner');
+      const serviceInner       = document.getElementById('service-inner');
+      const financeInner       = document.getElementById('finance-inner');
+      const insightsInner      = document.getElementById('insights-inner');
+
+      const contactNameCell    = document.getElementById('contact-name');
+      const contactTitleCell   = document.getElementById('contact-title')
+      const contactEmailCell   = document.getElementById('contact-email');
+      const contactPhoneCell   = document.getElementById('contact-phone');
+      const contactAddressCell = document.getElementById('contact-address');
+
+      const accountDropdown   = document.getElementById('account-select-list');
+      const equipmentGridDiv  = document.getElementById('equipment-grid-div');
+      const eqButtonDiv       = document.getElementById('eq-button-div');
+
+      const eqNoLabel         = document.getElementById('eq-no-label');
+      const eqClassLabel      = document.getElementById('eq-class-label');
+      const eqControllerLabel = document.getElementById('eq-controller-label');
+      const eqTypeLabel       = document.getElementById('eq-type-label');
+      const eqLoadLabel       = document.getElementById('eq-load-label');
+      const eqSpeedLabel      = document.getElementById('eq-speed-label');
+      const eqStopsLabel      = document.getElementById('eq-stops-label');
+      const eqRemoteLabel     = document.getElementById('eq-remote-label');
+
+      globalNotificationsLi.addEventListener('click', globalActionsULHandlerClick, false);
+      globalUserLi.addEventListener('click', globalActionsULHandlerClick, false);
+
+      summaryTab.addEventListener('click', globalActionsULHandlerClick, false);
+      serviceTab.addEventListener('click', globalActionsULHandlerClick, false);
+      financeTab.addEventListener('click', globalActionsULHandlerClick, false);
+      insightsTab.addEventListener('click', globalActionsULHandlerClick, false);
+      accountDropdown.addEventListener('change', accountDropdownChangeHandler, false);
+//      modalCancelButton.addEventListener('click', closeModalHandler, false); 
+      modalCloseButton.addEventListener('click',  closeModalHandler, false); 
+
+      let equipmentColDefs,invoiceColDefs,maintenanceColDefs,defaultDefs;
+      let equipmentGridOptions,maintenanceGridOptions,invoiceGridOptions;
+      let accountMap = {}, accountData, equipmentMap = {}, equipmentData;
+      let currentTab = summaryTab;
+      let currentContent = summaryContent;
+      let selectedAccountId, selectedAccount, selectedEquipmentId;
+      let contactName = '', contactTitle = '', contactEmail = '', contactPhone = '', contactAddress = '';
+      let invoiceData, maintenanceData, equipmentArray = [], maintenanceArray = [], invoiceArray = [];
+
+
+      initAgGrid();
+      getData().then(retVal => {
+        //  console.log(insertIconHtml('user'));
+
+        console.log(retVal);
+      });
+
+    </script>
+
+  </body>
+</apex:page>

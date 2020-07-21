@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type of Service --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>Call Back</masterLabel>
+        <translation><!-- Call Back --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MAINTENANCE</masterLabel>
+        <translation><!-- MAINTENANCE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPAIR</masterLabel>
+        <translation><!-- REPAIR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TEST</masterLabel>
+        <translation><!-- TEST --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

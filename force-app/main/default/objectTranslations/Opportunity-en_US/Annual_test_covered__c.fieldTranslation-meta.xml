@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Does vendor contract include Annual Test? --></help>
+    <label><!-- Annual test covered --></label>
+    <name>Annual_test_covered__c</name>
+</CustomFieldTranslation>

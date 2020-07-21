@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source__c</fullName>
+    <externalId>false</externalId>
+    <label>Source</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Schindler</fullName>
+                <default>false</default>
+                <label>Schindler</label>
+            </value>
+            <value>
+                <fullName>Otis</fullName>
+                <default>false</default>
+                <label>Otis</label>
+            </value>
+            <value>
+                <fullName>Kone</fullName>
+                <default>false</default>
+                <label>Kone</label>
+            </value>
+            <value>
+                <fullName>ThyssenKrupp</fullName>
+                <default>false</default>
+                <label>ThyssenKrupp</label>
+            </value>
+            <value>
+                <fullName>Mitsubishi Electric</fullName>
+                <default>false</default>
+                <label>Mitsubishi Electric</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

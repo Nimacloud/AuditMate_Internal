@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Customer_AP__c</fullName>
+    <externalId>false</externalId>
+    <formula>NOT(ISBLANK(Customer_Accounts_Contact__c))</formula>
+    <label>Has Customer AP</label>
+    <type>Checkbox</type>
+</CustomField>

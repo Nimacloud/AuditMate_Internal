@@ -1,0 +1,31 @@
+<apex:page standardController="Account" extensions="AccountSetupGroupEmailController" action="{!createGroupEmail}">
+
+    <script type='text/javascript' src='/canvas/sdk/js/publisher.js'></script>
+
+    <script>
+
+        // Activate 'Save button' when the panel shows up
+        Sfdc.canvas.publisher.subscribe({name: "publisher.showPanel", onData:function(e) {
+
+            Sfdc.canvas.publisher.publish({name: "publisher.setValidForSubmit", payload:"true"});
+        }});
+
+        // Subscribe to the Save button to influence custom logic
+        Sfdc.canvas.publisher.subscribe({ name: "publisher.post", onData: function(e) {
+            //**TODO** // Do whatever you want to do here when the user clicks save button
+            //** END TODO**
+
+            // Gracefully close the popup when user taps save
+            Sfdc.canvas.publisher.publish({ name: "publisher.close", payload:{ refresh: "true" }});
+
+        }});
+
+    </script>
+
+    <apex:outputPanel layout="block" rendered="{!isCompleted}">
+
+        <apex:outputLabel value="Action Completed. Close the screen"></apex:outputLabel>
+
+    </apex:outputPanel>
+
+</apex:page>

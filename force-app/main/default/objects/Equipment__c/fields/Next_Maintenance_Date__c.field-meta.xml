@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Maintenance_Date__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( UPPER(TEXT(Opportunity__r.Frequency_of_service__c)) == &apos;PERIODICALLY&apos;,
+NULL,
+Last_Maintenance_Date__c + 30
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Next Maintenance Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

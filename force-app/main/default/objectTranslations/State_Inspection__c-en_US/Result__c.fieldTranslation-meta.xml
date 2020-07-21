@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Result --></label>
+    <name>Result__c</name>
+    <picklistValues>
+        <masterLabel>5YFIN</masterLabel>
+        <translation><!-- 5YFIN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>5YISSUED</masterLabel>
+        <translation><!-- 5YISSUED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Active</masterLabel>
+        <translation><!-- Active --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corrections Req</masterLabel>
+        <translation><!-- Corrections Req --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FAIL</masterLabel>
+        <translation><!-- FAIL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INCOMPLETE</masterLabel>
+        <translation><!-- INCOMPLETE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PASS</masterLabel>
+        <translation><!-- PASS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PASS W/ COND</masterLabel>
+        <translation><!-- PASS W/ COND --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PENDING</masterLabel>
+        <translation><!-- PENDING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TEMPCERT</masterLabel>
+        <translation><!-- TEMPCERT --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

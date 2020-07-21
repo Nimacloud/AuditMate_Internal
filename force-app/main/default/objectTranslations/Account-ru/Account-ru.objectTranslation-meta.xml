@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label><!-- Account Summary --></label>
+            <section>Account Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Key Contacts --></label>
+            <section>Key Contacts</section>
+        </sections>
+        <sections>
+            <label><!-- Portal Information --></label>
+            <section>Portal Information</section>
+        </sections>
+        <sections>
+            <label><!-- SaaS Optics --></label>
+            <section>SaaS Optics</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CARE Account Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>IT Account Layout</layout>
+        <sections>
+            <label><!-- Account Summary --></label>
+            <section>Account Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Key Contacts --></label>
+            <section>Key Contacts</section>
+        </sections>
+        <sections>
+            <label><!-- Portal Information --></label>
+            <section>Portal Information</section>
+        </sections>
+        <sections>
+            <label><!-- SaaS Optics --></label>
+            <section>SaaS Optics</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Child Account --></label>
+        <name>Child_Account</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Create G Email --></label>
+        <name>Create_G_Email</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Setup email --></label>
+        <name>Setup_email</name>
+    </quickActions>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+</CustomObjectTranslation>

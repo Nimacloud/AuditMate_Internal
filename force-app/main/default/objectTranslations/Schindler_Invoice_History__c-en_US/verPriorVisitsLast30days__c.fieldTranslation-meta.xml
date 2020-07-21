@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Unit Id and Service Date of all visits within last 30 days --></help>
+    <label><!-- Prior Visits Last 30 days --></label>
+    <name>verPriorVisitsLast30days__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,21 @@
+<template>
+  <lightning-card>
+    <article class="slds-card">
+      <div class="url-header">
+        <h2 class="title">{title}</h2>
+      </div>
+    </article>  
+    <div class="slds-box">
+      <div>
+        <iframe 
+          lwc:dom="manual" 
+          sandbox="allow-same-origin allow-top-navigation allow-scripts"
+          id="pdfiframe"
+          class="pdf-iframe"
+          title="Invoice"
+          src={srcUrl}>
+        </iframe>
+      </div>
+    </div>
+  </lightning-card>
+</template>

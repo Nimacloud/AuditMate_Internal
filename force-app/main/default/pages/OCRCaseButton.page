@@ -1,0 +1,4 @@
+<apex:page standardController="Case" extensions="OCRCaseButtonController" action="{!createInvoiceAction}">
+
+
+</apex:page>

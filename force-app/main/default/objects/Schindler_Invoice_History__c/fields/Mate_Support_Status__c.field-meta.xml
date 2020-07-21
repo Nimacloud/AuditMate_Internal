@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mate_Support_Status__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Invoice will be visible to customer when &quot;Verified as Invalid&quot; or &quot;Verified as Valid&quot; are selected</inlineHelpText>
+    <label>Mate Support Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unverified</fullName>
+                <default>false</default>
+                <label>Unverified</label>
+            </value>
+            <value>
+                <fullName>Verified as Invalid</fullName>
+                <default>false</default>
+                <label>Verified as Invalid</label>
+            </value>
+            <value>
+                <fullName>Verified as Valid</fullName>
+                <default>false</default>
+                <label>Verified as Valid</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

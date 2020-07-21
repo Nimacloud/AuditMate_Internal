@@ -1,0 +1,5 @@
+<apex:page controller="GoogleDirectoryController" action="{!init}">
+
+    <apex:outputLabel value="Success"></apex:outputLabel>
+
+</apex:page>

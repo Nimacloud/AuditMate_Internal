@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EACSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableActivityCapture>true</enableActivityCapture>
+    <enableActivityMetrics>false</enableActivityMetrics>
+    <enableActivitySyncEngine>true</enableActivitySyncEngine>
+    <enableEACForEveryonePref>true</enableEACForEveryonePref>
+    <enableInboxActivitySharing>true</enableInboxActivitySharing>
+    <enableInsightsInTimeline>true</enableInsightsInTimeline>
+    <enableInsightsInTimelineEacStd>false</enableInsightsInTimelineEacStd>
+    <provisionProductivityFeatures>true</provisionProductivityFeatures>
+</EACSettings>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Meadow Lake Office Building</label>
+    <protected>false</protected>
+    <values>
+        <field>AccountId__c</field>
+        <value xsi:type="xsd:string">0013k00002fZbq9AAC</value>
+    </values>
+    <values>
+        <field>AccountName__c</field>
+        <value xsi:type="xsd:string">Meadow Lake Office Building</value>
+    </values>
+    <values>
+        <field>InternalEmailAddress__c</field>
+        <value xsi:type="xsd:string">meadowlake@myauditmate.com</value>
+    </values>
+</CustomMetadata>

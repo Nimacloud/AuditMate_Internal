@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>LightningBolt</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CARE_Equipment</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Equipment__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>CARE Active User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CARE_Equipment</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Equipment__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>CARE Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page6</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Case_Record_Page6</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <tabs>standard-LightningBoltHome</tabs>
+    <tabs>ServiceHistory__c</tabs>
+    <tabs>OCR_Send_Log__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>LightningBolt_UtilityBar</utilityBar>
+</CustomApplication>

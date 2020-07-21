@@ -1,0 +1,23 @@
+<template>
+
+    <div class="slds-m-horizontal_large slds-m-bottom_medium">
+
+        <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium">
+            <div class="slds-col slds-size_4-of-12">
+
+                <template if:true={showOptions}>
+
+                    <lightning-combobox
+                        value={value}
+                        placeholder="Select Account"
+                        options={options}
+                        onchange={handleChange}>
+                    </lightning-combobox>
+
+                </template>
+
+            </div>
+        </div>
+    </div>
+
+</template>

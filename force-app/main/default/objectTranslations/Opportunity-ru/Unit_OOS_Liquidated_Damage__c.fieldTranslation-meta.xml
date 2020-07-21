@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Unit OOS Liquidated Damage --></label>
+    <name>Unit_OOS_Liquidated_Damage__c</name>
+</CustomFieldTranslation>

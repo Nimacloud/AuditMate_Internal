@@ -1,0 +1,87 @@
+<template>
+
+    <div class="slds-m-horizontal_x-large">
+
+        <div class="slds-grid slds-wrap slds-gutters slds-p-around_medium">
+            <div class="slds-col slds-size_1-of-1 slds-m-bottom_small custom-image_logo">
+                <img src={logo} alt="">
+            </div>
+        </div>
+
+        <lightning-card>
+
+            <div class="slds-grid slds-wrap slds-gutters slds-p-around_large">
+
+                <div class="slds-col slds-size_1-of-1">
+                    <div class="slds-text-heading_large slds-m-bottom_small">Welcome to AuditMate</div>
+                    <div class="slds-text-heading_small">
+                        Please enter your username and password to start your worry-free experience with your vendor.
+                    </div>
+                </div>
+
+                <div class="slds-col slds-size_8-of-12">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_1-of-2 slds-m-top_large">
+                            <lightning-input type="email" label="Username" placeholder="Username" class="input-username"></lightning-input>
+                        </div>
+                    </div>
+
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_1-of-2 slds-m-top_large">
+
+                            <lightning-input type="password" label="Password" placeholder="Password" class="input-password"></lightning-input>
+                            <template if:true={showError}>
+                                <div class="slds-text-color_destructive">{errorMessage}</div>
+                            </template>
+                            <div class="slds-text-color_weak slds-text-body_small">
+                                Your password must be between 8 and 64 characters, and <br/> can contain letters, numbers, special characters and emojis.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slds-m-top_large">
+                        <div class="slds-grid slds-wrap">
+
+                            <div class="slds-col slds-size_2-of-12">
+                                <lightning-button variant="brand" label="Continue" title="Login" onclick={handleLogin}></lightning-button>
+                            </div>
+                            <div class="slds-col slds-size_2-of-12 custom-image_powered">
+                                <img src={pic} alt="">
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-1 slds-m-top_small">
+                                <div class="slds-text-color_weak slds-text-body_small">
+                                    By clicking Continue, you agree to our <a href="/customers/s/subscription-terms" target="_blank">Terms of Use and Privacy Policy</a>.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slds-col slds-size_4-of-12 slds-m-top_medium vertical-line">
+
+                    <div class="slds-text-heading_medium">Why you’ll love it</div>
+                    <div class="slds-text-body_regular slds-p-top_large">
+
+                        <p>View all your contract, invoices, <br>
+                            proposal, repair alerts in one place.</p>
+                        <br>
+                        <p>We will review everything for you</p>
+                        <br>
+                        <p>Find the best way to maximize <br>
+                            your benefits.</p>
+                        <br>
+                        <p>Stay informed.</p>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </lightning-card>
+
+    </div>
+
+</template>

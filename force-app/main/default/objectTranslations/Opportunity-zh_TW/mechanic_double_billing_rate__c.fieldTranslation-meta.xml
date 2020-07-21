@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Double time billing rate --></help>
+    <label><!-- Mechanic 2x Billing Rate --></label>
+    <name>mechanic_double_billing_rate__c</name>
+</CustomFieldTranslation>

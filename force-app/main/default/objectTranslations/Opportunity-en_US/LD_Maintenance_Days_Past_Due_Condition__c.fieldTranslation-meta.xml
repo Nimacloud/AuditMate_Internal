@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- LD Maintenance Days Past Due Condition --></label>
+    <name>LD_Maintenance_Days_Past_Due_Condition__c</name>
+</CustomFieldTranslation>

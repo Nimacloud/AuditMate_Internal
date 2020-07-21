@@ -1,0 +1,60 @@
+<template>
+
+    <div>
+
+        <lightning-spinner variant="inverse" if:false={showCharts}></lightning-spinner>
+
+        <div class="slds-m-horizontal_large">
+
+            <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium">
+                <div class="slds-col slds-size_2-of-12">
+
+                    <lightning-combobox
+                        value={elevatorValue}
+                        options={elevatorOptions}
+                        onchange={handleElevatorChange}>
+                    </lightning-combobox>
+
+                </div>
+            </div>
+        </div>
+
+        <template if:true={showCharts}>
+            <c-customer-finance-panels wrapper={wrapper}></c-customer-finance-panels>
+        </template>
+
+        <div class="slds-m-horizontal_large slds-m-top_large">
+
+            <lightning-card>
+
+                <div class="slds-p-horizontal_large">
+
+                    <lightning-tabset>
+
+                        <lightning-tab label="Open Invoices">
+                            <c-customer-finance-open-invoices records={openInvoices} onrefreshdata={handleRefreshData}></c-customer-finance-open-invoices>
+                        </lightning-tab>
+
+                        <lightning-tab label="Disputed Invoices">
+                            <c-customer-finance-dispute-invoices records={disputedInvoices} onrefreshdata={handleRefreshData}></c-customer-finance-dispute-invoices>
+                        </lightning-tab>
+
+                        <lightning-tab label="History">
+                            <c-customer-finance-invoices all-invoices={allInvoices} elevator-value={elevatorValue}></c-customer-finance-invoices>
+                        </lightning-tab>
+
+                        <!-- <lightning-tab label="Liquidated Damages">
+                            <c-customer-finance-liquidated-damages></c-customer-finance-liquidated-damages>
+                        </lightning-tab> -->
+
+                    </lightning-tabset>
+
+                </div>
+
+            </lightning-card>
+
+        </div>
+
+    </div>
+
+</template>
